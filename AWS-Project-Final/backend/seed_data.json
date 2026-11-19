@@ -1299,5 +1299,1918 @@
     ],
     "Storage": "Bảo quản rau, đậu và nước sốt riêng trong hộp kín ở ngăn mát; trộn ngay trước khi ăn và dùng trong 1–2 ngày.",
     "Reheating": "Không cần hâm nóng; dùng lạnh hoặc để bớt lạnh tùy khẩu vị."
+  },
+  {
+    "RecipeID": "R09",
+    "Name": "Thịt kho trứng cút",
+    "Ingredients": [
+      "thịt ba rọi",
+      "trứng cút",
+      "nước dừa tươi",
+      "hành tím",
+      "tỏi",
+      "nước mắm",
+      "đường",
+      "tiêu"
+    ],
+    "Instructions": [
+      "Luộc chín trứng cút, bóc vỏ.",
+      "Thái thịt ba rọi miếng vuông vừa ăn, ướp gia vị khoảng 15 phút.",
+      "Thắng nước màu, xào săn thịt rồi đổ nước dừa tươi vào.",
+      "Kho nhỏ lửa khoảng 25 phút rồi cho trứng cút vào kho thêm 10 phút."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80",
+    "CookingTimeMinutes": 40,
+    "EstimatedCostVND": 45000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "energizing"
+    ],
+    "HealthTags": [
+      "high_protein"
+    ],
+    "DietTags": [],
+    "Allergens": [
+      "trứng"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 460,
+      "ProteinG": 26,
+      "CarbsG": 14,
+      "FatG": 33,
+      "SaturatedFatG": 12,
+      "SodiumMg": 780,
+      "FiberG": 0.5,
+      "SugarG": 8,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Có thể chọn thịt nạc vai ít mỡ hơn nếu cần giảm chất béo bão hòa. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Thịt kho trứng cút mềm đậm đà, béo nhẹ vị nước dừa tươi và thơm tiêu xay. Món ăn truyền thống ấm bụng, thích hợp dùng kèm cơm trắng và dưa cải chua.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 20,
+    "TotalTimeMinutes": 60,
+    "IngredientDetails": [
+      {
+        "Name": "thịt ba rọi",
+        "Quantity": 250,
+        "Unit": "g",
+        "Preparation": "Rửa sạch, cạo bì, thái khối vuông 3 cm"
+      },
+      {
+        "Name": "trứng cút",
+        "Quantity": 10,
+        "Unit": "quả",
+        "Preparation": "Luộc chín, ngâm nước lạnh và bóc vỏ"
+      },
+      {
+        "Name": "nước dừa tươi",
+        "Quantity": 250,
+        "Unit": "ml",
+        "Preparation": "Lọc sạch cặn"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": 15,
+        "Unit": "g",
+        "Preparation": "Bóc vỏ, băm nhỏ"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": 8,
+        "Unit": "g",
+        "Preparation": "Bóc vỏ, băm nhỏ"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": 20,
+        "Unit": "ml",
+        "Preparation": "Dùng loại ngon để tạo mùi thơm"
+      },
+      {
+        "Name": "đường",
+        "Quantity": 15,
+        "Unit": "g",
+        "Preparation": "Chia đôi để thắng màu và ướp"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": 1,
+        "Unit": "g",
+        "Preparation": "Tiêu xay"
+      }
+    ],
+    "Preparation": [
+      "Luộc trứng cút trong nước sôi 6 phút, vớt ra ngâm nước lạnh để dễ bóc vỏ.",
+      "Vệ sinh thớt, dao và tay sau khi thái thịt sống; ướp thịt với hành, tỏi, nước mắm, tiêu và một nửa lượng đường.",
+      "Đong sẵn nước dừa tươi để đổ vào ngay khi thịt săn."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Thắng nước màu và xào săn thịt",
+        "Description": "Cho phần đường còn lại vào nồi đun đến khi chuyển màu cánh gián, cho thịt đã ướp vào đảo săn các mặt.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Vừa",
+        "Technique": "Thắng caramen và áp chảo",
+        "CompletionCue": "Nước màu nâu cánh gián không cháy khét, miếng thịt săn bề mặt."
+      },
+      {
+        "Step": 2,
+        "Title": "Kho mềm thịt với nước dừa",
+        "Description": "Đổ nước dừa tươi ngập mặt thịt, đun sôi rồi hạ nhỏ lửa, hớt bọt và đậy hờ nắp.",
+        "DurationMinutes": 25,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Kho liu riu",
+        "CompletionCue": "Thịt bắt đầu mềm, nước kho chuyển màu nâu hổ phách."
+      },
+      {
+        "Step": 3,
+        "Title": "Kho cùng trứng cút",
+        "Description": "Cho trứng cút đã bóc vỏ vào nồi, kho mở nắp đến khi nước sánh nhẹ và thấm vào trứng.",
+        "DurationMinutes": 10,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Kho thấm vị",
+        "CompletionCue": "Trứng lên màu nâu đẹp, thịt mềm rục."
+      }
+    ],
+    "ChefTips": [
+      "Hớt bọt kỹ khi nước dừa vừa sôi để nước kho trong và đẹp màu.",
+      "Không nên cho trứng cút vào kho từ đầu vì lòng trắng trứng dễ bị chai cứng.",
+      "Có thể chần sơ thịt qua nước sôi 1 phút trước khi ướp để loại bỏ tạp chất."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Nước màu bị đắng",
+        "Cause": "Đun đường quá lửa chuyển sang màu đen",
+        "Fix": "Tắt bếp ngay khi đường vừa chuyển nâu cánh gián và cho thịt vào ngay."
+      },
+      {
+        "Mistake": "Trứng cút bị cứng dai",
+        "Cause": "Kho trứng quá lâu trên lửa lớn",
+        "Fix": "Chỉ cho trứng vào ở 10 phút cuối trên lửa nhỏ."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "trứng cút",
+        "Alternatives": [
+          "trứng vịt hoặc trứng gà luộc"
+        ]
+      },
+      {
+        "Ingredient": "nước dừa tươi",
+        "Alternatives": [
+          "nước lọc thêm 5g đường"
+        ]
+      }
+    ],
+    "Storage": "Để nguội hoàn toàn, cho vào hộp kín bảo quản ngăn mát tủ lạnh trong 3–4 ngày.",
+    "Reheating": "Hâm nóng trên bếp ở lửa nhỏ, thêm 1–2 thìa nước lọc nếu nước kho đã đặc lại."
+  },
+  {
+    "RecipeID": "R10",
+    "Name": "Canh bí đỏ thịt bằm",
+    "Ingredients": [
+      "bí đỏ",
+      "thịt heo xay",
+      "hành tím",
+      "hành lá",
+      "ngò rí",
+      "nước",
+      "nước mắm",
+      "tiêu"
+    ],
+    "Instructions": [
+      "Gọt vỏ bí đỏ, bỏ ruột, rửa sạch và cắt miếng vừa ăn.",
+      "Ướp thịt heo xay với hành tím băm, nước mắm và tiêu.",
+      "Đun sôi nước, thả từng viên thịt vào nấu chín rồi cho bí đỏ vào.",
+      "Nấu mềm bí, nêm gia vị và rắc hành ngò trước khi tắt bếp."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 20,
+    "EstimatedCostVND": 25000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "light"
+    ],
+    "HealthTags": [
+      "low_saturated_fat",
+      "light"
+    ],
+    "DietTags": [],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 215,
+      "ProteinG": 14,
+      "CarbsG": 22,
+      "FatG": 8,
+      "SaturatedFatG": 2.5,
+      "SodiumMg": 480,
+      "FiberG": 3,
+      "SugarG": 6,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Vị ngọt tự nhiên từ bí đỏ giúp giảm lượng gia vị cần nêm. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Canh bí đỏ thịt bằm có vị ngọt bùi tự nhiên, màu vàng cam bắt mắt và dễ tiêu hóa. Món canh bổ dưỡng cho bữa cơm gia đình hoặc những ngày cần món ăn nhẹ bụng.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 10,
+    "TotalTimeMinutes": 30,
+    "IngredientDetails": [
+      {
+        "Name": "bí đỏ",
+        "Quantity": 250,
+        "Unit": "g",
+        "Preparation": "Gọt vỏ, bỏ hạt, cắt miếng vuông dày 1.5 cm"
+      },
+      {
+        "Name": "thịt heo xay",
+        "Quantity": 100,
+        "Unit": "g",
+        "Preparation": "Trộn đều với gia vị ướp"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      },
+      {
+        "Name": "ngò rí",
+        "Quantity": 5,
+        "Unit": "g",
+        "Preparation": "Rửa sạch, thái nhỏ"
+      },
+      {
+        "Name": "nước",
+        "Quantity": 600,
+        "Unit": "ml",
+        "Preparation": "Dùng làm nước dùng"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": 10,
+        "Unit": "ml",
+        "Preparation": "Chia để ướp thịt và nêm canh"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": 0.5,
+        "Unit": "g",
+        "Preparation": "Tiêu xay"
+      }
+    ],
+    "Preparation": [
+      "Gọt vỏ bí đỏ cẩn thận trên thớt vững chắc, cắt miếng đều nhau.",
+      "Trộn thịt xay với hành tím băm, 5 ml nước mắm và tiêu xay.",
+      "Rửa sạch hành lá và ngò rí, thái nhỏ."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Nấu nước dùng thịt viên",
+        "Description": "Đun sôi 600 ml nước, dùng thìa múc từng viên thịt nhỏ thả vào nồi, hớt bọt để nước trong.",
+        "DurationMinutes": 6,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu nước dùng",
+        "CompletionCue": "Viên thịt nổi lên, nước canh trong."
+      },
+      {
+        "Step": 2,
+        "Title": "Nấu chín bí đỏ",
+        "Description": "Cho bí đỏ vào nồi, nấu lửa vừa đến khi miếng bí mềm bùi.",
+        "DurationMinutes": 10,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu mềm",
+        "CompletionCue": "Xiên đũa qua miếng bí thấy mềm nhưng chưa nát."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm gia vị và hoàn thiện",
+        "Description": "Nêm phần nước mắm còn lại vừa miệng, rắc hành lá, ngò rí rồi tắt bếp.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Nêm hoàn thiện",
+        "CompletionCue": "Canh dậy mùi thơm hành ngò, vị ngọt thanh."
+      }
+    ],
+    "ChefTips": [
+      "Không khuấy mạnh khi bí đã mềm để tránh làm đục nước canh.",
+      "Chọn bí đỏ hồ lô hoặc bí sáp đặc ruột sẽ cho vị dẻo và ngọt hơn."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Bí đỏ bị nát nhừ",
+        "Cause": "Cắt miếng quá mỏng hoặc nấu quá lâu",
+        "Fix": "Cắt miếng dày khoảng 1.5 cm và tắt bếp ngay khi bí vừa chín tới."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "thịt heo xay",
+        "Alternatives": [
+          "tôm tươi băm nhỏ"
+        ]
+      },
+      {
+        "Ingredient": "bí đỏ",
+        "Alternatives": [
+          "bí xanh (bí đao)"
+        ]
+      }
+    ],
+    "Storage": "Bảo quản trong hộp kín ở ngăn mát tủ lạnh và dùng trong 1–2 ngày.",
+    "Reheating": "Đun sôi lại trên bếp lửa vừa; tránh khuấy mạnh."
+  },
+  {
+    "RecipeID": "R11",
+    "Name": "Tôm rim mặn ngọt",
+    "Ingredients": [
+      "tôm tươi",
+      "tỏi",
+      "hành tím",
+      "hành lá",
+      "nước mắm",
+      "đường",
+      "dầu ăn",
+      "tiêu"
+    ],
+    "Instructions": [
+      "Cắt râu, rút chỉ lưng tôm, rửa sạch và để ráo.",
+      "Ướp tôm với nước mắm, đường, tiêu khoảng 10 phút.",
+      "Phi thơm hành tỏi, cho tôm vào đảo săn trên lửa lớn.",
+      "Hạ lửa nhỏ rim đến khi nước sốt keo lại bám đều quanh vỏ tôm."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "CookingTimeMinutes": 18,
+    "EstimatedCostVND": 48000,
+    "Servings": 2,
+    "MoodTags": [
+      "energizing",
+      "comforting"
+    ],
+    "HealthTags": [
+      "high_protein",
+      "low_saturated_fat"
+    ],
+    "DietTags": [],
+    "Allergens": [
+      "động vật giáp xác"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 245,
+      "ProteinG": 28,
+      "CarbsG": 11,
+      "FatG": 9,
+      "SaturatedFatG": 1.5,
+      "SodiumMg": 690,
+      "FiberG": 0.5,
+      "SugarG": 7,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Không dùng nếu dị ứng hải sản/giáp xác. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Tôm rim mặn ngọt có màu đỏ cam bóng đẹp, vỏ giòn nhẹ thấm sốt đậm đà, thịt tôm bên trong săn ngọt tự nhiên.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 12,
+    "TotalTimeMinutes": 30,
+    "IngredientDetails": [
+      {
+        "Name": "tôm tươi",
+        "Quantity": 250,
+        "Unit": "g",
+        "Preparation": "Cắt đầu nhọn, rút chỉ đen, rửa sạch, thấm khô"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": 8,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": 12,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": 15,
+        "Unit": "ml",
+        "Preparation": "Dùng ướp và tạo vị mặn"
+      },
+      {
+        "Name": "đường",
+        "Quantity": 12,
+        "Unit": "g",
+        "Preparation": "Tạo độ bóng và vị ngọt"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": 10,
+        "Unit": "ml",
+        "Preparation": "Dùng phi thơm"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": 0.5,
+        "Unit": "g",
+        "Preparation": "Tiêu xay"
+      }
+    ],
+    "Preparation": [
+      "Sơ chế tôm sạch sẽ, để thật ráo nước để khi rim không bị tanh.",
+      "Ướp tôm với nước mắm, đường và tiêu trong 10 phút.",
+      "Băm nhỏ hành tím, tỏi và thái hành lá."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Phi thơm hành tỏi",
+        "Description": "Làm nóng dầu ăn trên chảo, cho hành tím và tỏi vào đảo thơm.",
+        "DurationMinutes": 1.5,
+        "HeatLevel": "Vừa",
+        "Technique": "Phi thơm",
+        "CompletionCue": "Hành tỏi dậy mùi thơm, ngả vàng nhẹ."
+      },
+      {
+        "Step": 2,
+        "Title": "Xào săn tôm",
+        "Description": "Cho toàn bộ tôm và nước ướp vào chảo, đảo đều trên lửa lớn cho tôm chuyển đỏ.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Lớn",
+        "Technique": "Xào săn",
+        "CompletionCue": "Vỏ tôm chuyển màu đỏ cam đồng đều."
+      },
+      {
+        "Step": 3,
+        "Title": "Rim keo sốt",
+        "Description": "Hạ lửa nhỏ, đảo đều tay đến khi nước sốt sệt lại bám bóng quanh tôm, rắc hành lá và tiêu rồi tắt bếp.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Rim cô sốt",
+        "CompletionCue": "Nước sốt sánh bóng, không còn nước loãng dưới đáy chảo."
+      }
+    ],
+    "ChefTips": [
+      "Để nguyên vỏ tôm khi rim giúp giữ độ ngọt và tạo lớp áo sốt bóng đẹp.",
+      "Không rim quá lâu sau khi tôm đã chín để tránh thịt tôm bị khô bở."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Đường bị cháy đắng ở đáy chảo",
+        "Cause": "Rim lửa quá lớn khi nước đã cạn",
+        "Fix": "Hạ lửa nhỏ ngay khi nước bắt đầu sánh và đảo liên tục."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "tôm tươi",
+        "Alternatives": [
+          "tép bạc đất"
+        ]
+      }
+    ],
+    "Storage": "Cho vào hộp kín bảo quản ngăn mát tủ lạnh và dùng trong 1–2 ngày.",
+    "Reheating": "Làm nóng nhanh trên chảo lửa nhỏ trong 1–2 phút với 1 thìa nhỏ nước."
+  },
+  {
+    "RecipeID": "R12",
+    "Name": "Canh chua cá lóc",
+    "Ingredients": [
+      "cá lóc",
+      "cà chua",
+      "thơm (dứa)",
+      "giá đỗ",
+      "bạc hà (dọc mùng)",
+      "me chua",
+      "rau om",
+      "ngò gai",
+      "nước mắm",
+      "đường"
+    ],
+    "Instructions": [
+      "Sơ chế sạch cá lóc, cắt khứa vừa ăn.",
+      "Dầm me lấy nước cốt chua; cắt cà chua, thơm, bạc hà.",
+      "Đun sôi nước, cho nước cốt me, thơm và cá vào nấu chín.",
+      "Thêm cà chua, bạc hà, giá đỗ, nêm gia vị và rắc rau thơm."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 30,
+    "EstimatedCostVND": 45000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "comforting"
+    ],
+    "HealthTags": [
+      "high_protein",
+      "low_saturated_fat",
+      "light"
+    ],
+    "DietTags": [],
+    "Allergens": [
+      "cá"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 240,
+      "ProteinG": 25,
+      "CarbsG": 16,
+      "FatG": 8,
+      "SaturatedFatG": 2,
+      "SodiumMg": 640,
+      "FiberG": 3,
+      "SugarG": 8,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Không dùng nếu dị ứng cá. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Canh chua cá lóc mang hương vị đặc trưng miền Nam với vị chua thanh của me, ngọt dịu từ thơm và cá tươi, dậy mùi rau om ngò gai.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 15,
+    "TotalTimeMinutes": 45,
+    "IngredientDetails": [
+      {
+        "Name": "cá lóc",
+        "Quantity": 250,
+        "Unit": "g",
+        "Preparation": "Làm sạch nhớt, cắt khứa dày 2 cm"
+      },
+      {
+        "Name": "cà chua",
+        "Quantity": 120,
+        "Unit": "g",
+        "Preparation": "Bổ múi cau"
+      },
+      {
+        "Name": "thơm (dứa)",
+        "Quantity": 100,
+        "Unit": "g",
+        "Preparation": "Gọt vỏ, bỏ mắt, thái lát mỏng"
+      },
+      {
+        "Name": "bạc hà (dọc mùng)",
+        "Quantity": 80,
+        "Unit": "g",
+        "Preparation": "Tước vỏ, thái lát xéo, bóp muối rửa sạch"
+      },
+      {
+        "Name": "giá đỗ",
+        "Quantity": 80,
+        "Unit": "g",
+        "Preparation": "Rửa sạch, để ráo"
+      },
+      {
+        "Name": "me chua",
+        "Quantity": 25,
+        "Unit": "g",
+        "Preparation": "Ngâm nước nóng, dầm lọc lấy nước cốt"
+      },
+      {
+        "Name": "rau om và ngò gai",
+        "Quantity": 15,
+        "Unit": "g",
+        "Preparation": "Rửa sạch, thái nhỏ"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": 15,
+        "Unit": "ml",
+        "Preparation": "Nêm tạo vị đậm"
+      },
+      {
+        "Name": "đường",
+        "Quantity": 12,
+        "Unit": "g",
+        "Preparation": "Cân bằng vị chua"
+      }
+    ],
+    "Preparation": [
+      "Chà xát cá lóc với ít muối và chanh rồi rửa sạch để khử mùi tanh.",
+      "Tước vỏ dọc mùng, thái lát xéo, bóp với chút muối rồi xả sạch vắt ráo để không bị ngứa.",
+      "Ngâm me vắt với 100 ml nước sôi, dầm nhuyễn và lọc bỏ hạt."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Nấu nước dùng chua ngọt",
+        "Description": "Đun sôi 700 ml nước cùng nước cốt me, thơm và một nửa lượng cà chua.",
+        "DurationMinutes": 6,
+        "HeatLevel": "Vừa-lớn",
+        "Technique": "Đun nước dùng",
+        "CompletionCue": "Nước sôi bùng, thơm tiết vị ngọt tự nhiên."
+      },
+      {
+        "Step": 2,
+        "Title": "Nấu chín cá lóc",
+        "Description": "Thả nhẹ từng khứa cá vào nồi nước đang sôi, hớt bọt và nấu đến khi cá chín tới.",
+        "DurationMinutes": 8,
+        "HeatLevel": "Vừa",
+        "Technique": "Luộc chín tới",
+        "CompletionCue": "Thịt cá chuyển trắng đục và chín đều phần xương."
+      },
+      {
+        "Step": 3,
+        "Title": "Cho rau và hoàn thiện",
+        "Description": "Nêm nước mắm và đường cho hài hòa vị chua-ngọt-mặn. Cho cà chua còn lại, dọc mùng và giá đỗ vào nấu 2 phút, rắc rau om ngò gai rồi tắt bếp.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu nhanh giữ giòn",
+        "CompletionCue": "Rau vừa chín tới còn độ giòn, dậy mùi thơm đặc trưng."
+      }
+    ],
+    "ChefTips": [
+      "Chỉ thả cá vào khi nước đã sôi bùng để cá không bị tanh.",
+      "Không đảo mạnh tay sau khi cho cá vào để tránh làm nát thịt cá."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Dọc mùng gây ngứa cổ",
+        "Cause": "Chưa tước sạch vỏ và bóp muối kỹ",
+        "Fix": "Tước sạch lớp vỏ xanh bên ngoài, bóp muối và xả nước nhiều lần."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "cá lóc",
+        "Alternatives": [
+          "cá basa hoặc cá diêu hồng"
+        ]
+      },
+      {
+        "Ingredient": "me chua",
+        "Alternatives": [
+          "nước cốt chanh hoặc giấm bỗng"
+        ]
+      }
+    ],
+    "Storage": "Nên dùng hết trong ngày; nếu bảo quản ngăn mát nên vớt riêng phần rau ra khỏi nước canh.",
+    "Reheating": "Đun sôi nhẹ phần nước và cá, sau đó mới thả rau vào làm nóng nhanh."
+  },
+  {
+    "RecipeID": "R13",
+    "Name": "Nấm đùi gà kho tiêu",
+    "Ingredients": [
+      "nấm đùi gà",
+      "hành tím",
+      "tỏi",
+      "nước tương",
+      "đường",
+      "tiêu đen",
+      "dầu ăn"
+    ],
+    "Instructions": [
+      "Rửa sạch nấm đùi gà, cắt khoanh tròn hoặc miếng vừa ăn.",
+      "Phi thơm hành tỏi với dầu ăn.",
+      "Cho nấm vào đảo săn trên lửa vừa.",
+      "Nêm nước tương, đường, tiêu đen và kho nhỏ lửa 10 phút đến khi sốt sệt."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=600&q=80",
+    "CookingTimeMinutes": 20,
+    "EstimatedCostVND": 26000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "light"
+    ],
+    "HealthTags": [
+      "low_saturated_fat",
+      "controlled_carb",
+      "light"
+    ],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [
+      "đậu nành"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 165,
+      "ProteinG": 7,
+      "CarbsG": 19,
+      "FatG": 7,
+      "SaturatedFatG": 1,
+      "SodiumMg": 520,
+      "FiberG": 4,
+      "SugarG": 6,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Có thể thay hành tỏi bằng hành boa-rô nếu ăn chay thuần không ngũ vị tân. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Nấm đùi gà giòn dai sần sật thấm đẫm nước sốt nước tương đậm đà và hương tiêu đen nồng ấm. Món chay thanh đạm nhưng rất bắt cơm.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 10,
+    "TotalTimeMinutes": 30,
+    "IngredientDetails": [
+      {
+        "Name": "nấm đùi gà",
+        "Quantity": 250,
+        "Unit": "g",
+        "Preparation": "Gọt gốc, rửa nhanh nước muối loãng, cắt khoanh 1.5 cm"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": 12,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": 6,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": 20,
+        "Unit": "ml",
+        "Preparation": "Tạo màu và vị mặn"
+      },
+      {
+        "Name": "đường",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Cân bằng vị"
+      },
+      {
+        "Name": "tiêu đen",
+        "Quantity": 2,
+        "Unit": "g",
+        "Preparation": "Tiêu đập dập hoặc xay thô"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": 10,
+        "Unit": "ml",
+        "Preparation": "Dùng phi thơm"
+      }
+    ],
+    "Preparation": [
+      "Không ngâm nấm đùi gà lâu trong nước vì nấm sẽ hút nước và mất độ giòn.",
+      "Khứa nhẹ mặt cắt của khoanh nấm để gia vị dễ thấm vào bên trong.",
+      "Pha sẵn hỗn hợp gồm nước tương, đường và 30 ml nước lọc."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Phi thơm và áp chảo nấm",
+        "Description": "Phi thơm hành tỏi với dầu ăn, cho nấm vào đảo đều đến khi bề mặt hơi xém vàng.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Vừa-lớn",
+        "Technique": "Áp chảo",
+        "CompletionCue": "Nấm săn lại, cạnh hơi vàng và dậy mùi thơm."
+      },
+      {
+        "Step": 2,
+        "Title": "Kho thấm gia vị",
+        "Description": "Đổ chén sốt nước tương đã pha vào chảo, hạ lửa nhỏ và kho mở nắp.",
+        "DurationMinutes": 8,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Kho sệt",
+        "CompletionCue": "Nước sốt rút bớt, bám màu nâu bóng quanh miếng nấm."
+      },
+      {
+        "Step": 3,
+        "Title": "Thêm tiêu và hoàn thiện",
+        "Description": "Rắc tiêu đen đập dập vào đảo đều 1 phút rồi tắt bếp.",
+        "DurationMinutes": 1,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện hương vị",
+        "CompletionCue": "Dậy mùi thơm nồng của tiêu đen."
+      }
+    ],
+    "ChefTips": [
+      "Áp chảo nấm trên lửa lớn trước khi đổ sốt giúp nấm giữ độ giòn dai như thịt.",
+      "Dùng tiêu đen xay thô hoặc đập dập sẽ thơm hơn tiêu xay mịn."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Nấm bị nhũn và ra nhiều nước",
+        "Cause": "Ngâm nấm quá lâu trước khi nấu hoặc kho lửa quá nhỏ từ đầu",
+        "Fix": "Rửa nhanh nấm dưới vòi nước và áp chảo lửa lớn trước khi kho."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "nấm đùi gà",
+        "Alternatives": [
+          "nấm bào ngư hoặc nấm rơm"
+        ]
+      }
+    ],
+    "Storage": "Bảo quản trong hộp kín ở ngăn mát tủ lạnh và dùng trong 2 ngày.",
+    "Reheating": "Làm nóng trên chảo ở lửa nhỏ trong 2 phút."
+  },
+  {
+    "RecipeID": "R14",
+    "Name": "Cải thìa xào nấm đông cô",
+    "Ingredients": [
+      "cải thìa",
+      "nấm đông cô tươi",
+      "tỏi",
+      "dầu hào chay",
+      "dầu ăn",
+      "bột năng"
+    ],
+    "Instructions": [
+      "Chẻ đôi cải thìa, rửa sạch; nấm đông cô cắt bỏ chân, khứa chữ thập.",
+      "Chần sơ cải thìa qua nước sôi có chút dầu ăn rồi vớt ra.",
+      "Phi thơm tỏi, xào chín nấm đông cô với dầu hào.",
+      "Cho cải thìa vào đảo đều, rưới chút nước bột năng tạo độ sánh nhẹ."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80",
+    "CookingTimeMinutes": 15,
+    "EstimatedCostVND": 24000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [
+      "low_sodium",
+      "controlled_carb",
+      "low_saturated_fat",
+      "light"
+    ],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [
+      "đậu nành"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 120,
+      "ProteinG": 5,
+      "CarbsG": 14,
+      "FatG": 5,
+      "SaturatedFatG": 0.8,
+      "SodiumMg": 340,
+      "FiberG": 3.5,
+      "SugarG": 3,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Kiểm tra nhãn dầu hào chay để đảm bảo phù hợp chế độ ăn. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Cải thìa xanh mướt giòn ngọt kết hợp cùng nấm đông cô mềm thơm và lớp sốt bóng mượt thanh đạm.",
+    "Cuisine": "Vietnamese",
+    "Category": "side",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 10,
+    "TotalTimeMinutes": 25,
+    "IngredientDetails": [
+      {
+        "Name": "cải thìa",
+        "Quantity": 250,
+        "Unit": "g",
+        "Preparation": "Cắt gốc, rửa sạch kẽ lá, chẻ đôi dọc"
+      },
+      {
+        "Name": "nấm đông cô tươi",
+        "Quantity": 100,
+        "Unit": "g",
+        "Preparation": "Rửa sạch, bỏ chân nấm, khứa hoa trên mũ nấm"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": 8,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "dầu hào chay",
+        "Quantity": 15,
+        "Unit": "ml",
+        "Preparation": "Tạo vị ngọt thanh"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": 10,
+        "Unit": "ml",
+        "Preparation": "Dùng chần rau và xào"
+      },
+      {
+        "Name": "bột năng",
+        "Quantity": 5,
+        "Unit": "g",
+        "Preparation": "Hòa tan với 20 ml nước lọc"
+      }
+    ],
+    "Preparation": [
+      "Rửa kỹ phần bẹ cải thìa để loại bỏ hết đất cát.",
+      "Hòa tan 5g bột năng với 20 ml nước lọc sẵn trong chén."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Chần cải thìa",
+        "Description": "Đun sôi nước với vài giọt dầu ăn, cho cải thìa vào chần 1 phút rồi vớt ra ngâm nước lạnh và để ráo.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Lớn",
+        "Technique": "Chần giữ màu",
+        "CompletionCue": "Cải chuyển màu xanh ngọc bóng đẹp, thân vẫn giòn."
+      },
+      {
+        "Step": 2,
+        "Title": "Xào nấm đông cô",
+        "Description": "Phi thơm tỏi với dầu ăn, cho nấm đông cô vào xào chín cùng dầu hào chay và 30 ml nước.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Vừa-lớn",
+        "Technique": "Xào sốt",
+        "CompletionCue": "Nấm chín mềm, dậy mùi thơm đặc trưng."
+      },
+      {
+        "Step": 3,
+        "Title": "Tạo độ sánh và trình bày",
+        "Description": "Cho cải thìa vào đảo nhanh 30 giây, rưới nước bột năng vào khuấy đều cho sốt sánh bóng rồi tắt bếp.",
+        "DurationMinutes": 1.5,
+        "HeatLevel": "Vừa",
+        "Technique": "Làm sánh sốt",
+        "CompletionCue": "Nước sốt bám mượt lên cải và nấm."
+      }
+    ],
+    "ChefTips": [
+      "Ngâm cải vào nước lạnh ngay sau khi chần giúp cải giữ màu xanh bắt mắt và độ giòn.",
+      "Khuấy đều chén nước bột năng trước khi đổ vào chảo để không bị vón cục."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Cải bị vàng và mềm nhũn",
+        "Cause": "Chần hoặc xào quá lâu trên chảo",
+        "Fix": "Chỉ chần 1 phút và đảo nhanh 30 giây ở bước cuối."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "cải thìa",
+        "Alternatives": [
+          "cải ngọt hoặc bông cải xanh"
+        ]
+      }
+    ],
+    "Storage": "Ngon nhất khi dùng nóng ngay sau khi nấu; có thể bảo quản ngăn mát tối đa 1 ngày.",
+    "Reheating": "Làm nóng nhanh trên chảo lửa vừa trong 1 phút."
+  },
+  {
+    "RecipeID": "R15",
+    "Name": "Sườn non ram mặn ngọt",
+    "Ingredients": [
+      "sườn non heo",
+      "hành tím",
+      "tỏi",
+      "nước mắm",
+      "đường",
+      "tương ớt",
+      "dầu ăn",
+      "tiêu"
+    ],
+    "Instructions": [
+      "Chặt sườn miếng vừa ăn, chần sơ nước sôi rồi rửa sạch.",
+      "Ướp sườn với hành tỏi băm, nước mắm, đường khoảng 20 phút.",
+      "Chiên áp chảo cho sườn vàng xém các mặt.",
+      "Đổ phần nước ướp và ít nước lọc vào ram nhỏ lửa đến khi sốt keo sánh."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80",
+    "CookingTimeMinutes": 35,
+    "EstimatedCostVND": 55000,
+    "Servings": 2,
+    "MoodTags": [
+      "energizing",
+      "comforting"
+    ],
+    "HealthTags": [
+      "high_protein"
+    ],
+    "DietTags": [],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 440,
+      "ProteinG": 28,
+      "CarbsG": 15,
+      "FatG": 29,
+      "SaturatedFatG": 10,
+      "SodiumMg": 750,
+      "FiberG": 0.5,
+      "SugarG": 10,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Sườn non ram vàng óng, thịt mềm róc xương quyện lớp sốt mặn ngọt đậm đà, thích hợp cho bữa cơm chiều nhiều năng lượng.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 25,
+    "TotalTimeMinutes": 60,
+    "IngredientDetails": [
+      {
+        "Name": "sườn non heo",
+        "Quantity": 300,
+        "Unit": "g",
+        "Preparation": "Chặt miếng 4 cm, chần nước sôi 2 phút, rửa sạch"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": 15,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ, vắt lấy nước cốt để ướp không cháy"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ, vắt lấy nước cốt"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": 20,
+        "Unit": "ml",
+        "Preparation": "Dùng ướp sườn"
+      },
+      {
+        "Name": "đường",
+        "Quantity": 15,
+        "Unit": "g",
+        "Preparation": "Tạo độ sánh bóng"
+      },
+      {
+        "Name": "tương ớt",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Tạo màu đỏ đẹp và vị cay nhẹ"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": 15,
+        "Unit": "ml",
+        "Preparation": "Dùng áp chảo sườn"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": 1,
+        "Unit": "g",
+        "Preparation": "Tiêu xay"
+      }
+    ],
+    "Preparation": [
+      "Chần sườn qua nước sôi có chút muối giúp loại bỏ bọt bẩn và giúp sườn mềm nhanh hơn.",
+      "Vắt lấy nước cốt hành tỏi để ướp sườn nhằm tránh xác hành tỏi bị cháy đen khi áp chảo."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Ướp sườn",
+        "Description": "Trộn sườn với nước cốt hành tỏi, nước mắm, đường, tương ớt và tiêu trong 20 phút.",
+        "DurationMinutes": 20,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Ướp thấm",
+        "CompletionCue": "Sườn thấm đều gia vị."
+      },
+      {
+        "Step": 2,
+        "Title": "Áp chảo vàng sườn",
+        "Description": "Gạt bớt nước ướp, cho sườn vào chảo dầu nóng áp chảo vàng đều các mặt.",
+        "DurationMinutes": 6,
+        "HeatLevel": "Vừa",
+        "Technique": "Áp chảo",
+        "CompletionCue": "Các mặt miếng sườn vàng nâu đẹp mắt."
+      },
+      {
+        "Step": 3,
+        "Title": "Ram mềm sườn",
+        "Description": "Đổ phần nước ướp còn lại cùng 80 ml nước lọc vào chảo, đậy nắp ram nhỏ lửa đến khi sườn mềm và nước sốt keo lại.",
+        "DurationMinutes": 15,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Ram cô sốt",
+        "CompletionCue": "Thịt sườn mềm róc xương, sốt keo sánh bóng."
+      }
+    ],
+    "ChefTips": [
+      "Gạt sạch xác hành tỏi trước khi áp chảo để miếng sườn vàng đẹp mà không bị đắng.",
+      "Có thể thay nước lọc bằng nước dừa tươi để vị ngọt thanh và màu đẹp hơn."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Sườn bị dai cứng",
+        "Cause": "Ram lửa lớn làm cạn nước trước khi sườn kịp mềm",
+        "Fix": "Đậy nắp và ram trên lửa thật nhỏ để thịt chín mềm từ từ."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "sườn non heo",
+        "Alternatives": [
+          "cốt lết heo cắt miếng"
+        ]
+      }
+    ],
+    "Storage": "Bảo quản trong hộp kín ở ngăn mát tủ lạnh và dùng trong 2–3 ngày.",
+    "Reheating": "Hâm nóng trên chảo lửa nhỏ với 1 thìa nước lọc trong 3 phút."
+  },
+  {
+    "RecipeID": "R16",
+    "Name": "Canh rong biển đậu hũ non",
+    "Ingredients": [
+      "rong biển khô",
+      "đậu hũ non",
+      "gừng",
+      "dầu mè",
+      "nước",
+      "nước tương",
+      "hành lá"
+    ],
+    "Instructions": [
+      "Ngâm rong biển khô nở mềm rồi rửa sạch.",
+      "Cắt đậu hũ non thành khối vuông nhỏ.",
+      "Đun sôi nước với vài lát gừng, cho rong biển vào nấu 3 phút.",
+      "Thả đậu hũ non vào, nêm gia vị và rắc hành lá, dầu mè."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 12,
+    "EstimatedCostVND": 22000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [
+      "low_sodium",
+      "controlled_carb",
+      "low_saturated_fat",
+      "light"
+    ],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [
+      "đậu nành",
+      "mè"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 110,
+      "ProteinG": 7,
+      "CarbsG": 7,
+      "FatG": 6,
+      "SaturatedFatG": 1,
+      "SodiumMg": 360,
+      "FiberG": 2.5,
+      "SugarG": 1,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chỉ cần lượng nhỏ rong biển khô vì rong biển nở rất nhiều khi ngâm nước. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Canh rong biển đậu hũ non thanh mát, thơm dịu mùi gừng và dầu mè, giải nhiệt nhanh cho những ngày trời oi bức hoặc bữa ăn cần sự nhẹ nhàng.",
+    "Cuisine": "Asian-inspired",
+    "Category": "soup",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 8,
+    "TotalTimeMinutes": 20,
+    "IngredientDetails": [
+      {
+        "Name": "rong biển khô nấu canh",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Ngâm nước 5 phút cho nở, bóp nhẹ và rửa sạch"
+      },
+      {
+        "Name": "đậu hũ non",
+        "Quantity": 150,
+        "Unit": "g",
+        "Preparation": "Cắt khối vuông 2 cm nhẹ tay"
+      },
+      {
+        "Name": "gừng",
+        "Quantity": 8,
+        "Unit": "g",
+        "Preparation": "Thái sợi mỏng"
+      },
+      {
+        "Name": "dầu mè",
+        "Quantity": 5,
+        "Unit": "ml",
+        "Preparation": "Tạo hương thơm sau khi tắt bếp"
+      },
+      {
+        "Name": "nước",
+        "Quantity": 600,
+        "Unit": "ml",
+        "Preparation": "Dùng làm nước canh"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": 10,
+        "Unit": "ml",
+        "Preparation": "Nêm vị thanh"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": 8,
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      }
+    ],
+    "Preparation": [
+      "Ngâm rong biển khô trong nước sạch 5 phút, rửa nhẹ để giảm bớt mùi tanh tự nhiên.",
+      "Thái sợi gừng tươi để khử mùi tanh của rong biển và làm ấm bụng."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Nấu nước gừng và rong biển",
+        "Description": "Đun sôi 600 ml nước cùng gừng thái sợi, cho rong biển đã rửa sạch vào nấu lửa vừa.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu canh nhanh",
+        "CompletionCue": "Rong biển mềm, nước canh dậy mùi thơm nhẹ."
+      },
+      {
+        "Step": 2,
+        "Title": "Cho đậu hũ non và hoàn thiện",
+        "Description": "Nhẹ nhàng thả đậu hũ non vào nồi, nêm nước tương vừa ăn. Khi nước sôi lăn tăn trở lại thì tắt bếp, thêm hành lá và dầu mè.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Nhỏ-vừa",
+        "Technique": "Nấu nhẹ giữ nguyên hình dạng",
+        "CompletionCue": "Đậu hũ nóng đều không bị vỡ, thơm mùi dầu mè."
+      }
+    ],
+    "ChefTips": [
+      "Thêm gừng tươi giúp cân bằng tính hàn của rong biển và khử tanh hiệu quả.",
+      "Chỉ cho dầu mè vào sau khi tắt bếp để giữ trọn hương thơm."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Đậu hũ non bị nát vụn",
+        "Cause": "Khuấy mạnh hoặc đun sôi bùng quá lâu",
+        "Fix": "Thả đậu hũ nhẹ tay và tắt bếp ngay khi nước vừa sôi lại."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "đậu hũ non",
+        "Alternatives": [
+          "đậu hũ trắng mềm"
+        ]
+      }
+    ],
+    "Storage": "Dùng ngon nhất trong ngày; bảo quản ngăn mát tối đa 24 giờ.",
+    "Reheating": "Hâm nóng nhẹ trên bếp lửa nhỏ, tránh đun sôi mạnh."
+  },
+  {
+    "RecipeID": "R17",
+    "Name": "Mướp xào giá đỗ",
+    "Ingredients": [
+      "mướp hương",
+      "giá đỗ",
+      "hành tím",
+      "hành lá",
+      "dầu ăn",
+      "muối",
+      "tiêu"
+    ],
+    "Instructions": [
+      "Gọt vỏ mướp hương, rửa sạch, thái lát xéo vừa ăn.",
+      "Phi thơm hành tím, cho mướp vào xào nhanh trên lửa lớn.",
+      "Khi mướp vừa chín tới, cho giá đỗ vào đảo đều 1 phút.",
+      "Nêm gia vị vừa ăn, rắc hành lá và tiêu rồi tắt bếp."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80",
+    "CookingTimeMinutes": 10,
+    "EstimatedCostVND": 16000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [
+      "low_sodium",
+      "controlled_carb",
+      "low_saturated_fat",
+      "light"
+    ],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 85,
+      "ProteinG": 3.5,
+      "CarbsG": 9,
+      "FatG": 4.5,
+      "SaturatedFatG": 0.7,
+      "SodiumMg": 240,
+      "FiberG": 3,
+      "SugarG": 4,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Mướp tự tiết nước ngọt khi xào nên không cần thêm nước lọc. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Mướp hương ngọt thanh, thơm dịu kết hợp cùng giá đỗ giòn mát. Món xào siêu nhanh, tiết kiệm chi phí và dễ tiêu hóa.",
+    "Cuisine": "Vietnamese",
+    "Category": "side",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 8,
+    "TotalTimeMinutes": 18,
+    "IngredientDetails": [
+      {
+        "Name": "mướp hương",
+        "Quantity": 250,
+        "Unit": "g",
+        "Preparation": "Gọt vỏ mỏng giữ lại lớp xanh nhạt, thái lát xéo 1 cm"
+      },
+      {
+        "Name": "giá đỗ",
+        "Quantity": 120,
+        "Unit": "g",
+        "Preparation": "Rửa sạch, để thật ráo"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Thái lát mỏng"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Cắt khúc 3 cm"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": 10,
+        "Unit": "ml",
+        "Preparation": "Dùng để xào"
+      },
+      {
+        "Name": "muối",
+        "Quantity": 2,
+        "Unit": "g",
+        "Preparation": "Nêm nhẹ giữ vị ngọt tự nhiên"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": 0.5,
+        "Unit": "g",
+        "Preparation": "Tiêu xay"
+      }
+    ],
+    "Preparation": [
+      "Gọt vỏ mướp nhẹ tay để giữ lại phần cùi xanh giúp mướp giòn và thơm hơn.",
+      "Để giá đỗ thật ráo nước trước khi cho vào chảo."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Phi hành và xào mướp",
+        "Description": "Phi thơm hành tím với dầu ăn, cho mướp vào đảo nhanh tay trên lửa lớn.",
+        "DurationMinutes": 2.5,
+        "HeatLevel": "Lớn",
+        "Technique": "Xào nhanh",
+        "CompletionCue": "Miếng mướp hơi trong cạnh nhưng chưa ra nhiều nước."
+      },
+      {
+        "Step": 2,
+        "Title": "Cho giá đỗ và hoàn thiện",
+        "Description": "Cho giá đỗ vào đảo nhanh, nêm muối vừa miệng, rắc hành lá và tiêu rồi tắt bếp ngay.",
+        "DurationMinutes": 1.5,
+        "HeatLevel": "Lớn",
+        "Technique": "Đảo nhanh giữ giòn",
+        "CompletionCue": "Giá đỗ vừa chín tới còn độ giòn, mướp xanh ngọt."
+      }
+    ],
+    "ChefTips": [
+      "Luôn xào trên lửa lớn và thao tác nhanh trong vòng 4 phút để mướp không bị thâm đen và ra nhiều nước."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Mướp bị thâm đen và nhũn nát",
+        "Cause": "Xào lửa nhỏ quá lâu",
+        "Fix": "Đun nóng chảo trước, xào lửa lớn và tắt bếp ngay khi giá vừa xẹp."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "giá đỗ",
+        "Alternatives": [
+          "nấm rơm cắt đôi"
+        ]
+      }
+    ],
+    "Storage": "Nên dùng ngay sau khi xào để giữ độ giòn của giá đỗ.",
+    "Reheating": "Không khuyến khích hâm lại nhiều lần vì giá và mướp dễ mềm."
+  },
+  {
+    "RecipeID": "R18",
+    "Name": "Gỏi gà xé phay bắp cải",
+    "Ingredients": [
+      "ức gà",
+      "bắp cải trắng",
+      "cà rốt",
+      "hành tây",
+      "rau răm",
+      "chanh",
+      "nước mắm",
+      "đường",
+      "tỏi",
+      "ớt"
+    ],
+    "Instructions": [
+      "Luộc chín ức gà, để nguội và xé sợi vừa ăn.",
+      "Thái sợi mỏng bắp cải, cà rốt và hành tây; ngâm hành tây nước đá cho bớt hăng.",
+      "Pha nước mắm chua ngọt với chanh, đường, tỏi ớt.",
+      "Trộn đều thịt gà, rau củ, rau răm với nước trộn gỏi ngay trước khi ăn."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    "CookingTimeMinutes": 25,
+    "EstimatedCostVND": 38000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "energizing"
+    ],
+    "HealthTags": [
+      "high_protein",
+      "low_saturated_fat",
+      "light"
+    ],
+    "DietTags": [],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 255,
+      "ProteinG": 29,
+      "CarbsG": 21,
+      "FatG": 6,
+      "SaturatedFatG": 1.2,
+      "SodiumMg": 580,
+      "FiberG": 4,
+      "SugarG": 11,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Gỏi gà xé phay giàu đạm từ ức gà kết hợp với bắp cải, cà rốt giòn sần sật, thơm rau răm và nước mắm chua ngọt kích thích vị giác.",
+    "Cuisine": "Vietnamese",
+    "Category": "salad",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 15,
+    "TotalTimeMinutes": 40,
+    "IngredientDetails": [
+      {
+        "Name": "ức gà không da",
+        "Quantity": 200,
+        "Unit": "g",
+        "Preparation": "Luộc chín tới, để nguội, xé sợi vừa ăn"
+      },
+      {
+        "Name": "bắp cải trắng",
+        "Quantity": 150,
+        "Unit": "g",
+        "Preparation": "Thái sợi thật mỏng, rửa sạch, vắt ráo"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": 60,
+        "Unit": "g",
+        "Preparation": "Gọt vỏ, bào sợi mỏng"
+      },
+      {
+        "Name": "hành tây",
+        "Quantity": 40,
+        "Unit": "g",
+        "Preparation": "Thái lát mỏng, ngâm nước đá lạnh 10 phút rồi vắt ráo"
+      },
+      {
+        "Name": "rau răm",
+        "Quantity": 15,
+        "Unit": "g",
+        "Preparation": "Nhặt lá non, rửa sạch, thái rối"
+      },
+      {
+        "Name": "nước cốt chanh",
+        "Quantity": 20,
+        "Unit": "ml",
+        "Preparation": "Bỏ hạt"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": 18,
+        "Unit": "ml",
+        "Preparation": "Dùng pha nước trộn"
+      },
+      {
+        "Name": "đường",
+        "Quantity": 18,
+        "Unit": "g",
+        "Preparation": "Khuấy tan hoàn toàn"
+      },
+      {
+        "Name": "tỏi và ớt",
+        "Quantity": 8,
+        "Unit": "g",
+        "Preparation": "Băm nhuyễn"
+      }
+    ],
+    "Preparation": [
+      "Luộc ức gà trong nước sôi nhẹ 12 phút, tắt bếp đậy nắp thêm 5 phút để thịt chín ẩm không bị khô.",
+      "Ngâm hành tây thái mỏng vào nước đá pha chút chanh để giòn và hết hăng."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Luộc và xé thịt gà",
+        "Description": "Luộc chín ức gà, vớt ra để nguội bớt rồi xé thành sợi dọc thớ.",
+        "DurationMinutes": 15,
+        "HeatLevel": "Vừa-nhỏ",
+        "Technique": "Luộc chín ẩm",
+        "CompletionCue": "Thịt gà trắng mềm, chín hoàn toàn bên trong."
+      },
+      {
+        "Step": 2,
+        "Title": "Pha nước trộn gỏi",
+        "Description": "Khuấy tan đường với nước mắm và nước cốt chanh, sau đó mới cho tỏi ớt băm vào.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Pha sốt cân bằng",
+        "CompletionCue": "Đường tan hết, vị chua-mặn-ngọt hài hòa."
+      },
+      {
+        "Step": 3,
+        "Title": "Trộn gỏi",
+        "Description": "Cho gà xé, bắp cải, cà rốt, hành tây vào tô lớn, rưới nước trộn gỏi đảo đều, cuối cùng thêm rau răm trộn nhẹ.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Trộn gỏi",
+        "CompletionCue": "Rau củ thấm sốt nhưng vẫn giữ độ giòn."
+      }
+    ],
+    "ChefTips": [
+      "Vắt thật ráo nước ở bắp cải và hành tây trước khi trộn để gỏi không bị ra nước loãng."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Gỏi bị chảy nhiều nước",
+        "Cause": "Rau chưa ráo hoặc trộn nước mắm quá sớm trước bữa ăn",
+        "Fix": "Để rau thật ráo và chỉ trộn sốt ngay trước khi dọn ăn."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "bắp cải trắng",
+        "Alternatives": [
+          "bắp cải tím hoặc bắp chuối bào"
+        ]
+      }
+    ],
+    "Storage": "Bảo quản riêng thịt gà, rau củ đã ráo và nước sốt trong ngăn mát; trộn trước khi ăn.",
+    "Reheating": "Món ăn nguội/mát, không cần hâm nóng."
+  },
+  {
+    "RecipeID": "R19",
+    "Name": "Trứng hấp vân thịt bằm",
+    "Ingredients": [
+      "trứng gà",
+      "thịt heo xay",
+      "nấm mèo khô",
+      "hành tím",
+      "hành lá",
+      "nước mắm",
+      "tiêu",
+      "dầu ăn"
+    ],
+    "Instructions": [
+      "Ngâm nở nấm mèo, rửa sạch và băm nhuyễn.",
+      "Tách riêng một lòng đỏ trứng để phết mặt; đánh tan phần trứng còn lại với thịt xay, nấm mèo và gia vị.",
+      "Đổ hỗn hợp vào khuôn thoa dầu, hấp cách thủy lửa nhỏ khoảng 20 phút.",
+      "Phết lòng đỏ trứng lên mặt, hấp mở nắp thêm 3 phút cho lên màu vàng đẹp."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
+    "CookingTimeMinutes": 25,
+    "EstimatedCostVND": 29000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "energizing"
+    ],
+    "HealthTags": [
+      "high_protein",
+      "controlled_carb"
+    ],
+    "DietTags": [],
+    "Allergens": [
+      "trứng"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 295,
+      "ProteinG": 23,
+      "CarbsG": 6,
+      "FatG": 20,
+      "SaturatedFatG": 6,
+      "SodiumMg": 560,
+      "FiberG": 1,
+      "SugarG": 1,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Hấp cách thủy giúp hạn chế dầu mỡ so với chiên rán. Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Chả trứng hấp mềm mịn, giòn sần sật vị nấm mèo, mặt trên vàng óng bắt mắt. Món ăn thanh nhẹ, dễ ăn cho cả trẻ nhỏ và người lớn tuổi.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 15,
+    "TotalTimeMinutes": 40,
+    "IngredientDetails": [
+      {
+        "Name": "trứng gà",
+        "Quantity": 3,
+        "Unit": "quả",
+        "Preparation": "Giữ lại 1 lòng đỏ để quét mặt, 2 quả + 1 lòng trắng đánh tan"
+      },
+      {
+        "Name": "thịt heo xay",
+        "Quantity": 120,
+        "Unit": "g",
+        "Preparation": "Chọn thịt nạc vai có chút mỡ cho mềm"
+      },
+      {
+        "Name": "nấm mèo khô",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Ngâm nước ấm 15 phút, cắt bỏ chân, băm nhỏ"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": 10,
+        "Unit": "ml",
+        "Preparation": "Nêm vừa vị"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": 0.5,
+        "Unit": "g",
+        "Preparation": "Tiêu xay"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": 5,
+        "Unit": "ml",
+        "Preparation": "Phết chống dính khuôn hấp"
+      }
+    ],
+    "Preparation": [
+      "Ngâm nấm mèo bằng nước ấm (không dùng nước sôi), rửa sạch và băm nhỏ.",
+      "Phết một lớp dầu ăn mỏng vào lòng bát hoặc khuôn chịu nhiệt để dễ lấy trứng ra sau khi hấp."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Trộn nhân trứng thịt",
+        "Description": "Trộn đều trứng đã đánh tan với thịt xay, nấm mèo, hành tím, hành lá, nước mắm và tiêu rồi đổ vào khuôn.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Trộn đều",
+        "CompletionCue": "Hỗn hợp hòa quyện, bề mặt dàn phẳng."
+      },
+      {
+        "Step": 2,
+        "Title": "Hấp chín phần nhân",
+        "Description": "Đặt khuôn vào xửng nước sôi, phủ khăn sạch lên miệng nồi trước khi đậy nắp và hấp lửa nhỏ-vừa.",
+        "DurationMinutes": 18,
+        "HeatLevel": "Nhỏ-vừa",
+        "Technique": "Hấp cách thủy",
+        "CompletionCue": "Xiên tăm vào giữa rút ra thấy tăm khô sạch."
+      },
+      {
+        "Step": 3,
+        "Title": "Tạo lớp mặt vàng óng",
+        "Description": "Đánh tan lòng đỏ trứng đã giữ lại, phết đều lên bề mặt chả trứng, hấp mở nắp thêm 3 phút rồi tắt bếp.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hấp mở nắp",
+        "CompletionCue": "Mặt trên se khô, có màu vàng cam đẹp mắt."
+      }
+    ],
+    "ChefTips": [
+      "Phủ một chiếc khăn xô sạch dưới nắp nồi hấp giúp ngăn hơi nước nhỏ giọt làm rỗ mặt trứng.",
+      "Mở nắp khi hấp lớp lòng đỏ cuối cùng giúp mặt trứng khô ráo và lên màu chuẩn."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Mặt trứng bị rỗ và nhão nước",
+        "Cause": "Hấp lửa quá lớn hoặc hơi nước từ nắp nồi nhỏ xuống",
+        "Fix": "Hấp lửa nhỏ và lót khăn thấm hơi nước dưới nắp nồi."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "nấm mèo khô",
+        "Alternatives": [
+          "nấm hương băm nhỏ"
+        ]
+      }
+    ],
+    "Storage": "Để nguội, bọc kín bảo quản ngăn mát tủ lạnh trong 2 ngày.",
+    "Reheating": "Hấp lại 3–4 phút hoặc hâm bằng lò vi sóng ở mức nhiệt vừa."
+  },
+  {
+    "RecipeID": "R20",
+    "Name": "Đậu hũ non hấp xì dầu",
+    "Ingredients": [
+      "đậu hũ non",
+      "nước tương",
+      "gừng",
+      "hành lá",
+      "tỏi",
+      "đường",
+      "dầu mè"
+    ],
+    "Instructions": [
+      "Đặt nguyên khối đậu hũ non vào đĩa sâu lòng, cắt lát dày 1.5 cm.",
+      "Hấp cách thủy đậu hũ khoảng 6 phút cho nóng đều, chắt bỏ phần nước tiết ra.",
+      "Đun nóng nước tương với ít đường, gừng sợi và dầu mè.",
+      "Rắc hành lá lên đậu hũ rồi rưới sốt xì dầu nóng lên trên."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=600&q=80",
+    "CookingTimeMinutes": 12,
+    "EstimatedCostVND": 18000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [
+      "low_sodium",
+      "controlled_carb",
+      "low_saturated_fat",
+      "light"
+    ],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [
+      "đậu nành",
+      "mè"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 135,
+      "ProteinG": 9,
+      "CarbsG": 8,
+      "FatG": 7,
+      "SaturatedFatG": 1,
+      "SodiumMg": 410,
+      "FiberG": 1,
+      "SugarG": 3,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Dinh dưỡng và chi phí là ước tính tham khảo; cần điều chỉnh theo nhãn nguyên liệu, khẩu phần và giá địa phương.",
+    "Description": "Đậu hũ non mềm mượt tan trong miệng, quyện cùng nước sốt xì dầu thơm gừng, hành lá và dầu mè. Món ăn thanh đạm chế biến chỉ trong hơn 10 phút.",
+    "Cuisine": "Asian-inspired",
+    "Category": "main",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 6,
+    "TotalTimeMinutes": 18,
+    "IngredientDetails": [
+      {
+        "Name": "đậu hũ non",
+        "Quantity": 300,
+        "Unit": "g",
+        "Preparation": "Lấy nhẹ ra đĩa sâu lòng, cắt lát dày 1.5 cm"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": 20,
+        "Unit": "ml",
+        "Preparation": "Ưu tiên loại thanh vị"
+      },
+      {
+        "Name": "gừng",
+        "Quantity": 10,
+        "Unit": "g",
+        "Preparation": "Thái sợi chỉ"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": 15,
+        "Unit": "g",
+        "Preparation": "Thái sợi dài hoặc thái nhỏ"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": 5,
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "đường",
+        "Quantity": 5,
+        "Unit": "g",
+        "Preparation": "Làm dịu vị mặn của nước tương"
+      },
+      {
+        "Name": "dầu mè",
+        "Quantity": 8,
+        "Unit": "ml",
+        "Preparation": "Tạo mùi thơm đặc trưng"
+      }
+    ],
+    "Preparation": [
+      "Cắt bỏ phần đáy hộp đậu hũ non để không khí lọt vào, giúp lấy nguyên khối đậu ra đĩa mà không bị vỡ.",
+      "Thái sợi chỉ gừng tươi và hành lá."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Hấp nóng đậu hũ non",
+        "Description": "Đặt đĩa đậu hũ vào xửng nước sôi, hấp lửa vừa 6 phút rồi lấy ra, nghiêng đĩa chắt bỏ nước tiết ra.",
+        "DurationMinutes": 6,
+        "HeatLevel": "Hơi nước sôi",
+        "Technique": "Hấp cách thủy",
+        "CompletionCue": "Khối đậu nóng đều từ trong ra ngoài."
+      },
+      {
+        "Step": 2,
+        "Title": "Nấu sốt xì dầu",
+        "Description": "Đun nóng dầu mè trên chảo nhỏ, phi thơm tỏi và gừng sợi rồi cho nước tương, đường và 20 ml nước lọc vào đun sôi nhẹ.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Nấu sốt nhanh",
+        "CompletionCue": "Đường tan hết, sốt dậy mùi thơm gừng và dầu mè."
+      },
+      {
+        "Step": 3,
+        "Title": "Rưới sốt hoàn thiện",
+        "Description": "Xếp hành lá lên trên mặt đậu hũ nóng rồi rưới trực tiếp phần sốt xì dầu đang sôi lên.",
+        "DurationMinutes": 1,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Rưới sốt nóng",
+        "CompletionCue": "Hành lá chín tái thơm lừng, sốt phủ đều mặt đậu."
+      }
+    ],
+    "ChefTips": [
+      "Nhớ chắt bỏ phần nước dư trong đĩa sau khi hấp đậu hũ để nước sốt xì dầu không bị loãng vị."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Đậu hũ bị vỡ nát khi lấy ra khỏi hộp",
+        "Cause": "Dốc ngược hộp khi đáy còn kín chân không",
+        "Fix": "Dùng mũi dao rạch nhẹ một lỗ nhỏ ở đáy hộp trước khi úp ra đĩa."
+      }
+    ],
+    "Substitutions": [
+      {
+        "Ingredient": "nước tương",
+        "Alternatives": [
+          "tamari"
+        ]
+      }
+    ],
+    "Storage": "Ngon nhất khi ăn nóng ngay; bảo quản ngăn mát tối đa 1 ngày.",
+    "Reheating": "Hấp lại 3 phút trong xửng hấp."
   }
 ]
