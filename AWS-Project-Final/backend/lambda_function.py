@@ -3,7 +3,7 @@ Bep Thong Minh - AWS Lambda API (Teaching & Cooking Assistant)
 Runtime: Python 3.12
 Handler: lambda_function.lambda_handler
 DynamoDB table: MealRecipesTable (partition key RecipeID, String)
-Integrations: Amazon DynamoDB, Amazon Location Service, Amazon Bedrock
+Integrations: Amazon DynamoDB, Amazon Location Service (geo-places v2), Amazon Bedrock
 Supports API Gateway REST API v1 and HTTP API v2 events.
 """
 import base64
@@ -24,7 +24,6 @@ logger.setLevel(logging.INFO)
 
 REGION = os.environ.get("AWS_REGION", "ap-southeast-1")
 TABLE_NAME = os.environ.get("DYNAMODB_TABLE", "MealRecipesTable")
-PLACE_INDEX_NAME = os.environ.get("PLACE_INDEX_NAME", "BepThongMinhPlaceIndex")
 BEDROCK_MODEL_ID = os.environ.get("BEDROCK_MODEL_ID", "amazon.nova-micro-v1:0")
 
 MAX_INPUT_LENGTH = 200
@@ -32,7 +31,7 @@ MAX_KEYWORDS = 10
 
 dynamodb = boto3.resource("dynamodb", region_name=REGION)
 table = dynamodb.Table(TABLE_NAME)
-location_client = boto3.client("location", region_name=REGION)
+geo_places_client = boto3.client("geo-places", region_name=REGION)
 bedrock_client = boto3.client("bedrock-runtime", region_name=REGION)
 
 CORS_HEADERS = {
@@ -183,7 +182,7 @@ def haversine_meters(lat1, lon1, lat2, lon2):
     return int(2 * r * math.atan2(math.sqrt(a), math.sqrt(1 - a)))
 
 
-# 1. TÌM ĐIỂM MUA NGUYÊN LIỆU GẦN VỊ TRÍ & PHÙ HỢP TÚI TIỀN (AMAZON LOCATION SERVICE)
+# 1. TÌM ĐIỂM MUA NGUYÊN LIỆU GẦN VỊ TRÍ & PHÙ HỢP TÚI TIỀN (AMAZON LOCATION GEO-PLACES V2)
 def handle_nearby_stores(params):
     ingredients = (params.get("ingredients") or "thực phẩm tươi").strip()
     if len(ingredients) > MAX_INPUT_LENGTH:
@@ -213,33 +212,32 @@ def handle_nearby_stores(params):
     selected = tier_config.get(tier, tier_config["mid"])
 
     try:
-        res = location_client.search_place_index_for_text(
-            IndexName=PLACE_INDEX_NAME,
-            Text=selected["search_text"],
+        res = geo_places_client.search_text(
+            QueryText=selected["search_text"],
             BiasPosition=[lng, lat],
             MaxResults=5,
             Language="vi",
         )
         stores = []
-        for entry in res.get("Results", []):
-            place = entry.get("Place", {})
-            coords = place.get("Geometry", {}).get("Point", [lng, lat])
-            dist_m = haversine_meters(lat, lng, coords[1], coords[0])
+        for item in res.get("ResultItems", []):
+            pos = item.get("Position", [lng, lat])
+            addr_label = (item.get("Address") or {}).get("Label") or item.get("Title", "")
+            dist_m = item.get("Distance") or haversine_meters(lat, lng, pos[1], pos[0])
             stores.append({
-                "name": place.get("Label", "Điểm bán thực phẩm").split(",")[0],
-                "address": place.get("Label", ""),
-                "distanceMeters": dist_m,
-                "lat": coords[1],
-                "lng": coords[0],
+                "name": item.get("Title", "Điểm bán thực phẩm"),
+                "address": addr_label,
+                "distanceMeters": int(dist_m),
+                "lat": pos[1],
+                "lng": pos[0],
             })
         stores.sort(key=lambda s: s["distanceMeters"])
         return response(200, {
-            "source": "amazon-location-service",
+            "source": "amazon-location-geo-places",
             "advice": selected["advice"],
             "stores": stores,
         })
     except Exception as exc:
-        logger.warning("Amazon Location Service fallback triggered: %s", exc)
+        logger.warning("Amazon Location geo-places fallback triggered: %s", exc)
         return response(200, {
             "source": "fallback",
             "advice": selected["advice"],
@@ -307,4 +305,148 @@ def handle_chat(event):
 
     system_prompt = (
         "Bạn là Đầu Bếp AI Tâm Lý trên website hướng dẫn dạy nấu ăn Việt Nam. "
-        "Người dùng có thể hỏi gợi ý món ăn
+        "Người dùng có thể hỏi gợi ý món ăn theo TÂM TRẠNG (vui, buồn, stress, mệt mỏi, cần năng lượng, ăn thanh đạm), "
+        "THỜI TIẾT (trời mưa, trời lạnh, nắng nóng, oi bức), ngân sách hoặc nguyên liệu sẵn có.\n"
+        "Quy tắc trả lời:\n"
+        "1. Đồng cảm nhẹ nhàng với tâm trạng hoặc thời tiết của người dùng (1 câu ngắn).\n"
+        "2. Gợi ý 1–2 món phù hợp nhất TỪ DANH SÁCH BÊN DƯỚI (ghi rõ tên món chính xác, chi phí và thời gian nấu), giải thích ngắn gọn vì sao món đó hợp với tâm trạng/thời tiết hiện tại.\n"
+        "3. Khích lệ người dùng bấm nút xem hướng dẫn từng bước bên dưới.\n"
+        "Trả lời bằng tiếng Việt tự nhiên, ấm áp, ngắn gọn (tối đa 5 câu).\n\n"
+        f"Danh sách công thức hiện có:\n{menu_context}"
+    )
+
+    matched_recipes = find_recipes_by_mood_weather(user_message, items)
+    suggested_id = matched_recipes[0].get("RecipeID") if matched_recipes else None
+    suggested_name = matched_recipes[0].get("Name") if matched_recipes else None
+
+    try:
+        res = bedrock_client.converse(
+            modelId=BEDROCK_MODEL_ID,
+            messages=[{"role": "user", "content": [{"text": user_message}]}],
+            system=[{"text": system_prompt}],
+            inferenceConfig={"maxTokens": 450, "temperature": 0.7},
+        )
+        reply_text = res["output"]["message"]["content"][0]["text"]
+        return response(200, {
+            "reply": reply_text,
+            "suggestedRecipeId": suggested_id,
+            "suggestedRecipeName": suggested_name,
+            "source": "amazon-bedrock",
+        })
+    except Exception as exc:
+        logger.warning("Amazon Bedrock fallback triggered: %s", exc)
+        if matched_recipes:
+            top = matched_recipes[0]
+            second = matched_recipes[1] if len(matched_recipes) > 1 else None
+            extra = f" hoặc <strong>{second.get('Name')}</strong> (~{second.get('EstimatedCostVND')}đ)" if second else ""
+            reply = (
+                f"Với thời tiết và tâm trạng hiện tại của bạn, một bữa ăn tự nấu sẽ giúp tinh thần dễ chịu hơn nhiều! "
+                f"Mình gợi ý món <strong>{top.get('Name')}</strong> (~{top.get('EstimatedCostVND')}đ, "
+                f"{top.get('TotalTimeMinutes') or top.get('CookingTimeMinutes', 20)} phút){extra}. "
+                f"Bạn bấm vào nút bên dưới để xem hướng dẫn chi tiết từng bước nhé!"
+            )
+        else:
+            reply = (
+                "Dù tâm trạng hay thời tiết hôm nay thế nào, tự vào bếp nấu một món ngon cũng giúp thư giãn rất tốt! "
+                "Bạn hãy cho mình biết bạn đang thích ăn món nóng hổi (canh/kho) hay món thanh mát (salad/xào) để mình chọn công thức chuẩn nhất nhé."
+            )
+        return response(200, {
+            "reply": reply,
+            "suggestedRecipeId": suggested_id,
+            "suggestedRecipeName": suggested_name,
+            "source": "fallback",
+        })
+
+
+# 3. TÌM KIẾM CÔNG THỨC NẤU ĂN TỪ DYNAMODB
+def handle_recipe_search(params, context):
+    filters = {
+        "ingredients": csv_values(params.get("ingredients", ""), "ingredients"),
+        "allergies": csv_values(params.get("allergies", ""), "allergies"),
+        "avoid": csv_values(params.get("avoid", ""), "avoid"),
+        "health": (params.get("health") or "").strip(),
+        "need": (params.get("need") or "").strip(),
+        "mood": (params.get("mood") or "").strip(),
+        "maxTime": None,
+        "maxBudget": None,
+        "maxSodium": None,
+        "maxCarbs": None,
+    }
+    allowed_tags = {
+        "health": {"low_sodium", "controlled_carb", "low_saturated_fat", "light", "high_protein"},
+        "need": {"high_protein", "vegetarian", "vegan", "low_calorie"},
+        "mood": {"comforting", "fresh", "energizing", "light"},
+    }
+    for key, allowed in allowed_tags.items():
+        if filters[key] and filters[key] not in allowed:
+            return response(400, {"error": f"Giá trị bộ lọc {key} không hợp lệ."})
+
+    numeric_limits = {
+        "maxTime": (600, 0),
+        "maxBudget": (10000000, 0),
+        "maxSodium": (100000, 0),
+        "maxCarbs": (1000, 0),
+    }
+    for key, (upper, lower) in numeric_limits.items():
+        raw = params.get(key)
+        if raw not in (None, ""):
+            try:
+                value = float(raw)
+            except (TypeError, ValueError):
+                return response(400, {"error": f"Tham số {key} phải là số."})
+            if value < lower or value > upper:
+                return response(400, {"error": f"Tham số {key} nằm ngoài giới hạn cho phép."})
+            filters[key] = value
+
+    logger.info(
+        "RequestId=%s filters=%s random=%s",
+        getattr(context, "aws_request_id", "local"),
+        filters,
+        params.get("random") == "true",
+    )
+    recipes = get_all_recipes()
+    matched = [item for item in recipes if matches(item, filters)]
+    matched.sort(key=lambda item: ingredient_score(item, filters["ingredients"]), reverse=True)
+    if params.get("random", "false").lower() == "true":
+        random.shuffle(matched)
+        matched = matched[:6]
+
+    return response(200, {
+        "recipes": matched,
+        "count": len(matched),
+        "filters": filters,
+        "source": "dynamodb",
+    })
+
+
+def lambda_handler(event, context):
+    method = (
+        event.get("httpMethod")
+        or (event.get("requestContext", {}).get("http") or {}).get("method")
+        or "GET"
+    ).upper()
+    raw_path = event.get("rawPath") or event.get("path") or ""
+    route_key = event.get("routeKey") or ""
+
+    if method == "OPTIONS":
+        return response(200, {"message": "CORS OK"})
+
+    try:
+        if method == "POST" and ("chat" in route_key or raw_path.endswith("/chat")):
+            return handle_chat(event)
+
+        if method == "GET" and ("nearby-stores" in route_key or raw_path.endswith("/nearby-stores")):
+            return handle_nearby_stores(query_params(event))
+
+        if method == "GET":
+            return handle_recipe_search(query_params(event), context)
+
+        return response(405, {"error": "Phương thức HTTP không được hỗ trợ."})
+    except ValueError as exc:
+        return response(400, {"error": str(exc)})
+    except ClientError:
+        logger.exception("AWS service request failed")
+        return response(500, {"error": "Không truy cập được dịch vụ AWS. Kiểm tra tên bảng MealRecipesTable và IAM Role."})
+    except Exception:
+        logger.exception("Unhandled Lambda error")
+        return response(500, {"error": "Lỗi nội bộ. Xem CloudWatch Logs để biết chi tiết."})
