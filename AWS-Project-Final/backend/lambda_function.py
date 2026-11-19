@@ -1,19 +1,20 @@
 """
-Bep Thong Minh - AWS Lambda API
+Bep Thong Minh - AWS Lambda API (Teaching & Cooking Assistant)
 Runtime: Python 3.12
 Handler: lambda_function.lambda_handler
 DynamoDB table: MealRecipesTable (partition key RecipeID, String)
+Integrations: Amazon DynamoDB, Amazon Location Service, Amazon Bedrock
 Supports API Gateway REST API v1 and HTTP API v2 events.
 """
+import base64
 import json
 import logging
+import math
 import os
 import random
-import re
 import unicodedata
-import uuid
-from datetime import datetime, timezone
 from decimal import Decimal
+from urllib.parse import parse_qs
 
 import boto3
 from botocore.exceptions import ClientError
@@ -23,12 +24,16 @@ logger.setLevel(logging.INFO)
 
 REGION = os.environ.get("AWS_REGION", "ap-southeast-1")
 TABLE_NAME = os.environ.get("DYNAMODB_TABLE", "MealRecipesTable")
-ORDERS_TABLE_NAME = os.environ.get("ORDERS_TABLE", "FoodOrdersTable")
+PLACE_INDEX_NAME = os.environ.get("PLACE_INDEX_NAME", "BepThongMinhPlaceIndex")
+BEDROCK_MODEL_ID = os.environ.get("BEDROCK_MODEL_ID", "amazon.nova-micro-v1:0")
+
 MAX_INPUT_LENGTH = 200
 MAX_KEYWORDS = 10
+
 dynamodb = boto3.resource("dynamodb", region_name=REGION)
 table = dynamodb.Table(TABLE_NAME)
-orders_table = dynamodb.Table(ORDERS_TABLE_NAME)
+location_client = boto3.client("location", region_name=REGION)
+bedrock_client = boto3.client("bedrock-runtime", region_name=REGION)
 
 CORS_HEADERS = {
     "Access-Control-Allow-Origin": "*",
@@ -71,13 +76,21 @@ def csv_values(value, field_name):
 
 
 def query_params(event):
-    # HTTP API v2 may use rawQueryString and requestContext.http.method.
     params = event.get("queryStringParameters") or {}
     if params:
         return params
     raw = event.get("rawQueryString", "")
-    from urllib.parse import parse_qs
     return {k: v[0] for k, v in parse_qs(raw).items() if v}
+
+
+def parse_json_body(event):
+    body = event.get("body") or "{}"
+    if event.get("isBase64Encoded"):
+        body = base64.b64decode(body).decode("utf-8")
+    try:
+        return json.loads(body)
+    except (TypeError, json.JSONDecodeError):
+        raise ValueError("Dữ liệu gửi lên không phải JSON hợp lệ.")
 
 
 def get_all_recipes():
@@ -90,6 +103,7 @@ def get_all_recipes():
         if not last_key:
             break
         kwargs = {"ExclusiveStartKey": last_key}
+    items.sort(key=lambda x: str(x.get("RecipeID", "")))
     logger.info("Loaded %s recipes from %s", len(items), TABLE_NAME)
     return items
 
@@ -117,17 +131,15 @@ def matches(recipe, filters):
     if filters["health"] and not has_tag(recipe, "HealthTags", filters["health"]):
         return False
     if filters["need"] and not (
-        has_tag(recipe, "HealthTags", filters["need"]) or
-        has_tag(recipe, "DietTags", filters["need"])
+        has_tag(recipe, "HealthTags", filters["need"])
+        or has_tag(recipe, "DietTags", filters["need"])
     ):
         return False
     if filters["mood"] and not has_tag(recipe, "MoodTags", filters["mood"]):
         return False
-    # Exclude a recipe if a requested allergen appears in either ingredient
-    # names or the recipe's declared allergen list.
     if filters["allergies"] and (
-        has_any(ingredients, filters["allergies"]) or
-        has_any(allergens, filters["allergies"])
+        has_any(ingredients, filters["allergies"])
+        or has_any(allergens, filters["allergies"])
     ):
         return False
     if filters["avoid"] and has_any(ingredients, filters["avoid"]):
@@ -151,7 +163,6 @@ def matches(recipe, filters):
             try:
                 value = float(nutrition[field])
             except (KeyError, TypeError, ValueError):
-                # Missing nutrition information is not treated as safe.
                 return False
             if value > filters[param]:
                 return False
@@ -163,207 +174,137 @@ def ingredient_score(recipe, keywords):
     return sum(1 for term in keywords if any(normalize(term) in ing for ing in ingredients))
 
 
-def parse_order_body(event):
-    body = event.get("body") or "{}"
-    if event.get("isBase64Encoded"):
-        import base64
-        body = base64.b64decode(body).decode("utf-8")
-    try:
-        return json.loads(body)
-    except (TypeError, json.JSONDecodeError):
-        raise ValueError("Dữ liệu đơn hàng không phải JSON hợp lệ.")
+def haversine_meters(lat1, lon1, lat2, lon2):
+    r = 6371000
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dlambda = math.radians(lon2 - lon1)
+    a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
+    return int(2 * r * math.atan2(math.sqrt(a), math.sqrt(1 - a)))
 
 
-def create_order(event):
-    payload = parse_order_body(event)
-    customer = payload.get("customer") or {}
-    name = str(customer.get("name") or "").strip()
-    phone = str(customer.get("phone") or "").strip()
-    address = str(customer.get("address") or "").strip()
-    payment_method = str(payload.get("paymentMethod") or "cod").strip().lower()
-    raw_items = payload.get("items")
-
-    if not name or len(name) > 80:
-        raise ValueError("Tên người nhận là bắt buộc và tối đa 80 ký tự.")
-    if not re.fullmatch(r"[0-9 +().-]{9,16}", phone):
-        raise ValueError("Số điện thoại không hợp lệ.")
-    if not address or len(address) > 250:
-        raise ValueError("Địa chỉ nhận hàng là bắt buộc và tối đa 250 ký tự.")
-    if payment_method != "cod":
-        raise ValueError("Hiện chỉ hỗ trợ thanh toán khi nhận hàng (COD).")
-    if not isinstance(raw_items, list) or not raw_items or len(raw_items) > 20:
-        raise ValueError("Đơn hàng phải có từ 1 đến 20 món.")
-
-    items = []
-    total = 0
-    for raw in raw_items:
-        if not isinstance(raw, dict):
-            raise ValueError("Thông tin món ăn không hợp lệ.")
-        item_id = str(raw.get("id") or "").strip()
-        item_name = str(raw.get("name") or "").strip()
-        category = str(raw.get("category") or "").strip()
-        try:
-            price = int(raw.get("price"))
-            quantity = int(raw.get("quantity"))
-        except (TypeError, ValueError):
-            raise ValueError("Giá và số lượng món ăn phải là số nguyên.")
-        if not item_id or len(item_id) > 40 or not item_name or len(item_name) > 120:
-            raise ValueError("Thiếu mã hoặc tên món ăn hợp lệ.")
-        if price < 1 or price > 10000000 or quantity < 1 or quantity > 50:
-            raise ValueError("Giá hoặc số lượng món ăn nằm ngoài giới hạn.")
-        line_total = price * quantity
-        total += line_total
-        items.append({
-            "id": item_id,
-            "name": item_name,
-            "category": category[:50],
-            "price": price,
-            "quantity": quantity,
-            "lineTotal": line_total,
-        })
-
-    order_id = "BTM-" + uuid.uuid4().hex[:10].upper()
-    created_at = datetime.now(timezone.utc).isoformat()
-    order = {
-        "OrderID": order_id,
-        "CreatedAt": created_at,
-        "Status": "RECEIVED",
-        "Customer": {"Name": name, "Phone": phone, "Address": address},
-        "Items": items,
-        "TotalAmount": total,
-        "PaymentMethod": "COD",
-    }
-    orders_table.put_item(Item=order, ConditionExpression="attribute_not_exists(OrderID)")
-    logger.info("Created order %s with %s items; total=%s", order_id, len(items), total)
-    return response(201, {
-        "message": "Đặt hàng thành công.",
-        "order": order,
-        "source": "dynamodb",
-    })
-
-
-
-def get_order_status(event):
-    path_params = event.get("pathParameters") or {}
-    order_id = str(path_params.get("orderId") or "").strip().upper()
-    if not re.fullmatch(r"BTM-[A-F0-9]{10}", order_id):
-        return response(400, {"error": "Mã đơn hàng không đúng định dạng."})
-
-    result = orders_table.get_item(
-        Key={"OrderID": order_id},
-        ConsistentRead=True
-    )
-    order = result.get("Item")
-    if not order:
-        return response(404, {"error": "Không tìm thấy đơn hàng. Vui lòng kiểm tra lại mã đơn."})
-
-    # Only return tracking information; never expose customer phone/address.
-    public_order = {
-        "OrderID": order.get("OrderID"),
-        "CreatedAt": order.get("CreatedAt"),
-        "Status": order.get("Status"),
-        "Items": order.get("Items", []),
-        "TotalAmount": order.get("TotalAmount", 0),
-        "PaymentMethod": order.get("PaymentMethod", "COD"),
-    }
-    return response(200, {
-        "message": "Tra cứu đơn hàng thành công.",
-        "order": public_order,
-        "source": "dynamodb",
-    })
-
-def lambda_handler(event, context):
-    method = (
-        event.get("httpMethod")
-        or (event.get("requestContext", {}).get("http") or {}).get("method")
-        or "GET"
-    ).upper()
-    if method == "OPTIONS":
-        return response(200, {"message": "CORS OK"})
-    if method == "POST":
-        try:
-            return create_order(event)
-        except ValueError as exc:
-            return response(400, {"error": str(exc)})
-        except ClientError:
-            logger.exception("Could not save order to DynamoDB")
-            return response(500, {"error": "Không lưu được đơn hàng. Kiểm tra bảng FoodOrdersTable và quyền IAM."})
-        except Exception:
-            logger.exception("Unhandled order creation error")
-            return response(500, {"error": "Lỗi khi tạo đơn hàng. Xem CloudWatch Logs để biết chi tiết."})
-    if method == "GET" and (event.get("pathParameters") or {}).get("orderId"):
-        try:
-            return get_order_status(event)
-        except ClientError:
-            logger.exception("Could not retrieve order from DynamoDB")
-            return response(500, {"error": "Không tra cứu được đơn hàng. Kiểm tra quyền IAM và bảng FoodOrdersTable."})
-        except Exception:
-            logger.exception("Unhandled order lookup error")
-            return response(500, {"error": "Lỗi khi tra cứu đơn hàng. Xem CloudWatch Logs để biết chi tiết."})
-    if method != "GET":
-        return response(405, {"error": "Chỉ hỗ trợ GET để tìm công thức và POST để tạo đơn hàng."})
+# 1. TÌM ĐIỂM MUA NGUYÊN LIỆU GẦN VỊ TRÍ & PHÙ HỢP TÚI TIỀN (AMAZON LOCATION SERVICE)
+def handle_nearby_stores(params):
+    ingredients = (params.get("ingredients") or "thực phẩm tươi").strip()
+    if len(ingredients) > MAX_INPUT_LENGTH:
+        raise ValueError(f"Tham số ingredients vượt quá {MAX_INPUT_LENGTH} ký tự.")
+    tier = (params.get("tier") or "mid").strip().lower()
 
     try:
-        params = query_params(event)
-        filters = {
-            "ingredients": csv_values(params.get("ingredients", ""), "ingredients"),
-            "allergies": csv_values(params.get("allergies", ""), "allergies"),
-            "avoid": csv_values(params.get("avoid", ""), "avoid"),
-            "health": (params.get("health") or "").strip(),
-            "need": (params.get("need") or "").strip(),
-            "mood": (params.get("mood") or "").strip(),
-            "maxTime": None,
-            "maxBudget": None,
-            "maxSodium": None,
-            "maxCarbs": None,
-        }
-        allowed_tags = {
-            "health": {"low_sodium", "controlled_carb", "low_saturated_fat", "light", "high_protein"},
-            "need": {"high_protein", "vegetarian", "vegan", "low_calorie"},
-            "mood": {"comforting", "fresh", "energizing", "light"},
-        }
-        for key, allowed in allowed_tags.items():
-            if filters[key] and filters[key] not in allowed:
-                return response(400, {"error": f"Giá trị bộ lọc {key} không hợp lệ."})
+        lat = float(params.get("lat", 10.7769))
+        lng = float(params.get("lng", 106.7009))
+    except (TypeError, ValueError):
+        lat, lng = 10.7769, 106.7009
 
-        numeric_limits = {
-            "maxTime": (600, 0),
-            "maxBudget": (10000000, 0),
-            "maxSodium": (100000, 0),
-            "maxCarbs": (1000, 0),
-        }
-        for key, (upper, lower) in numeric_limits.items():
-            raw = params.get(key)
-            if raw not in (None, ""):
-                try:
-                    value = float(raw)
-                except (TypeError, ValueError):
-                    return response(400, {"error": f"Tham số {key} phải là số."})
-                if value < lower or value > upper:
-                    return response(400, {"error": f"Tham số {key} nằm ngoài giới hạn cho phép."})
-                filters[key] = value
+    tier_config = {
+        "low": {
+            "search_text": f"chợ truyền thống tạp hóa {ingredients}",
+            "advice": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống hoặc tạp hóa để mua lẻ đúng định lượng.",
+        },
+        "mid": {
+            "search_text": "Bách Hóa Xanh WinMart+ Co.op Food",
+            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Siêu thị mini bình ổn giá, tiện lợi và sạch sẽ.",
+        },
+        "high": {
+            "search_text": "siêu thị Co.opmart Tops Market thực phẩm sạch",
+            "advice": "Ngân sách thoải mái (> 70.000đ): Siêu thị lớn và cửa hàng thực phẩm hữu cơ chuẩn nguồn gốc.",
+        },
+    }
+    selected = tier_config.get(tier, tier_config["mid"])
 
-        logger.info("RequestId=%s filters=%s random=%s",
-                    getattr(context, "aws_request_id", "local"), filters,
-                    params.get("random") == "true")
-        recipes = get_all_recipes()
-        matched = [item for item in recipes if matches(item, filters)]
-        matched.sort(key=lambda item: ingredient_score(item, filters["ingredients"]), reverse=True)
-        if params.get("random", "false").lower() == "true":
-            random.shuffle(matched)
-            matched = matched[:6]
-
+    try:
+        res = location_client.search_place_index_for_text(
+            IndexName=PLACE_INDEX_NAME,
+            Text=selected["search_text"],
+            BiasPosition=[lng, lat],
+            MaxResults=5,
+            Language="vi",
+        )
+        stores = []
+        for entry in res.get("Results", []):
+            place = entry.get("Place", {})
+            coords = place.get("Geometry", {}).get("Point", [lng, lat])
+            dist_m = haversine_meters(lat, lng, coords[1], coords[0])
+            stores.append({
+                "name": place.get("Label", "Điểm bán thực phẩm").split(",")[0],
+                "address": place.get("Label", ""),
+                "distanceMeters": dist_m,
+                "lat": coords[1],
+                "lng": coords[0],
+            })
+        stores.sort(key=lambda s: s["distanceMeters"])
         return response(200, {
-            "recipes": matched,
-            "count": len(matched),
-            "filters": filters,
-            "source": "dynamodb",
+            "source": "amazon-location-service",
+            "advice": selected["advice"],
+            "stores": stores,
         })
-    except ValueError as exc:
-        return response(400, {"error": str(exc)})
-    except ClientError:
-        logger.exception("DynamoDB request failed")
-        return response(500, {"error": "Không truy cập được DynamoDB. Kiểm tra tên bảng và IAM Role."})
-    except Exception:
-        logger.exception("Unhandled Lambda error")
-        return response(500, {"error": "Lỗi nội bộ. Xem CloudWatch Logs để biết chi tiết."})
+    except Exception as exc:
+        logger.warning("Amazon Location Service fallback triggered: %s", exc)
+        return response(200, {
+            "source": "fallback",
+            "advice": selected["advice"],
+            "stores": [],
+        })
+
+
+# 2. CHATBOT ĐẦU BẾP AI TÂM LÝ THEO TÂM TRẠNG & THỜI TIẾT (AMAZON BEDROCK)
+def find_recipes_by_mood_weather(msg, items):
+    norm_msg = normalize(msg)
+    target_moods = []
+    target_cats = []
+
+    if any(k in norm_msg for k in ["mua", "lanh", "se lanh", "buon", "stress", "ap luc", "am bung", "co don"]):
+        target_moods.append("comforting")
+        target_cats.extend(["soup", "main"])
+    if any(k in norm_msg for k in ["nong", "oi buc", "nang", "ngan", "nhe bung", "giam can", "thanh dam", "mat"]):
+        target_moods.extend(["fresh", "light"])
+        target_cats.extend(["salad", "side", "soup"])
+    if any(k in norm_msg for k in ["met", "duoi", "ue oai", "can nang luong", "doi", "tap gym", "vui"]):
+        target_moods.append("energizing")
+        target_cats.append("main")
+
+    direct = [
+        r for r in items
+        if normalize(r.get("Name", "")) in norm_msg
+        or any(normalize(ing) in norm_msg for ing in (r.get("Ingredients") or []))
+    ]
+    if direct:
+        return direct
+
+    scored = []
+    for r in items:
+        score = 0
+        r_moods = r.get("MoodTags") or []
+        if any(m in r_moods for m in target_moods):
+            score += 2
+        if r.get("Category") in target_cats:
+            score += 1
+        if ("chay" in norm_msg or "thanh dam" in norm_msg) and "vegetarian" in (r.get("DietTags") or []):
+            score += 3
+        if score > 0:
+            scored.append((score, r))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [r for _, r in scored]
+
+
+def handle_chat(event):
+    payload = parse_json_body(event)
+    user_message = str(payload.get("message") or "").strip()
+    if not user_message:
+        raise ValueError("Vui lòng nhập tâm trạng, thời tiết hoặc câu hỏi của bạn.")
+    if len(user_message) > 500:
+        raise ValueError("Câu hỏi tối đa 500 ký tự.")
+
+    items = get_all_recipes()
+    menu_context = "\n".join([
+        f"- [{r.get('RecipeID')}] {r.get('Name')}: loại {r.get('Category')}, "
+        f"tâm trạng phù hợp: {', '.join(r.get('MoodTags') or [])}, "
+        f"chi phí ~{r.get('EstimatedCostVND')}đ, nấu {r.get('TotalTimeMinutes') or r.get('CookingTimeMinutes', 20)} phút, "
+        f"nguyên liệu: {', '.join(r.get('Ingredients') or [])}"
+        for r in items
+    ])
+
+    system_prompt = (
+        "Bạn là Đầu Bếp AI Tâm Lý trên website hướng dẫn dạy nấu ăn Việt Nam. "
+        "Người dùng có thể hỏi gợi ý món ăn
