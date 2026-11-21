@@ -611,6 +611,7 @@
     }
 
     function detectLocation(refreshModal = false) {
+      if (refreshModal) document.getElementById("storeAddressInput").value = "";
       const label = document.getElementById("locationLabel");
       label.textContent = "Đang định vị...";
       if (!navigator.geolocation) { label.textContent = "TP.HCM"; return; }
