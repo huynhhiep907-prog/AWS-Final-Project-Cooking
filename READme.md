@@ -88,10 +88,10 @@ Không đưa AWS access key/secret key vào repository. Chỉ cấp cho Lambda c
 Mở `frontend/cooking/index.html` và kiểm tra:
 
 ```javascript
-const API_BASE = "https://YOUR_API_ID.execute-api.ap-southeast-1.amazonaws.com/prod";
+const API_BASE = "https://1f10tq33a6.execute-api.ap-southeast-1.amazonaws.com/prod";
 ```
 
-Thay bằng Invoke URL thực tế của API Gateway. API Gateway cần có ba route ở bảng phía trên và bật CORS cho website.
+Đây là endpoint đang được ghi trong file giao diện lấy từ bản của nhóm; cần đối chiếu với **API Gateway → Stages → prod → Invoke URL** trên tài khoản AWS đang triển khai. Nếu Invoke URL khác, thay lại đúng URL đó. API Gateway cần có ba route ở bảng phía trên và bật CORS cho website.
 
 ## Lưu ý GPS và chi phí
 
