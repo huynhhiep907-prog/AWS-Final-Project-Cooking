@@ -15,6 +15,22 @@
       ]
     },
     {
+      "Sid": "SearchNearbyPlaces",
+      "Effect": "Allow",
+      "Action": [
+        "geo-places:SearchText"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "InvokeCookingAssistantModel",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel"
+      ],
+      "Resource": "arn:aws:bedrock:ap-southeast-1::foundation-model/amazon.nova-micro-v1:0"
+    },
+    {
       "Sid": "WriteLambdaLogs",
       "Effect": "Allow",
       "Action": [
