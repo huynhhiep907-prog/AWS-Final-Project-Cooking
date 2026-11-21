@@ -189,11 +189,32 @@ def handle_nearby_stores(params):
         raise ValueError(f"Tham số ingredients vượt quá {MAX_INPUT_LENGTH} ký tự.")
     tier = (params.get("tier") or "mid").strip().lower()
 
-    try:
-        lat = float(params.get("lat", 10.7769))
-        lng = float(params.get("lng", 106.7009))
-    except (TypeError, ValueError):
-        lat, lng = 10.7769, 106.7009
+    address = (params.get("address") or "").strip()
+    if len(address) > 200:
+        raise ValueError("Địa chỉ tìm kiếm tối đa 200 ký tự.")
+
+    if address:
+        # Chuyển địa chỉ người dùng nhập thành tọa độ bằng Amazon Location Places.
+        geocode = geo_places_client.search_text(
+            QueryText=address,
+            MaxResults=1,
+            Language="vi",
+        )
+        address_results = geocode.get("ResultItems", [])
+        if not address_results or not address_results[0].get("Position"):
+            return response(200, {
+                "source": "amazon-location-geo-places",
+                "advice": "Không tìm thấy địa chỉ này. Hãy thử nhập địa chỉ cụ thể hơn hoặc dùng GPS.",
+                "stores": [],
+            })
+        address_position = address_results[0]["Position"]
+        lng, lat = float(address_position[0]), float(address_position[1])
+    else:
+        try:
+            lat = float(params.get("lat", 10.7769))
+            lng = float(params.get("lng", 106.7009))
+        except (TypeError, ValueError):
+            lat, lng = 10.7769, 106.7009
 
     tier_config = {
         "low": {
