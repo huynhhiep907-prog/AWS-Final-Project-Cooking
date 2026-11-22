@@ -295,9 +295,32 @@ def handle_nearby_stores(params):
                 ):
                     continue
 
-                # Không bắt buộc category phải khớp từ khóa tiếng Anh:
-                # Amazon Location có thể trả category tiếng Việt hoặc nhãn khác.
-                # Chỉ loại rõ ràng các nhóm không phù hợp ở excluded_category_terms.
+                # Chỉ nhận đúng nhóm địa điểm mua thực phẩm tổng hợp.
+                # Nếu có category, category phải thể hiện đây là chợ/siêu thị/cửa hàng thực phẩm.
+                relevant_category_terms = (
+                    "grocery", "supermarket", "market", "food store", "food market",
+                    "food and drink", "food & drink", "department store",
+                    "grocery store", "hypermarket", "cho", "sieu thi",
+                    "cua hang thuc pham", "bach hoa",
+                )
+                if category_names:
+                    if not any(
+                        relevant in category
+                        for category in category_names
+                        for relevant in relevant_category_terms
+                    ):
+                        continue
+                else:
+                    # Khi không có category, chỉ chấp nhận tên chợ/chuỗi siêu thị rõ ràng.
+                    title_store_terms = (
+                        "cho ", "cho.", "sieu thi", "bach hoa", "bach hoa xanh",
+                        "coop food", "co.op food", "coopmart", "co.opmart",
+                        "winmart", "kingfood", "tops market", "lotte mart",
+                        "mega market", "go!", "go market", "food mart",
+                        "food store", "cua hang thuc pham",
+                    )
+                    if not any(term in title_norm for term in title_store_terms):
+                        continue
 
                 pos = item.get("Position")
                 if not pos or len(pos) < 2:
