@@ -222,16 +222,16 @@ def handle_nearby_stores(params):
 
     tier_config = {
         "low": {
-            "advice": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống hoặc tạp hóa để mua lẻ đúng định lượng.",
-            "search_terms": ["chợ", "tạp hóa", "cửa hàng thực phẩm", "cửa hàng nông sản"],
+            "advice": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống, sạp rau củ, thịt cá và tạp hóa có bán nguyên liệu nấu ăn.",
+            "search_terms": ["chợ truyền thống", "chợ", "cửa hàng rau củ", "cửa hàng thịt cá", "tạp hóa"],
         },
         "mid": {
-            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Ưu tiên siêu thị mini, cửa hàng thực phẩm và cửa hàng tiện lợi.",
-            "search_terms": ["siêu thị mini", "cửa hàng thực phẩm", "cửa hàng tiện lợi", "Bách Hóa Xanh", "WinMart+", "Co.op Food"],
+            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Ưu tiên cửa hàng thực phẩm, siêu thị mini và nơi bán rau củ, thịt cá, gia vị.",
+            "search_terms": ["cửa hàng thực phẩm", "siêu thị thực phẩm", "cửa hàng rau củ", "cửa hàng thịt cá", "chợ", "Bách Hóa Xanh", "WinMart+", "Co.op Food"],
         },
         "high": {
-            "advice": "Ngân sách thoải mái (> 70.000đ): Ưu tiên siêu thị lớn và cửa hàng thực phẩm sạch.",
-            "search_terms": ["siêu thị", "cửa hàng thực phẩm sạch", "Co.opmart", "Tops Market", "Go!"],
+            "advice": "Ngân sách thoải mái (> 70.000đ): Ưu tiên siêu thị lớn và cửa hàng thực phẩm sạch có bán nguyên liệu nấu ăn.",
+            "search_terms": ["siêu thị thực phẩm", "cửa hàng thực phẩm sạch", "cửa hàng rau củ", "Co.opmart", "Tops Market", "Go!"],
         },
     }
     selected = tier_config.get(tier, tier_config["mid"])
