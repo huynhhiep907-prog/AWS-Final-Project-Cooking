@@ -199,6 +199,7 @@ def handle_nearby_stores(params):
             QueryText=address,
             MaxResults=1,
             Language="vi",
+            BiasPosition=[106.7009, 10.7769]
         )
         address_results = geocode.get("ResultItems", [])
         if not address_results or not address_results[0].get("Position"):
