@@ -220,24 +220,39 @@ def handle_nearby_stores(params):
         except (TypeError, ValueError):
             lat, lng = 10.7769, 106.7009
 
+    # Các nguồn mua thực phẩm tổng hợp; không tìm riêng cửa hàng thịt/cá/rau.
+    # Mỗi mức ngân sách vẫn tìm cùng loại địa điểm, chỉ thay đổi lời khuyên.
     tier_config = {
         "low": {
-            "advice": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống, sạp rau củ, thịt cá và tạp hóa có bán nguyên liệu nấu ăn.",
-            "search_terms": ["chợ truyền thống", "chợ", "cửa hàng rau củ", "cửa hàng thịt cá", "tạp hóa"],
+            "advice": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống và siêu thị bình dân gần bạn.",
+            "search_terms": ["chợ", "Bách Hóa Xanh", "WinMart", "Co.op Food", "siêu thị"],
         },
         "mid": {
-            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Ưu tiên cửa hàng thực phẩm, siêu thị mini và nơi bán rau củ, thịt cá, gia vị.",
-            "search_terms": ["cửa hàng thực phẩm", "siêu thị thực phẩm", "cửa hàng rau củ", "cửa hàng thịt cá", "chợ", "Bách Hóa Xanh", "WinMart+", "Co.op Food"],
+            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Ưu tiên chợ, siêu thị và cửa hàng thực phẩm tổng hợp.",
+            "search_terms": ["chợ", "Bách Hóa Xanh", "WinMart", "Co.op Food", "Co.opmart", "Kingfoodmart", "siêu thị"],
         },
         "high": {
-            "advice": "Ngân sách thoải mái (> 70.000đ): Ưu tiên siêu thị lớn và cửa hàng thực phẩm sạch có bán nguyên liệu nấu ăn.",
-            "search_terms": ["siêu thị thực phẩm", "cửa hàng thực phẩm sạch", "cửa hàng rau củ", "Co.opmart", "Tops Market", "Go!"],
+            "advice": "Ngân sách thoải mái (> 70.000đ): Ưu tiên siêu thị và cửa hàng thực phẩm tổng hợp có nhiều lựa chọn.",
+            "search_terms": ["chợ", "Co.opmart", "Tops Market", "GO!", "Kingfoodmart", "Lotte Mart", "MM Mega Market", "siêu thị"],
         },
     }
     selected = tier_config.get(tier, tier_config["mid"])
 
+    # Loại các chuỗi cửa hàng tiện lợi không phù hợp mục tiêu mua nguyên liệu nấu ăn.
+    excluded_name_terms = (
+        "circle k", "gs25", "7-eleven", "familymart", "family mart",
+        "ministop", "cheers", "shop&go", "shop and go",
+    )
+    excluded_category_terms = (
+        "convenience", "restaurant", "cafe", "coffee shop", "fast food",
+        "gas station", "pet store", "clothing store",
+    )
+    relevant_category_terms = (
+        "grocery", "supermarket", "market", "food store", "food market",
+        "food and drink", "food & drink", "department store",
+    )
+
     try:
-        # Tìm nhiều nhóm địa điểm riêng biệt để không bị lệ thuộc vào một chuỗi siêu thị.
         stores_by_key = {}
         for search_term in selected["search_terms"]:
             res = geo_places_client.search_text(
@@ -249,26 +264,78 @@ def handle_nearby_stores(params):
                     },
                     "IncludeCountries": ["VNM"]
                 },
-                MaxResults=20,
+                MaxResults=30,
                 Language="vi",
             )
             for item in res.get("ResultItems", []):
+                # Chỉ nhận POI cụ thể; bỏ kết quả là đường, khu vực hoặc địa chỉ chung.
+                if item.get("PlaceType") != "PointOfInterest":
+                    continue
+
+                title = (item.get("Title") or "").strip()
+                if not title:
+                    continue
+                title_norm = normalize(title)
+                if any(term in title_norm for term in excluded_name_terms):
+                    continue
+
+                categories = item.get("Categories") or []
+                category_names = [
+                    normalize(
+                        category.get("LocalizedName")
+                        or category.get("Name")
+                        or ""
+                    )
+                    for category in categories
+                ]
+                if any(
+                    excluded in category
+                    for category in category_names
+                    for excluded in excluded_category_terms
+                ):
+                    continue
+
+                # Nếu nhà cung cấp có phân loại địa điểm, chỉ giữ nhóm chợ/siêu thị/thực phẩm.
+                # Nếu không có category, chỉ nhận kết quả đến từ truy vấn chợ/siêu thị/chuỗi cụ thể.
+                if category_names and not any(
+                    relevant in category
+                    for category in category_names
+                    for relevant in relevant_category_terms
+                ):
+                    continue
+
                 pos = item.get("Position")
                 if not pos or len(pos) < 2:
                     continue
-                addr_label = (item.get("Address") or {}).get("Label") or item.get("Title", "")
+
+                addr_label = (item.get("Address") or {}).get("Label") or ""
+                if not addr_label:
+                    continue
+
                 dist_m = item.get("Distance")
                 if dist_m is None:
                     dist_m = haversine_meters(lat, lng, pos[1], pos[0])
+
+                chain_names = [
+                    chain.get("Name", "")
+                    for chain in (item.get("BusinessChains") or [])
+                    if chain.get("Name")
+                ]
                 store = {
-                    "name": item.get("Title", "Điểm bán thực phẩm"),
+                    "name": title,
                     "address": addr_label,
                     "distanceMeters": int(dist_m),
                     "lat": float(pos[1]),
                     "lng": float(pos[0]),
+                    "category": ", ".join(
+                        category.get("LocalizedName") or category.get("Name", "")
+                        for category in categories
+                        if category.get("LocalizedName") or category.get("Name")
+                    ),
+                    "businessChains": chain_names,
                 }
-                address_key = addr_label.lower().split(",")[0].strip()
-                key = (store["name"].lower().strip(), address_key)
+                address_key = normalize(addr_label.split(",")[0])
+                key = (normalize(title), address_key)
                 if (
                     key not in stores_by_key
                     or store["distanceMeters"] < stores_by_key[key]["distanceMeters"]
