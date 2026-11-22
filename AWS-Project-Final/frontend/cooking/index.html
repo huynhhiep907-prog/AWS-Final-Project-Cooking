@@ -692,10 +692,10 @@
             const mapsParams = new URLSearchParams({
               api: "1",
               origin: origin,
-              destination: `${s.name}, ${s.address}`,
+              destination: `${s.lat},${s.lng}`,
               travelmode: "driving"
             });
-            // Dùng địa chỉ/tên cửa hàng làm đích để Google Maps nhận diện địa điểm ổn định hơn tọa độ trần.
+            // Dùng tọa độ cửa hàng từ Amazon Location để Google Maps không phải tự tìm tên/địa chỉ cửa hàng.
             const mapsUrl = `https://www.google.com/maps/dir/?${mapsParams.toString()}`;
 
             return `
