@@ -222,71 +222,75 @@ def handle_nearby_stores(params):
 
     tier_config = {
         "low": {
-            "search_text": f"chợ truyền thống tạp hóa {ingredients}",
             "advice": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống hoặc tạp hóa để mua lẻ đúng định lượng.",
+            "search_terms": ["chợ", "tạp hóa", "cửa hàng thực phẩm", "cửa hàng nông sản"],
         },
         "mid": {
-            "search_text": "Bách Hóa Xanh WinMart+ Co.op Food",
-            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Siêu thị mini bình ổn giá, tiện lợi và sạch sẽ.",
+            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Ưu tiên siêu thị mini, cửa hàng thực phẩm và cửa hàng tiện lợi.",
+            "search_terms": ["siêu thị mini", "cửa hàng thực phẩm", "cửa hàng tiện lợi", "Bách Hóa Xanh", "WinMart+", "Co.op Food"],
         },
         "high": {
-            "search_text": "siêu thị Co.opmart Tops Market thực phẩm sạch",
-            "advice": "Ngân sách thoải mái (> 70.000đ): Siêu thị lớn và cửa hàng thực phẩm hữu cơ chuẩn nguồn gốc.",
+            "advice": "Ngân sách thoải mái (> 70.000đ): Ưu tiên siêu thị lớn và cửa hàng thực phẩm sạch.",
+            "search_terms": ["siêu thị", "cửa hàng thực phẩm sạch", "Co.opmart", "Tops Market", "Go!"],
         },
     }
     selected = tier_config.get(tier, tier_config["mid"])
 
     try:
-        res = geo_places_client.search_text(
-            QueryText=selected["search_text"],
-            Filter={
-                "Circle": {
-                    "Center": [lng, lat],
-                    "Radius": 10000
-                },
-                "IncludeCountries": ["VNM"]
-            },
-            MaxResults=20,
-            Language="vi",
-        )
+        # Tìm nhiều nhóm địa điểm riêng biệt để không bị lệ thuộc vào một chuỗi siêu thị.
         stores_by_key = {}
-        for item in res.get("ResultItems", []):
-            pos = item.get("Position", [lng, lat])
-            addr_label = (item.get("Address") or {}).get("Label") or item.get("Title", "")
-            dist_m = item.get("Distance")
-            if dist_m is None:
-                dist_m = haversine_meters(lat, lng, pos[1], pos[0])
-            store={
-                "name": item.get("Title", "Điểm bán thực phẩm"),
-                "address": addr_label,
-                "distanceMeters": int(dist_m),
-                "lat": pos[1],
-                "lng": pos[0],
-            }
-            address_key = addr_label.lower().split(",")[0].strip()
-
-            key = (
-                store["name"].lower().strip(),
-                address_key
+        for search_term in selected["search_terms"]:
+            res = geo_places_client.search_text(
+                QueryText=search_term,
+                Filter={
+                    "Circle": {
+                        "Center": [lng, lat],
+                        "Radius": 10000
+                    },
+                    "IncludeCountries": ["VNM"]
+                },
+                MaxResults=20,
+                Language="vi",
             )
-            if (
-                key not in stores_by_key or store["distanceMeters"]
-                < stores_by_key[key]["distanceMeters"]
-            ):
-                stores_by_key[key] = store
-        stores=sorted(
+            for item in res.get("ResultItems", []):
+                pos = item.get("Position")
+                if not pos or len(pos) < 2:
+                    continue
+                addr_label = (item.get("Address") or {}).get("Label") or item.get("Title", "")
+                dist_m = item.get("Distance")
+                if dist_m is None:
+                    dist_m = haversine_meters(lat, lng, pos[1], pos[0])
+                store = {
+                    "name": item.get("Title", "Điểm bán thực phẩm"),
+                    "address": addr_label,
+                    "distanceMeters": int(dist_m),
+                    "lat": float(pos[1]),
+                    "lng": float(pos[0]),
+                }
+                address_key = addr_label.lower().split(",")[0].strip()
+                key = (store["name"].lower().strip(), address_key)
+                if (
+                    key not in stores_by_key
+                    or store["distanceMeters"] < stores_by_key[key]["distanceMeters"]
+                ):
+                    stores_by_key[key] = store
+
+        stores = sorted(
             stores_by_key.values(),
-            key=lambda s: s["distanceMeters"])
+            key=lambda item: item["distanceMeters"]
+        )
         return response(200, {
             "source": "amazon-location-geo-places",
             "advice": selected["advice"],
-            "stores": stores,
+            "origin": {"lat": lat, "lng": lng},
+            "stores": stores[:30],
         })
-    except Exception as exc:
-        logger.warning("Amazon Location geo-places fallback triggered: %s", exc)
+    except Exception:
+        logger.exception("Amazon Location geo-places search failed")
         return response(200, {
             "source": "fallback",
             "advice": selected["advice"],
+            "origin": {"lat": lat, "lng": lng},
             "stores": [],
         })
 
