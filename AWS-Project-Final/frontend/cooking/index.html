@@ -665,8 +665,10 @@
             const distLabel = s.distanceMeters < 1000
               ? `${s.distanceMeters} m`
               : `${(s.distanceMeters / 1000).toFixed(1)} km`;
-            // Dùng đúng địa chỉ/tọa độ đã gửi lên API làm điểm xuất phát.
-            const origin = manualAddress || `${lat},${lng}`;
+            // Ưu tiên tọa độ đã được Lambda geocode để khoảng cách và chỉ đường cùng điểm xuất phát.
+            const origin = data.origin
+              ? `${data.origin.lat},${data.origin.lng}`
+              : (manualAddress || `${lat},${lng}`);
             const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${s.lat},${s.lng}`;
 
             return `
@@ -688,7 +690,9 @@
         }
 
         const fallbackQuery = tier === "low" ? `chợ gần đây bán ${ing}` : (tier === "mid" ? "cửa hàng thực phẩm và siêu thị gần đây" : "siêu thị gần đây");
-        const fallbackLocation = manualAddress || `${lat},${lng}`;
+        const fallbackLocation = data.origin
+          ? `${data.origin.lat},${data.origin.lng}`
+          : (manualAddress || `${lat},${lng}`);
         const fallbackMapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(fallbackQuery + " gần " + fallbackLocation)}`;
         listBox.innerHTML = adviceHtml + `
           <div class="p-3 border border-gray-200 rounded bg-gray-50 flex items-center justify-between gap-2">
