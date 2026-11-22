@@ -643,12 +643,12 @@
 
       const lat = userCoords ? userCoords.lat : 10.7769;
       const lng = userCoords ? userCoords.lng : 106.7009;
+      const manualAddress = document.getElementById("storeAddressInput").value.trim();
 
       listBox.innerHTML = `<p class="text-center text-gray-500 py-4">⏳ Đang truy vấn Amazon Location Service quanh vị trí của bạn...</p>`;
 
       try {
         const params = new URLSearchParams({ ingredients: ing, tier: tier });
-        const manualAddress = document.getElementById("storeAddressInput").value.trim();
         if (manualAddress) {
           params.set("address", manualAddress);
         } else {
@@ -665,7 +665,9 @@
             const distLabel = s.distanceMeters < 1000
               ? `${s.distanceMeters} m`
               : `${(s.distanceMeters / 1000).toFixed(1)} km`;
-            const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`;
+            // Dùng đúng địa chỉ/tọa độ đã gửi lên API làm điểm xuất phát.
+            const origin = manualAddress || `${lat},${lng}`;
+            const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${s.lat},${s.lng}`;
 
             return `
               <div class="p-2.5 border border-gray-200 rounded bg-gray-50 flex items-center justify-between gap-2">
@@ -685,14 +687,16 @@
           return;
         }
 
-        const fallbackQuery = tier === "low" ? `chợ gần đây bán ${ing}` : (tier === "mid" ? "Bách Hóa Xanh gần đây" : "siêu thị gần đây");
+        const fallbackQuery = tier === "low" ? `chợ gần đây bán ${ing}` : (tier === "mid" ? "cửa hàng thực phẩm và siêu thị gần đây" : "siêu thị gần đây");
+        const fallbackLocation = manualAddress || `${lat},${lng}`;
+        const fallbackMapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(fallbackQuery + " gần " + fallbackLocation)}`;
         listBox.innerHTML = adviceHtml + `
           <div class="p-3 border border-gray-200 rounded bg-gray-50 flex items-center justify-between gap-2">
             <div>
               <p class="font-bold text-gray-800">Tìm điểm bán quanh tọa độ hiện tại</p>
               <p class="text-gray-500 mt-0.5">Mở bản đồ chỉ đường trực tiếp tới điểm bán phù hợp ngân sách.</p>
             </div>
-            <a href="https://www.google.com/maps/search/${encodeURIComponent(fallbackQuery)}/@${lat},${lng},15z" target="_blank" class="bg-foody-red text-white font-bold px-3 py-1.5 rounded shrink-0">
+            <a href="${fallbackMapsUrl}" target="_blank" class="bg-foody-red text-white font-bold px-3 py-1.5 rounded shrink-0">
               Mở bản đồ ↗
             </a>
           </div>
