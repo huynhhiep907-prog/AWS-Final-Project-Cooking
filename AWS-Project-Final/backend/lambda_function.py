@@ -295,14 +295,9 @@ def handle_nearby_stores(params):
                 ):
                     continue
 
-                # Nếu nhà cung cấp có phân loại địa điểm, chỉ giữ nhóm chợ/siêu thị/thực phẩm.
-                # Nếu không có category, chỉ nhận kết quả đến từ truy vấn chợ/siêu thị/chuỗi cụ thể.
-                if category_names and not any(
-                    relevant in category
-                    for category in category_names
-                    for relevant in relevant_category_terms
-                ):
-                    continue
+                # Không bắt buộc category phải khớp từ khóa tiếng Anh:
+                # Amazon Location có thể trả category tiếng Việt hoặc nhãn khác.
+                # Chỉ loại rõ ràng các nhóm không phù hợp ở excluded_category_terms.
 
                 pos = item.get("Position")
                 if not pos or len(pos) < 2:
