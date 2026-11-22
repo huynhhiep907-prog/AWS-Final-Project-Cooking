@@ -689,7 +689,7 @@
             const origin = data.origin
               ? `${data.origin.lat},${data.origin.lng}`
               : (manualAddress || `${lat},${lng}`);
-            const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${s.lat},${s.lng}&travelmode=driving`;
+            const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${s.lat},${s.lng}&travelmode=two-wheeler`;
 
             return `
               <div class="p-2.5 border border-gray-200 rounded bg-gray-50 flex items-center justify-between gap-2">
