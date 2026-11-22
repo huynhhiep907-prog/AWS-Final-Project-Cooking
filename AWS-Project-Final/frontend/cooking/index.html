@@ -613,18 +613,38 @@
     function detectLocation(refreshModal = false) {
       if (refreshModal) document.getElementById("storeAddressInput").value = "";
       const label = document.getElementById("locationLabel");
+      const listBox = document.getElementById("storeResultList");
       label.textContent = "Đang định vị...";
-      if (!navigator.geolocation) { label.textContent = "TP.HCM"; return; }
+      if (!navigator.geolocation) {
+        label.textContent = "Không hỗ trợ GPS";
+        if (refreshModal) listBox.innerHTML = '<p class="text-red-600 py-3">Trình duyệt này không hỗ trợ định vị GPS.</p>';
+        return;
+      }
       navigator.geolocation.getCurrentPosition(
         pos => {
           userCoords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-          label.textContent = "Gần tôi (GPS)";
-          if (refreshModal) renderNearbyStores();
+          const accuracy = Math.round(pos.coords.accuracy || 0);
+          label.textContent = accuracy > 1000 ? "GPS kém chính xác" : "Gần tôi (GPS)";
+          if (refreshModal) {
+            if (accuracy > 1000) {
+              listBox.innerHTML = `<p class="text-amber-700 py-2">GPS hiện chỉ chính xác khoảng ${accuracy} m. Hãy bật định vị chính xác hoặc nhập địa chỉ để có kết quả tốt hơn.</p>`;
+            }
+            renderNearbyStores();
+          }
         },
-        () => {
-          label.textContent = "TP.HCM";
-          if (refreshModal) renderNearbyStores();
-        }
+        err => {
+          userCoords = null;
+          label.textContent = "Không lấy được GPS";
+          const messages = {
+            1: "Bạn chưa cấp quyền vị trí cho website. Hãy cho phép Location trong cài đặt trang web.",
+            2: "Thiết bị/trình duyệt chưa xác định được vị trí. Hãy thử bật Location Services hoặc nhập địa chỉ.",
+            3: "Định vị quá thời gian chờ. Hãy thử lại hoặc nhập địa chỉ."
+          };
+          if (refreshModal) {
+            listBox.innerHTML = `<p class="text-red-600 py-2">${messages[err.code] || "Không lấy được vị trí GPS."}</p>`;
+          }
+        },
+        { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 }
       );
     }
 
@@ -669,7 +689,7 @@
             const origin = data.origin
               ? `${data.origin.lat},${data.origin.lng}`
               : (manualAddress || `${lat},${lng}`);
-            const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${s.lat},${s.lng}`;
+            const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${s.lat},${s.lng}&travelmode=driving`;
 
             return `
               <div class="p-2.5 border border-gray-200 rounded bg-gray-50 flex items-center justify-between gap-2">
