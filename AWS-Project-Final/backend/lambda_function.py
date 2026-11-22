@@ -182,7 +182,7 @@ def haversine_meters(lat1, lon1, lat2, lon2):
     return int(2 * r * math.atan2(math.sqrt(a), math.sqrt(1 - a)))
 
 
-# 1. TÌM ĐIỂM MUA NGUYÊN LIỆU GẦN VỊ TRÍ & PHÙ HỢP TÚI TIỀN (AMAZON LOCATION GEO-PLACES V2)
+# 1. TÌM CỬA HÀNG THỰC PHẨM GẦN VỊ TRÍ (AMAZON LOCATION GEO-PLACES V2)
 def handle_nearby_stores(params):
     ingredients = (params.get("ingredients") or "thực phẩm tươi").strip()
     if len(ingredients) > MAX_INPUT_LENGTH:
@@ -194,7 +194,6 @@ def handle_nearby_stores(params):
         raise ValueError("Địa chỉ tìm kiếm tối đa 200 ký tự.")
 
     if address:
-        # Chuyển địa chỉ người dùng nhập thành tọa độ bằng Amazon Location Places.
         geocode = geo_places_client.search_text(
             QueryText=address,
             MaxResults=1,
@@ -220,55 +219,59 @@ def handle_nearby_stores(params):
         except (TypeError, ValueError):
             lat, lng = 10.7769, 106.7009
 
-    # Các nguồn mua thực phẩm tổng hợp; không tìm riêng cửa hàng thịt/cá/rau.
-    # Mỗi mức ngân sách vẫn tìm cùng loại địa điểm, chỉ thay đổi lời khuyên.
     tier_config = {
-        "low": {
-            "advice": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống và siêu thị bình dân gần bạn.",
-            "search_terms": ["chợ", "Bách Hóa Xanh", "WinMart", "Co.op Food", "siêu thị"],
-        },
-        "mid": {
-            "advice": "Ngân sách vừa phải (35.000đ – 70.000đ): Ưu tiên chợ, siêu thị và cửa hàng thực phẩm tổng hợp.",
-            "search_terms": ["chợ", "Bách Hóa Xanh", "WinMart", "Co.op Food", "Co.opmart", "Kingfoodmart", "siêu thị"],
-        },
-        "high": {
-            "advice": "Ngân sách thoải mái (> 70.000đ): Ưu tiên siêu thị và cửa hàng thực phẩm tổng hợp có nhiều lựa chọn.",
-            "search_terms": ["chợ", "Co.opmart", "Tops Market", "GO!", "Kingfoodmart", "Lotte Mart", "MM Mega Market", "siêu thị"],
-        },
+        "low": "Ngân sách tiết kiệm (< 35.000đ): Ưu tiên chợ truyền thống và siêu thị bình dân gần bạn.",
+        "mid": "Ngân sách vừa phải (35.000đ – 70.000đ): Ưu tiên chợ, siêu thị và cửa hàng thực phẩm tổng hợp.",
+        "high": "Ngân sách thoải mái (> 70.000đ): Ưu tiên siêu thị và cửa hàng thực phẩm tổng hợp có nhiều lựa chọn.",
     }
-    selected = tier_config.get(tier, tier_config["mid"])
+    advice = tier_config.get(tier, tier_config["mid"])
 
-    # Loại các chuỗi cửa hàng tiện lợi không phù hợp mục tiêu mua nguyên liệu nấu ăn.
+    # Loại chuỗi tiện lợi và loại hình không phục vụ mua nguyên liệu nấu ăn.
     excluded_name_terms = (
-        "circle k", "gs25", "7-eleven", "familymart", "family mart",
-        "ministop", "cheers", "shop&go", "shop and go",
+        "famima", "familymart", "family mart", "circle k", "gs25",
+        "7-eleven", "ministop", "cheers", "shop&go", "shop and go",
     )
     excluded_category_terms = (
-        "convenience", "restaurant", "cafe", "coffee shop", "fast food",
-        "gas station", "pet store", "clothing store",
+        "restaurant", "cafe", "coffee", "fast food", "food court",
+        "bar", "pub", "gas station", "pet store", "clothing",
+        "hotel", "lodging",
     )
-    relevant_category_terms = (
+    grocery_category_terms = (
         "grocery", "supermarket", "market", "food store", "food market",
-        "food and drink", "food & drink", "department store",
+        "department store", "hypermarket", "convenience store",
+        "cua hang thuc pham", "sieu thi", "cho", "bach hoa",
+    )
+    grocery_name_terms = (
+        "bach hoa xanh", "bach hoa", "winmart", "win mart",
+        "coop food", "co.op food", "coopmart", "co.opmart",
+        "kingfood", "tops market", "lotte mart", "mega market",
+        "go!", "go market", "aeon", "emart", "sieu thi",
+        "cho ", "cho.", "food mart", "food store",
     )
 
     try:
         stores_by_key = {}
-        for search_term in selected["search_terms"]:
-            res = geo_places_client.search_text(
-                QueryText=search_term,
-                Filter={
-                    "Circle": {
-                        "Center": [lng, lat],
-                        "Radius": 10000
-                    },
-                    "IncludeCountries": ["VNM"]
-                },
-                MaxResults=30,
-                Language="vi",
-            )
-            for item in res.get("ResultItems", []):
-                # Chỉ nhận POI cụ thể; bỏ kết quả là đường, khu vực hoặc địa chỉ chung.
+        next_token = None
+        page_count = 0
+        max_pages = 5
+
+        # SearchNearby tìm POI theo tọa độ và bán kính, không phụ thuộc một
+        # danh sách từ khóa; phân trang để lấy nhiều kết quả hơn 100 POI đầu.
+        while page_count < max_pages:
+            request = {
+                "QueryPosition": [lng, lat],
+                "QueryRadius": 10000,
+                "Filter": {"IncludeCountries": ["VNM"]},
+                "MaxResults": 100,
+                "Language": "vi",
+            }
+            if next_token:
+                request["NextToken"] = next_token
+
+            result = geo_places_client.search_nearby(**request)
+            page_count += 1
+
+            for item in result.get("ResultItems", []):
                 if item.get("PlaceType") != "PointOfInterest":
                     continue
 
@@ -281,13 +284,11 @@ def handle_nearby_stores(params):
 
                 categories = item.get("Categories") or []
                 category_names = [
-                    normalize(
-                        category.get("LocalizedName")
-                        or category.get("Name")
-                        or ""
-                    )
+                    normalize(category.get("LocalizedName") or category.get("Name") or "")
                     for category in categories
                 ]
+
+                # Loại chắc chắn nhà hàng/quán ăn và các nhóm không liên quan.
                 if any(
                     excluded in category
                     for category in category_names
@@ -295,86 +296,87 @@ def handle_nearby_stores(params):
                 ):
                     continue
 
-                # Chỉ nhận đúng nhóm địa điểm mua thực phẩm tổng hợp.
-                # Nếu có category, category phải thể hiện đây là chợ/siêu thị/cửa hàng thực phẩm.
-                relevant_category_terms = (
-                    "grocery", "supermarket", "market", "food store", "food market",
-                    "food and drink", "food & drink", "department store",
-                    "grocery store", "hypermarket", "cho", "sieu thi",
-                    "cua hang thuc pham", "bach hoa",
+                has_grocery_category = any(
+                    term in category
+                    for category in category_names
+                    for term in grocery_category_terms
                 )
-                if category_names:
-                    if not any(
-                        relevant in category
-                        for category in category_names
-                        for relevant in relevant_category_terms
-                    ):
-                        continue
-                else:
-                    # Khi không có category, chỉ chấp nhận tên chợ/chuỗi siêu thị rõ ràng.
-                    title_store_terms = (
-                        "cho ", "cho.", "sieu thi", "bach hoa", "bach hoa xanh",
-                        "coop food", "co.op food", "coopmart", "co.opmart",
-                        "winmart", "kingfood", "tops market", "lotte mart",
-                        "mega market", "go!", "go market", "food mart",
-                        "food store", "cua hang thuc pham",
-                    )
-                    if not any(term in title_norm for term in title_store_terms):
-                        continue
+                has_grocery_name = any(term in title_norm for term in grocery_name_terms)
+
+                # Chỉ nhận địa điểm có category bán lẻ thực phẩm hoặc tên cửa hàng/chợ rõ ràng.
+                # Không suy luận cửa hàng chỉ từ việc tên địa chỉ có chữ Co.opmart/WinMart.
+                if not (has_grocery_category or has_grocery_name):
+                    continue
 
                 pos = item.get("Position")
                 if not pos or len(pos) < 2:
+                    continue
+
+                store_lat, store_lng = float(pos[1]), float(pos[0])
+                dist_m = haversine_meters(lat, lng, store_lat, store_lng)
+                if dist_m > 10000:
                     continue
 
                 addr_label = (item.get("Address") or {}).get("Label") or ""
                 if not addr_label:
                     continue
 
-                dist_m = item.get("Distance")
-                if dist_m is None:
-                    dist_m = haversine_meters(lat, lng, pos[1], pos[0])
-
                 chain_names = [
                     chain.get("Name", "")
                     for chain in (item.get("BusinessChains") or [])
                     if chain.get("Name")
                 ]
+                category_label = ", ".join(
+                    category.get("LocalizedName") or category.get("Name", "")
+                    for category in categories
+                    if category.get("LocalizedName") or category.get("Name")
+                )
                 store = {
                     "name": title,
                     "address": addr_label,
-                    "distanceMeters": int(dist_m),
-                    "lat": float(pos[1]),
-                    "lng": float(pos[0]),
-                    "category": ", ".join(
-                        category.get("LocalizedName") or category.get("Name", "")
-                        for category in categories
-                        if category.get("LocalizedName") or category.get("Name")
-                    ),
+                    "distanceMeters": dist_m,
+                    "lat": store_lat,
+                    "lng": store_lng,
+                    "category": category_label,
                     "businessChains": chain_names,
                 }
-                address_key = normalize(addr_label.split(",")[0])
-                key = (normalize(title), address_key)
-                if (
-                    key not in stores_by_key
-                    or store["distanceMeters"] < stores_by_key[key]["distanceMeters"]
-                ):
-                    stores_by_key[key] = store
+
+                # Dùng PlaceId nếu có để tránh gộp nhầm hai chi nhánh cùng tên.
+                place_id = item.get("PlaceId")
+                address_key = normalize(addr_label)
+                key = place_id or (normalize(title), address_key)
+                stores_by_key[key] = store
+
+            next_token = result.get("NextToken")
+            if not next_token:
+                break
+
+        if next_token:
+            logger.warning(
+                "SearchNearby reached page limit (%s); more results may exist. location=(%s,%s)",
+                max_pages, lat, lng
+            )
 
         stores = sorted(
             stores_by_key.values(),
             key=lambda item: item["distanceMeters"]
         )
+        logger.info(
+            "SearchNearby pages=%s stores_kept=%s location=(%s,%s)",
+            page_count, len(stores), lat, lng
+        )
         return response(200, {
-            "source": "amazon-location-geo-places",
-            "advice": selected["advice"],
+            "source": "amazon-location-search-nearby",
+            "advice": advice,
             "origin": {"lat": lat, "lng": lng},
-            "stores": stores[:30],
+            "searchRadiusMeters": 10000,
+            "stores": stores[:100],
         })
     except Exception:
-        logger.exception("Amazon Location geo-places search failed")
+        logger.exception("Amazon Location SearchNearby failed")
         return response(200, {
             "source": "fallback",
-            "advice": selected["advice"],
+            "advice": advice,
             "origin": {"lat": lat, "lng": lng},
             "stores": [],
         })
