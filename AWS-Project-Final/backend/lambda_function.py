@@ -199,7 +199,10 @@ def handle_nearby_stores(params):
             QueryText=address,
             MaxResults=1,
             Language="vi",
-            BiasPosition=[106.7009, 10.7769]
+            Filter={
+                "BoundingBox": [102.0, 8.0, 110.0, 24.0],
+                "IncludeCountries": ["VNM"]
+            }
         )
         address_results = geocode.get("ResultItems", [])
         if not address_results or not address_results[0].get("Position"):
@@ -236,23 +239,44 @@ def handle_nearby_stores(params):
     try:
         res = geo_places_client.search_text(
             QueryText=selected["search_text"],
-            BiasPosition=[lng, lat],
-            MaxResults=5,
+            Filter={
+                "Circle": {
+                    "Center": [lng, lat],
+                    "Radius": 10000
+                },
+                "IncludeCountries": ["VNM"]
+            },
+            MaxResults=20,
             Language="vi",
         )
-        stores = []
+        stores_by_key = {}
         for item in res.get("ResultItems", []):
             pos = item.get("Position", [lng, lat])
             addr_label = (item.get("Address") or {}).get("Label") or item.get("Title", "")
-            dist_m = item.get("Distance") or haversine_meters(lat, lng, pos[1], pos[0])
-            stores.append({
+            dist_m = item.get("Distance")
+            if dist_m is None:
+                dist_m = haversine_meters(lat, lng, pos[1], pos[0])
+            store={
                 "name": item.get("Title", "Điểm bán thực phẩm"),
                 "address": addr_label,
                 "distanceMeters": int(dist_m),
                 "lat": pos[1],
                 "lng": pos[0],
-            })
-        stores.sort(key=lambda s: s["distanceMeters"])
+            }
+            address_key = addr_label.lower().split(",")[0].strip()
+
+            key = (
+                store["name"].lower().strip(),
+                address_key
+            )
+            if (
+                key not in stores_by_key or store["distanceMeters"]
+                < stores_by_key[key]["distanceMeters"]
+            ):
+                stores_by_key[key] = store
+        stores=sorted(
+            stores_by_key.values(),
+            key=lambda s: s["distanceMeters"])
         return response(200, {
             "source": "amazon-location-geo-places",
             "advice": selected["advice"],
