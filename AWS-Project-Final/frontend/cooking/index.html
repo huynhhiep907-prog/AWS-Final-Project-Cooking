@@ -689,7 +689,14 @@
             const origin = data.origin
               ? `${data.origin.lat},${data.origin.lng}`
               : (manualAddress || `${lat},${lng}`);
-            const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${s.lat},${s.lng}&travelmode=two-wheeler`;
+            const mapsParams = new URLSearchParams({
+              api: "1",
+              origin: origin,
+              destination: `${s.name}, ${s.address}`,
+              travelmode: "two-wheeler"
+            });
+            // Dùng địa chỉ/tên cửa hàng làm đích để Google Maps nhận diện địa điểm ổn định hơn tọa độ trần.
+            const mapsUrl = `https://www.google.com/maps/dir/?${mapsParams.toString()}`;
 
             return `
               <div class="p-2.5 border border-gray-200 rounded bg-gray-50 flex items-center justify-between gap-2">
