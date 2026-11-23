@@ -247,19 +247,15 @@ def handle_nearby_stores(params):
     )
     # So khớp category theo tên loại hình hoàn chỉnh, tránh bắt nhầm chỉ vì
     # category có chứa một từ chung như "market" hoặc "food".
-    grocery_categories = {
-        "grocery", "grocery store", "supermarket", "market",
-        "food store", "food market", "department store", "hypermarket",
-        "convenience store", "cua hang thuc pham", "sieu thi",
-        "cho", "bach hoa", "grocery or supermarket",
-    }
-    # Tên các chuỗi/loại hình tổng hợp đã biết. Các tên mơ hồ như "AEON"
-    # không tự động được chấp nhận nếu category không xác nhận là cửa hàng thực phẩm.
+    # Category từ nhà cung cấp đang gắn nhãn "sieu thi" sai cho cả GS25,
+    # cửa hàng trái cây và đại lý gạo. Vì vậy chỉ nhận diện bằng tên loại hình/
+    # thương hiệu rõ ràng; không nhận POI chỉ vì category.
     grocery_name_terms = (
         "bach hoa xanh", "winmart", "win mart", "coop food", "co.op food",
         "coopmart", "co.opmart", "kingfood", "tops market", "lotte mart",
-        "mega market", "go market", "emart", "food mart", "food store",
-        "sieu thi", "cho ",
+        "mega market", "go market", "emart", "satrafood",
+        "food mart", "food store", "cua hang thuc pham",
+        "tap hoa", "bach hoa", "sieu thi", "cho ",
     )
 
     try:
@@ -317,15 +313,12 @@ def handle_nearby_stores(params):
                     logger.info("Nearby POI rejected by excluded category: %r categories=%s", title, category_names)
                     continue
 
-                has_grocery_category = any(
-                    category in grocery_categories
-                    for category in category_names
-                )
                 has_grocery_name = any(term in title_norm for term in grocery_name_terms)
 
-                # Không nhận cửa hàng chuyên biệt/quán ăn chỉ vì tên hoặc category
-                # có một từ chung liên quan đến thực phẩm.
-                if not (has_grocery_category or has_grocery_name):
+                # Category không được dùng làm điều kiện chấp nhận vì dữ liệu
+                # Amazon Location có nhiều nhãn sai. Tên phải thể hiện rõ
+                # siêu thị/chợ/tạp hóa/cửa hàng thực phẩm hoặc chuỗi đã biết.
+                if not has_grocery_name:
                     logger.info("Nearby POI rejected: not recognized as general grocery: %r categories=%s", title, category_names)
                     continue
 
@@ -442,14 +435,10 @@ def handle_nearby_stores(params):
                         ):
                             continue
 
-                        has_grocery_category = any(
-                            category in grocery_categories
-                            for category in category_names
-                        )
                         has_grocery_name = any(
                             term in title_norm for term in grocery_name_terms
                         )
-                        if not (has_grocery_category or has_grocery_name):
+                        if not has_grocery_name:
                             continue
 
                         pos = item.get("Position")
@@ -498,9 +487,35 @@ def handle_nearby_stores(params):
                 except Exception:
                     logger.exception("SearchText fallback failed for query=%r", search_term)
 
+        def budget_priority(store):
+            name = normalize(store.get("name", ""))
+            if tier == "low":
+                priorities = (
+                    ("cho ", 0), ("tap hoa", 1), ("bach hoa xanh", 2),
+                    ("satrafood", 2), ("coop food", 3), ("winmart", 3),
+                )
+            elif tier == "high":
+                priorities = (
+                    ("coopmart", 0), ("lotte mart", 0), ("mega market", 0),
+                    ("emart", 0), ("go market", 0), ("tops market", 1),
+                    ("kingfood", 1), ("winmart", 2), ("bach hoa xanh", 2),
+                )
+            else:
+                priorities = (
+                    ("coop food", 0), ("winmart", 0), ("bach hoa xanh", 0),
+                    ("satrafood", 0), ("kingfood", 1), ("tap hoa", 2),
+                    ("cho ", 2), ("coopmart", 2), ("lotte mart", 2),
+                )
+            for term, score in priorities:
+                if term in name:
+                    return score
+            return 4
+
+        # Xếp ưu tiên theo mức ngân sách trước, khoảng cách sau.
+        # Đây là ưu tiên theo loại hình/chuỗi, không phải giá bán tồn kho thực tế.
         stores = sorted(
             stores_by_key.values(),
-            key=lambda item: item["distanceMeters"]
+            key=lambda item: (budget_priority(item), item["distanceMeters"])
         )
         logger.info(
             "SearchNearby pages=%s stores_kept=%s location=(%s,%s)",
@@ -511,7 +526,7 @@ def handle_nearby_stores(params):
             "advice": advice,
             "origin": {"lat": lat, "lng": lng},
             "searchRadiusMeters": 10000,
-            "stores": stores[:100],
+            "stores": stores[:12],
         })
     except Exception:
         logger.exception("Amazon Location SearchNearby failed")
