@@ -530,22 +530,27 @@ def handle_nearby_stores(params):
             store["budgetLabel"] = group_label
             stores.append(store)
 
-        # Trong từng nhóm, cửa hàng gần hơn được hiển thị trước.
-        group_order = {"low": 0, "mid": 1, "high": 2}
-        stores.sort(key=lambda item: (
-            group_order[item["budgetGroup"]],
-            item["distanceMeters"]
-        ))
+        # Chỉ trả về cửa hàng thuộc đúng mức ngân sách người dùng đã chọn.
+        # Không trộn cửa hàng của ba nhóm vào cùng một danh sách.
+        if tier not in ("low", "mid", "high"):
+            tier = "mid"
+        selected_stores = [
+            store for store in stores
+            if store["budgetGroup"] == tier
+        ]
+        selected_stores.sort(key=lambda item: item["distanceMeters"])
+
         logger.info(
-            "SearchNearby pages=%s stores_kept=%s location=(%s,%s)",
-            page_count, len(stores), lat, lng
+            "SearchNearby pages=%s stores_found=%s stores_selected=%s tier=%s location=(%s,%s)",
+            page_count, len(stores), len(selected_stores), tier, lat, lng
         )
         return response(200, {
             "source": "amazon-location-search-nearby",
             "advice": advice,
+            "selectedTier": tier,
             "origin": {"lat": lat, "lng": lng},
             "searchRadiusMeters": 10000,
-            "stores": stores[:30],
+            "stores": selected_stores[:30],
         })
     except Exception:
         logger.exception("Amazon Location SearchNearby failed")
