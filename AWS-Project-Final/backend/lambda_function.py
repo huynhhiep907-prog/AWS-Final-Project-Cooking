@@ -487,54 +487,55 @@ def handle_nearby_stores(params):
                 except Exception:
                     logger.exception("SearchText fallback failed for query=%r", search_term)
 
-        # Ước lượng mức phù hợp ngân sách theo loại hình cửa hàng, không phải giá
-        # hoặc tồn kho thực tế. Trong cùng nhóm, cửa hàng gần hơn được xếp trước.
-        def budget_priority(store):
+        # Phân nhóm cố định theo loại hình cửa hàng. Đây là mức ngân sách tham khảo,
+        # không phải giá bán hay tồn kho thực tế của từng chi nhánh.
+        def budget_group(store):
             name = normalize(store.get("name", ""))
 
-            market_terms = ("cho ", "tap hoa", "bach hoa")
-            affordable_chains = (
-                "bach hoa xanh", "satrafood", "coop food", "co.op food",
-            )
-            mid_range_chains = ("winmart", "win mart", "kingfood")
-            large_supermarkets = (
-                "coopmart", "co.opmart", "lotte mart", "mega market",
-                "emart", "go market", "tops market",
-            )
+            # WinMart+ và Bách Hóa Xanh thuộc nhóm tầm trung;
+            # WinMart (không có dấu +) thuộc nhóm siêu thị lớn.
+            if (
+                "bach hoa xanh" in name
+                or "winmart+" in name
+                or "win mart+" in name
+                or "coop food" in name
+                or "co.op food" in name
+                or "satrafood" in name
+                or "cua hang thuc pham" in name
+            ):
+                return "mid", "Tầm trung (35.000đ – 70.000đ)"
 
-            if tier == "low":
-                priorities = (
-                    (market_terms, 0),
-                    (affordable_chains, 1),
-                    (mid_range_chains, 2),
-                    (large_supermarkets, 3),
-                )
-            elif tier == "high":
-                priorities = (
-                    (large_supermarkets, 0),
-                    (mid_range_chains, 1),
-                    (affordable_chains, 2),
-                    (market_terms, 3),
-                )
-            else:
-                priorities = (
-                    (market_terms, 0),
-                    (affordable_chains, 1),
-                    (mid_range_chains, 2),
-                    (large_supermarkets, 3),
-                )
+            if (
+                "coopmart" in name or "co.opmart" in name
+                or ("winmart" in name and "+" not in name)
+                or ("win mart" in name and "+" not in name)
+                or "kingfood" in name or "tops market" in name
+                or "lotte mart" in name or "mega market" in name
+                or "emart" in name or "go market" in name
+                or "sieu thi" in name
+            ):
+                return "high", "Siêu thị lớn (trên 70.000đ)"
 
-            for terms, score in priorities:
-                if any(term in name for term in terms):
-                    return score
-            return 4
+            if "cho " in name or "tap hoa" in name or "bach hoa" in name:
+                return "low", "Tiết kiệm (dưới 35.000đ)"
 
-        # Tìm trong bán kính 10 km; ưu tiên nhóm cửa hàng phù hợp ngân sách,
-        # sau đó sắp xếp theo khoảng cách gần nhất trong từng nhóm.
-        stores = sorted(
-            stores_by_key.values(),
-            key=lambda item: (budget_priority(item), item["distanceMeters"])
-        )
+            # Những cửa hàng thực phẩm tổng hợp không rõ quy mô được xếp tạm
+            # vào nhóm tầm trung, tránh tự nhận là siêu thị lớn.
+            return "mid", "Tầm trung (35.000đ – 70.000đ)"
+
+        stores = []
+        for store in stores_by_key.values():
+            group_key, group_label = budget_group(store)
+            store["budgetGroup"] = group_key
+            store["budgetLabel"] = group_label
+            stores.append(store)
+
+        # Trong từng nhóm, cửa hàng gần hơn được hiển thị trước.
+        group_order = {"low": 0, "mid": 1, "high": 2}
+        stores.sort(key=lambda item: (
+            group_order[item["budgetGroup"]],
+            item["distanceMeters"]
+        ))
         logger.info(
             "SearchNearby pages=%s stores_kept=%s location=(%s,%s)",
             page_count, len(stores), lat, lng
@@ -544,7 +545,7 @@ def handle_nearby_stores(params):
             "advice": advice,
             "origin": {"lat": lat, "lng": lng},
             "searchRadiusMeters": 10000,
-            "stores": stores[:12],
+            "stores": stores[:30],
         })
     except Exception:
         logger.exception("Amazon Location SearchNearby failed")
