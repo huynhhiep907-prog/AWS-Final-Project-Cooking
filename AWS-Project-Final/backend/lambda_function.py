@@ -373,6 +373,97 @@ def handle_nearby_stores(params):
                 max_pages, lat, lng
             )
 
+        # SearchNearby đôi khi không trả POI ở một số khu vực. Nếu hoàn toàn
+        # không có cửa hàng sau bước này, thử tìm theo loại cửa hàng bằng SearchText
+        # và giới hạn trong vòng tròn 10 km quanh tọa độ người dùng.
+        if not stores_by_key:
+            fallback_queries = (
+                "siêu thị", "chợ", "cửa hàng thực phẩm",
+                "supermarket", "grocery store", "food market",
+            )
+            for search_term in fallback_queries:
+                try:
+                    text_result = geo_places_client.search_text(
+                        QueryText=search_term,
+                        MaxResults=100,
+                        Filter={
+                            "Circle": {"Center": [lng, lat], "Radius": 10000},
+                            "IncludeCountries": ["VNM"],
+                        },
+                        Language="vi",
+                    )
+                    logger.info(
+                        "SearchText fallback query=%r raw_results=%s",
+                        search_term, len(text_result.get("ResultItems", []))
+                    )
+
+                    for item in text_result.get("ResultItems", []):
+                        title = (item.get("Title") or "").strip()
+                        if not title:
+                            continue
+                        title_norm = normalize(title)
+                        if any(term in title_norm for term in excluded_name_terms):
+                            continue
+
+                        categories = item.get("Categories") or []
+                        category_names = [
+                            normalize(category.get("LocalizedName") or category.get("Name") or "")
+                            for category in categories
+                        ]
+                        if any(
+                            excluded in category
+                            for category in category_names
+                            for excluded in excluded_category_terms
+                        ):
+                            continue
+
+                        has_grocery_category = any(
+                            category in grocery_categories
+                            for category in category_names
+                        )
+                        has_grocery_name = any(
+                            term in title_norm for term in grocery_name_terms
+                        )
+                        if not (has_grocery_category or has_grocery_name):
+                            continue
+
+                        pos = item.get("Position")
+                        if not pos or len(pos) < 2:
+                            continue
+                        store_lat, store_lng = float(pos[1]), float(pos[0])
+                        dist_m = haversine_meters(lat, lng, store_lat, store_lng)
+                        if dist_m > 10000:
+                            continue
+
+                        addr_label = (item.get("Address") or {}).get("Label") or ""
+                        if not addr_label:
+                            continue
+                        chain_names = [
+                            chain.get("Name", "")
+                            for chain in (item.get("BusinessChains") or [])
+                            if chain.get("Name")
+                        ]
+                        category_label = ", ".join(
+                            category.get("LocalizedName") or category.get("Name", "")
+                            for category in categories
+                            if category.get("LocalizedName") or category.get("Name")
+                        )
+                        store = {
+                            "name": title,
+                            "address": addr_label,
+                            "distanceMeters": dist_m,
+                            "lat": store_lat,
+                            "lng": store_lng,
+                            "category": category_label,
+                            "businessChains": chain_names,
+                        }
+                        place_id = item.get("PlaceId")
+                        address_key = normalize(addr_label)
+                        key = place_id or (normalize(title), address_key)
+                        stores_by_key[key] = store
+                except Exception:
+                    logger.exception("SearchText fallback failed for query=%r", search_term)
+
         stores = sorted(
             stores_by_key.values(),
             key=lambda item: item["distanceMeters"]
