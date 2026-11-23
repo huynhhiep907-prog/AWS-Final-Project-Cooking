@@ -4731,5 +4731,2657 @@
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
     "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R33",
+    "Name": "Canh mồng tơi nấu mướp",
+    "Ingredients": [
+      "rau mồng tơi",
+      "mướp hương",
+      "nấm rơm",
+      "nước",
+      "muối"
+    ],
+    "Instructions": [
+      "Nhặt rửa rau mồng tơi, gọt mướp và sơ chế nấm.",
+      "Đun nước sôi, cho nấm và mướp vào nấu vừa mềm.",
+      "Cho rau mồng tơi vào, nêm muối và tắt bếp khi rau vừa chín."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 10,
+    "EstimatedCostVND": 22000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 90,
+      "ProteinG": 4,
+      "CarbsG": 16,
+      "FatG": 2,
+      "SaturatedFatG": 0,
+      "SodiumMg": 280,
+      "FiberG": 3,
+      "SugarG": 3,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Canh mồng tơi nấu mướp là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 8,
+    "TotalTimeMinutes": 18,
+    "IngredientDetails": [
+      {
+        "Name": "rau mồng tơi",
+        "Quantity": "150",
+        "Unit": "g",
+        "Preparation": "Nhặt lá, rửa sạch"
+      },
+      {
+        "Name": "mướp hương",
+        "Quantity": "1",
+        "Unit": "quả",
+        "Preparation": "Gọt vỏ, thái lát"
+      },
+      {
+        "Name": "nấm rơm",
+        "Quantity": "80",
+        "Unit": "g",
+        "Preparation": "Rửa sạch"
+      },
+      {
+        "Name": "nước",
+        "Quantity": "700",
+        "Unit": "ml",
+        "Preparation": "Nấu canh"
+      },
+      {
+        "Name": "muối",
+        "Quantity": "2",
+        "Unit": "g",
+        "Preparation": "Nêm"
+      }
+    ],
+    "Preparation": [
+      "rau mồng tơi: Nhặt lá, rửa sạch.",
+      "mướp hương: Gọt vỏ, thái lát.",
+      "nấm rơm: Rửa sạch.",
+      "nước: Nấu canh.",
+      "muối: Nêm."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Nhặt rửa rau mồng tơi, gọt mướp và sơ chế nấm.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Đun nước sôi, cho nấm và mướp vào nấu vừa mềm.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Cho rau mồng tơi vào, nêm muối và tắt bếp khi rau vừa chín.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R34",
+    "Name": "Canh bầu nấu tôm",
+    "Ingredients": [
+      "bầu",
+      "tôm tươi",
+      "hành tím",
+      "nước",
+      "hành lá"
+    ],
+    "Instructions": [
+      "Gọt bầu, thái sợi; bóc và băm tôm.",
+      "Phi hành, xào tôm đến săn rồi thêm nước.",
+      "Đun sôi, cho bầu vào nấu vừa mềm, nêm và rắc hành."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 12,
+    "EstimatedCostVND": 36000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [
+      "tôm"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 110,
+      "ProteinG": 13,
+      "CarbsG": 10,
+      "FatG": 3,
+      "SaturatedFatG": 1,
+      "SodiumMg": 400,
+      "FiberG": 2,
+      "SugarG": 3,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Canh bầu nấu tôm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 10,
+    "TotalTimeMinutes": 22,
+    "IngredientDetails": [
+      {
+        "Name": "bầu",
+        "Quantity": "250",
+        "Unit": "g",
+        "Preparation": "Gọt vỏ, thái sợi"
+      },
+      {
+        "Name": "tôm tươi",
+        "Quantity": "100",
+        "Unit": "g",
+        "Preparation": "Bóc vỏ, băm"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": "1",
+        "Unit": "củ",
+        "Preparation": "Băm"
+      },
+      {
+        "Name": "nước",
+        "Quantity": "700",
+        "Unit": "ml",
+        "Preparation": "Nấu canh"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": "10",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      }
+    ],
+    "Preparation": [
+      "bầu: Gọt vỏ, thái sợi.",
+      "tôm tươi: Bóc vỏ, băm.",
+      "hành tím: Băm.",
+      "nước: Nấu canh.",
+      "hành lá: Thái nhỏ."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Gọt bầu, thái sợi; bóc và băm tôm.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Phi hành, xào tôm đến săn rồi thêm nước.",
+        "DurationMinutes": 6,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Đun sôi, cho bầu vào nấu vừa mềm, nêm và rắc hành.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R35",
+    "Name": "Canh chua tôm",
+    "Ingredients": [
+      "tôm tươi",
+      "cà chua",
+      "thơm",
+      "đậu bắp",
+      "me chua",
+      "rau om"
+    ],
+    "Instructions": [
+      "Sơ chế tôm, cà chua, thơm và đậu bắp; lọc nước me.",
+      "Xào cà chua và thơm, thêm nước cùng nước me rồi đun sôi.",
+      "Cho tôm và đậu bắp vào nấu chín, nêm chua ngọt và thêm rau om."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 15,
+    "EstimatedCostVND": 45000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "energizing"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [
+      "tôm"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 160,
+      "ProteinG": 16,
+      "CarbsG": 20,
+      "FatG": 4,
+      "SaturatedFatG": 1,
+      "SodiumMg": 620,
+      "FiberG": 3,
+      "SugarG": 7,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Canh chua tôm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 12,
+    "TotalTimeMinutes": 27,
+    "IngredientDetails": [
+      {
+        "Name": "tôm tươi",
+        "Quantity": "120",
+        "Unit": "g",
+        "Preparation": "Bóc vỏ, bỏ chỉ"
+      },
+      {
+        "Name": "cà chua",
+        "Quantity": "1",
+        "Unit": "quả",
+        "Preparation": "Bổ múi"
+      },
+      {
+        "Name": "thơm",
+        "Quantity": "100",
+        "Unit": "g",
+        "Preparation": "Cắt miếng"
+      },
+      {
+        "Name": "đậu bắp",
+        "Quantity": "80",
+        "Unit": "g",
+        "Preparation": "Cắt xéo"
+      },
+      {
+        "Name": "me chua",
+        "Quantity": "15",
+        "Unit": "g",
+        "Preparation": "Dằm lấy nước"
+      },
+      {
+        "Name": "rau om",
+        "Quantity": "5",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      }
+    ],
+    "Preparation": [
+      "tôm tươi: Bóc vỏ, bỏ chỉ.",
+      "cà chua: Bổ múi.",
+      "thơm: Cắt miếng.",
+      "đậu bắp: Cắt xéo.",
+      "me chua: Dằm lấy nước.",
+      "rau om: Thái nhỏ."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Sơ chế tôm, cà chua, thơm và đậu bắp; lọc nước me.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Xào cà chua và thơm, thêm nước cùng nước me rồi đun sôi.",
+        "DurationMinutes": 8,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Cho tôm và đậu bắp vào nấu chín, nêm chua ngọt và thêm rau om.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R36",
+    "Name": "Gà hấp hành",
+    "Ingredients": [
+      "đùi gà",
+      "hành lá",
+      "gừng",
+      "muối",
+      "tiêu"
+    ],
+    "Instructions": [
+      "Rửa gà, thấm khô và xát muối tiêu; xếp gừng bên dưới.",
+      "Đặt gà vào xửng, hấp đến khi phần dày nhất chín hoàn toàn.",
+      "Thêm hành lá vào cuối, hấp thêm ngắn rồi để nghỉ trước khi chặt."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 25,
+    "EstimatedCostVND": 52000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 320,
+      "ProteinG": 30,
+      "CarbsG": 2,
+      "FatG": 20,
+      "SaturatedFatG": 6,
+      "SodiumMg": 510,
+      "FiberG": 0,
+      "SugarG": 0,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Gà hấp hành là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 10,
+    "TotalTimeMinutes": 35,
+    "IngredientDetails": [
+      {
+        "Name": "đùi gà",
+        "Quantity": "350",
+        "Unit": "g",
+        "Preparation": "Rửa sạch, để ráo"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": "30",
+        "Unit": "g",
+        "Preparation": "Cắt khúc"
+      },
+      {
+        "Name": "gừng",
+        "Quantity": "10",
+        "Unit": "g",
+        "Preparation": "Thái lát"
+      },
+      {
+        "Name": "muối",
+        "Quantity": "3",
+        "Unit": "g",
+        "Preparation": "Ướp"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": "1",
+        "Unit": "g",
+        "Preparation": "Giã"
+      }
+    ],
+    "Preparation": [
+      "đùi gà: Rửa sạch, để ráo.",
+      "hành lá: Cắt khúc.",
+      "gừng: Thái lát.",
+      "muối: Ướp.",
+      "tiêu: Giã."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Rửa gà, thấm khô và xát muối tiêu; xếp gừng bên dưới.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Đặt gà vào xửng, hấp đến khi phần dày nhất chín hoàn toàn.",
+        "DurationMinutes": 13,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Thêm hành lá vào cuối, hấp thêm ngắn rồi để nghỉ trước khi chặt.",
+        "DurationMinutes": 8,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R37",
+    "Name": "Bò xào hành tây",
+    "Ingredients": [
+      "thịt bò",
+      "hành tây",
+      "tỏi",
+      "nước tương",
+      "dầu ăn"
+    ],
+    "Instructions": [
+      "Thái bò ngang thớ, ướp với tỏi và nước tương.",
+      "Làm nóng chảo, xào bò nhanh đến khi vừa săn rồi trút ra.",
+      "Xào hành tây vừa mềm, cho bò trở lại đảo nhanh và tắt bếp."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 10,
+    "EstimatedCostVND": 56000,
+    "Servings": 2,
+    "MoodTags": [
+      "energizing",
+      "fresh"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [
+      "đậu nành"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 330,
+      "ProteinG": 27,
+      "CarbsG": 12,
+      "FatG": 18,
+      "SaturatedFatG": 5,
+      "SodiumMg": 590,
+      "FiberG": 2,
+      "SugarG": 4,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Bò xào hành tây là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 10,
+    "TotalTimeMinutes": 20,
+    "IngredientDetails": [
+      {
+        "Name": "thịt bò",
+        "Quantity": "180",
+        "Unit": "g",
+        "Preparation": "Thái lát mỏng"
+      },
+      {
+        "Name": "hành tây",
+        "Quantity": "1",
+        "Unit": "củ",
+        "Preparation": "Thái múi"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": "2",
+        "Unit": "tép",
+        "Preparation": "Băm"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": "10",
+        "Unit": "ml",
+        "Preparation": "Ướp"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": "10",
+        "Unit": "ml",
+        "Preparation": "Xào"
+      }
+    ],
+    "Preparation": [
+      "thịt bò: Thái lát mỏng.",
+      "hành tây: Thái múi.",
+      "tỏi: Băm.",
+      "nước tương: Ướp.",
+      "dầu ăn: Xào."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Thái bò ngang thớ, ướp với tỏi và nước tương.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Làm nóng chảo, xào bò nhanh đến khi vừa săn rồi trút ra.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Xào hành tây vừa mềm, cho bò trở lại đảo nhanh và tắt bếp.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R38",
+    "Name": "Cá diêu hồng hấp gừng",
+    "Ingredients": [
+      "cá diêu hồng",
+      "gừng",
+      "hành lá",
+      "nước tương",
+      "dầu mè"
+    ],
+    "Instructions": [
+      "Làm sạch cá, khứa nhẹ hai bên để cá chín đều.",
+      "Xếp gừng lên cá và hấp đến khi thịt cá chín, dễ tách thớ.",
+      "Rưới nước tương pha dầu mè, thêm hành lá và dùng nóng."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 18,
+    "EstimatedCostVND": 58000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [
+      "cá",
+      "đậu nành"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 280,
+      "ProteinG": 35,
+      "CarbsG": 2,
+      "FatG": 14,
+      "SaturatedFatG": 3,
+      "SodiumMg": 590,
+      "FiberG": 0,
+      "SugarG": 0,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Cá diêu hồng hấp gừng là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 12,
+    "TotalTimeMinutes": 30,
+    "IngredientDetails": [
+      {
+        "Name": "cá diêu hồng",
+        "Quantity": "400",
+        "Unit": "g",
+        "Preparation": "Làm sạch"
+      },
+      {
+        "Name": "gừng",
+        "Quantity": "20",
+        "Unit": "g",
+        "Preparation": "Thái sợi"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": "20",
+        "Unit": "g",
+        "Preparation": "Cắt khúc"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": "15",
+        "Unit": "ml",
+        "Preparation": "Pha nước rưới"
+      },
+      {
+        "Name": "dầu mè",
+        "Quantity": "5",
+        "Unit": "ml",
+        "Preparation": "Tạo mùi"
+      }
+    ],
+    "Preparation": [
+      "cá diêu hồng: Làm sạch.",
+      "gừng: Thái sợi.",
+      "hành lá: Cắt khúc.",
+      "nước tương: Pha nước rưới.",
+      "dầu mè: Tạo mùi."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Làm sạch cá, khứa nhẹ hai bên để cá chín đều.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Xếp gừng lên cá và hấp đến khi thịt cá chín, dễ tách thớ.",
+        "DurationMinutes": 9,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Rưới nước tương pha dầu mè, thêm hành lá và dùng nóng.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R39",
+    "Name": "Tôm rang thịt",
+    "Ingredients": [
+      "tôm tươi",
+      "thịt ba chỉ",
+      "hành tím",
+      "nước mắm",
+      "đường"
+    ],
+    "Instructions": [
+      "Sơ chế tôm và thái thịt ba chỉ.",
+      "Rang thịt đến khi ra bớt mỡ, thêm hành tím và tôm.",
+      "Nêm nước mắm, đường; đảo đến khi tôm chín và sốt áo quanh thịt."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 15,
+    "EstimatedCostVND": 52000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "energizing"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [
+      "tôm"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 390,
+      "ProteinG": 25,
+      "CarbsG": 8,
+      "FatG": 27,
+      "SaturatedFatG": 9,
+      "SodiumMg": 760,
+      "FiberG": 0,
+      "SugarG": 6,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Tôm rang thịt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 12,
+    "TotalTimeMinutes": 27,
+    "IngredientDetails": [
+      {
+        "Name": "tôm tươi",
+        "Quantity": "120",
+        "Unit": "g",
+        "Preparation": "Bóc vỏ, bỏ chỉ"
+      },
+      {
+        "Name": "thịt ba chỉ",
+        "Quantity": "120",
+        "Unit": "g",
+        "Preparation": "Thái lát"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": "1",
+        "Unit": "củ",
+        "Preparation": "Băm"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": "15",
+        "Unit": "ml",
+        "Preparation": "Nêm"
+      },
+      {
+        "Name": "đường",
+        "Quantity": "8",
+        "Unit": "g",
+        "Preparation": "Tạo màu"
+      }
+    ],
+    "Preparation": [
+      "tôm tươi: Bóc vỏ, bỏ chỉ.",
+      "thịt ba chỉ: Thái lát.",
+      "hành tím: Băm.",
+      "nước mắm: Nêm.",
+      "đường: Tạo màu."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Sơ chế tôm và thái thịt ba chỉ.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Rang thịt đến khi ra bớt mỡ, thêm hành tím và tôm.",
+        "DurationMinutes": 8,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Nêm nước mắm, đường; đảo đến khi tôm chín và sốt áo quanh thịt.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R40",
+    "Name": "Thịt viên sốt cà chua",
+    "Ingredients": [
+      "thịt heo xay",
+      "cà chua",
+      "hành tím",
+      "hành lá",
+      "bột năng"
+    ],
+    "Instructions": [
+      "Trộn thịt xay với hành lá, chút muối tiêu và viên vừa ăn.",
+      "Áp chảo viên thịt cho săn các mặt.",
+      "Nấu cà chua thành sốt, cho thịt viên vào om đến chín hoàn toàn."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 18,
+    "EstimatedCostVND": 39000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "energizing"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 310,
+      "ProteinG": 22,
+      "CarbsG": 12,
+      "FatG": 18,
+      "SaturatedFatG": 6,
+      "SodiumMg": 620,
+      "FiberG": 2,
+      "SugarG": 5,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Thịt viên sốt cà chua là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 12,
+    "TotalTimeMinutes": 30,
+    "IngredientDetails": [
+      {
+        "Name": "thịt heo xay",
+        "Quantity": "200",
+        "Unit": "g",
+        "Preparation": "Trộn gia vị"
+      },
+      {
+        "Name": "cà chua",
+        "Quantity": "2",
+        "Unit": "quả",
+        "Preparation": "Băm"
+      },
+      {
+        "Name": "hành tím",
+        "Quantity": "1",
+        "Unit": "củ",
+        "Preparation": "Băm"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": "10",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      },
+      {
+        "Name": "bột năng",
+        "Quantity": "5",
+        "Unit": "g",
+        "Preparation": "Tạo kết dính"
+      }
+    ],
+    "Preparation": [
+      "thịt heo xay: Trộn gia vị.",
+      "cà chua: Băm.",
+      "hành tím: Băm.",
+      "hành lá: Thái nhỏ.",
+      "bột năng: Tạo kết dính."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Trộn thịt xay với hành lá, chút muối tiêu và viên vừa ăn.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Áp chảo viên thịt cho săn các mặt.",
+        "DurationMinutes": 9,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Nấu cà chua thành sốt, cho thịt viên vào om đến chín hoàn toàn.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R41",
+    "Name": "Trứng cuộn rau củ",
+    "Ingredients": [
+      "trứng gà",
+      "cà rốt",
+      "đậu que",
+      "hành lá",
+      "dầu ăn"
+    ],
+    "Instructions": [
+      "Chần nhanh cà rốt và đậu que băm, để ráo.",
+      "Đánh trứng cùng rau củ và hành lá.",
+      "Tráng trứng thành lớp mỏng, cuộn từ từ và chiên chín đều."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 10,
+    "EstimatedCostVND": 23000,
+    "Servings": 2,
+    "MoodTags": [
+      "energizing",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian"
+    ],
+    "Allergens": [
+      "trứng"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 220,
+      "ProteinG": 17,
+      "CarbsG": 6,
+      "FatG": 15,
+      "SaturatedFatG": 4,
+      "SodiumMg": 390,
+      "FiberG": 2,
+      "SugarG": 3,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Trứng cuộn rau củ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 8,
+    "TotalTimeMinutes": 18,
+    "IngredientDetails": [
+      {
+        "Name": "trứng gà",
+        "Quantity": "3",
+        "Unit": "quả",
+        "Preparation": "Đánh tan"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": "30",
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "đậu que",
+        "Quantity": "30",
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": "10",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": "8",
+        "Unit": "ml",
+        "Preparation": "Chiên"
+      }
+    ],
+    "Preparation": [
+      "trứng gà: Đánh tan.",
+      "cà rốt: Băm nhỏ.",
+      "đậu que: Băm nhỏ.",
+      "hành lá: Thái nhỏ.",
+      "dầu ăn: Chiên."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Chần nhanh cà rốt và đậu que băm, để ráo.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Đánh trứng cùng rau củ và hành lá.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Tráng trứng thành lớp mỏng, cuộn từ từ và chiên chín đều.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R42",
+    "Name": "Bánh mì trứng ốp la",
+    "Ingredients": [
+      "bánh mì",
+      "trứng gà",
+      "dưa leo",
+      "dầu ăn",
+      "nước tương"
+    ],
+    "Instructions": [
+      "Rửa dưa leo, thái lát và làm nóng bánh mì.",
+      "Chiên trứng đến khi lòng trắng đông hoàn toàn.",
+      "Kẹp trứng và dưa leo vào bánh mì, dùng ngay."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 5,
+    "EstimatedCostVND": 20000,
+    "Servings": 2,
+    "MoodTags": [
+      "energizing",
+      "comforting"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian"
+    ],
+    "Allergens": [
+      "trứng",
+      "gluten"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 350,
+      "ProteinG": 15,
+      "CarbsG": 42,
+      "FatG": 14,
+      "SaturatedFatG": 4,
+      "SodiumMg": 510,
+      "FiberG": 2,
+      "SugarG": 4,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Bánh mì trứng ốp la là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 3,
+    "TotalTimeMinutes": 8,
+    "IngredientDetails": [
+      {
+        "Name": "bánh mì",
+        "Quantity": "1",
+        "Unit": "ổ",
+        "Preparation": "Làm nóng"
+      },
+      {
+        "Name": "trứng gà",
+        "Quantity": "2",
+        "Unit": "quả",
+        "Preparation": "Đập riêng"
+      },
+      {
+        "Name": "dưa leo",
+        "Quantity": "1/4",
+        "Unit": "quả",
+        "Preparation": "Thái lát"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": "5",
+        "Unit": "ml",
+        "Preparation": "Chiên"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": "5",
+        "Unit": "ml",
+        "Preparation": "Tùy chọn"
+      }
+    ],
+    "Preparation": [
+      "bánh mì: Làm nóng.",
+      "trứng gà: Đập riêng.",
+      "dưa leo: Thái lát.",
+      "dầu ăn: Chiên.",
+      "nước tương: Tùy chọn."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Rửa dưa leo, thái lát và làm nóng bánh mì.",
+        "DurationMinutes": 1,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Chiên trứng đến khi lòng trắng đông hoàn toàn.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Kẹp trứng và dưa leo vào bánh mì, dùng ngay.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R43",
+    "Name": "Cháo yến mạch rau củ",
+    "Ingredients": [
+      "yến mạch",
+      "cà rốt",
+      "nấm rơm",
+      "nước",
+      "hành lá"
+    ],
+    "Instructions": [
+      "Băm cà rốt, thái nấm và chuẩn bị yến mạch.",
+      "Đun nước với cà rốt và nấm đến khi mềm.",
+      "Cho yến mạch vào khuấy đến khi sánh, nêm nhẹ và thêm hành."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 12,
+    "EstimatedCostVND": 22000,
+    "Servings": 2,
+    "MoodTags": [
+      "light",
+      "comforting"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "Allergens": [
+      "gluten"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 180,
+      "ProteinG": 7,
+      "CarbsG": 30,
+      "FatG": 4,
+      "SaturatedFatG": 1,
+      "SodiumMg": 260,
+      "FiberG": 4,
+      "SugarG": 3,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Cháo yến mạch rau củ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 5,
+    "TotalTimeMinutes": 17,
+    "IngredientDetails": [
+      {
+        "Name": "yến mạch",
+        "Quantity": "50",
+        "Unit": "g",
+        "Preparation": "Rửa nhanh nếu cần"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": "40",
+        "Unit": "g",
+        "Preparation": "Băm nhỏ"
+      },
+      {
+        "Name": "nấm rơm",
+        "Quantity": "60",
+        "Unit": "g",
+        "Preparation": "Thái lát"
+      },
+      {
+        "Name": "nước",
+        "Quantity": "450",
+        "Unit": "ml",
+        "Preparation": "Nấu cháo"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": "5",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      }
+    ],
+    "Preparation": [
+      "yến mạch: Rửa nhanh nếu cần.",
+      "cà rốt: Băm nhỏ.",
+      "nấm rơm: Thái lát.",
+      "nước: Nấu cháo.",
+      "hành lá: Thái nhỏ."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Băm cà rốt, thái nấm và chuẩn bị yến mạch.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Đun nước với cà rốt và nấm đến khi mềm.",
+        "DurationMinutes": 6,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Cho yến mạch vào khuấy đến khi sánh, nêm nhẹ và thêm hành.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R44",
+    "Name": "Mì xào chay rau củ",
+    "Ingredients": [
+      "mì trứng chay hoặc mì rau củ",
+      "bắp cải",
+      "cà rốt",
+      "nấm",
+      "nước tương"
+    ],
+    "Instructions": [
+      "Luộc mì vừa chín, xả ráo và để riêng.",
+      "Xào nấm, cà rốt và bắp cải đến vừa mềm.",
+      "Cho mì vào đảo cùng nước tương, thêm ít nước nếu khô và dùng nóng."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 10,
+    "EstimatedCostVND": 26000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "energizing"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "Allergens": [
+      "đậu nành",
+      "gluten"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 310,
+      "ProteinG": 9,
+      "CarbsG": 52,
+      "FatG": 7,
+      "SaturatedFatG": 2,
+      "SodiumMg": 610,
+      "FiberG": 4,
+      "SugarG": 5,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Mì xào chay rau củ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "main",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 10,
+    "TotalTimeMinutes": 20,
+    "IngredientDetails": [
+      {
+        "Name": "mì trứng chay hoặc mì rau củ",
+        "Quantity": "150",
+        "Unit": "g",
+        "Preparation": "Luộc vừa chín"
+      },
+      {
+        "Name": "bắp cải",
+        "Quantity": "80",
+        "Unit": "g",
+        "Preparation": "Thái sợi"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": "1/2",
+        "Unit": "củ",
+        "Preparation": "Thái sợi"
+      },
+      {
+        "Name": "nấm",
+        "Quantity": "80",
+        "Unit": "g",
+        "Preparation": "Thái lát"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": "10",
+        "Unit": "ml",
+        "Preparation": "Nêm"
+      }
+    ],
+    "Preparation": [
+      "mì trứng chay hoặc mì rau củ: Luộc vừa chín.",
+      "bắp cải: Thái sợi.",
+      "cà rốt: Thái sợi.",
+      "nấm: Thái lát.",
+      "nước tương: Nêm."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Luộc mì vừa chín, xả ráo và để riêng.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Xào nấm, cà rốt và bắp cải đến vừa mềm.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Cho mì vào đảo cùng nước tương, thêm ít nước nếu khô và dùng nóng.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R45",
+    "Name": "Rau củ luộc chấm kho quẹt chay",
+    "Ingredients": [
+      "đậu que",
+      "cà rốt",
+      "bông cải xanh",
+      "nước tương",
+      "đường",
+      "tiêu"
+    ],
+    "Instructions": [
+      "Rửa và cắt rau củ thành miếng vừa ăn.",
+      "Hấp hoặc luộc từng loại đến chín tới, vớt ra để ráo.",
+      "Đun nước tương với đường, tiêu và ít nước đến sánh nhẹ; dùng làm sốt chấm."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    "CookingTimeMinutes": 15,
+    "EstimatedCostVND": 28000,
+    "Servings": 2,
+    "MoodTags": [
+      "light",
+      "fresh"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "Allergens": [
+      "đậu nành"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 140,
+      "ProteinG": 6,
+      "CarbsG": 24,
+      "FatG": 3,
+      "SaturatedFatG": 1,
+      "SodiumMg": 520,
+      "FiberG": 6,
+      "SugarG": 5,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Rau củ luộc chấm kho quẹt chay là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "side",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 12,
+    "TotalTimeMinutes": 27,
+    "IngredientDetails": [
+      {
+        "Name": "đậu que",
+        "Quantity": "80",
+        "Unit": "g",
+        "Preparation": "Cắt khúc"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": "80",
+        "Unit": "g",
+        "Preparation": "Cắt thanh"
+      },
+      {
+        "Name": "bông cải xanh",
+        "Quantity": "100",
+        "Unit": "g",
+        "Preparation": "Tách nhánh"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": "15",
+        "Unit": "ml",
+        "Preparation": "Pha kho quẹt"
+      },
+      {
+        "Name": "đường",
+        "Quantity": "5",
+        "Unit": "g",
+        "Preparation": "Tạo vị"
+      },
+      {
+        "Name": "tiêu",
+        "Quantity": "1",
+        "Unit": "g",
+        "Preparation": "Giã"
+      }
+    ],
+    "Preparation": [
+      "đậu que: Cắt khúc.",
+      "cà rốt: Cắt thanh.",
+      "bông cải xanh: Tách nhánh.",
+      "nước tương: Pha kho quẹt.",
+      "đường: Tạo vị.",
+      "tiêu: Giã."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Rửa và cắt rau củ thành miếng vừa ăn.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Hấp hoặc luộc từng loại đến chín tới, vớt ra để ráo.",
+        "DurationMinutes": 8,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Đun nước tương với đường, tiêu và ít nước đến sánh nhẹ; dùng làm sốt chấm.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R46",
+    "Name": "Gỏi ngó sen tôm thịt",
+    "Ingredients": [
+      "ngó sen",
+      "tôm",
+      "thịt heo",
+      "cà rốt",
+      "nước mắm",
+      "rau răm"
+    ],
+    "Instructions": [
+      "Ngâm ngó sen trong nước chanh, vắt ráo; luộc tôm và thịt chín.",
+      "Thái thịt, bóc tôm và bào cà rốt.",
+      "Pha nước mắm chua ngọt, trộn cùng ngó sen và rau; dùng ngay."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    "CookingTimeMinutes": 12,
+    "EstimatedCostVND": 55000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "energizing"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [
+      "tôm"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 230,
+      "ProteinG": 18,
+      "CarbsG": 20,
+      "FatG": 8,
+      "SaturatedFatG": 2,
+      "SodiumMg": 650,
+      "FiberG": 4,
+      "SugarG": 7,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Gỏi ngó sen tôm thịt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "salad",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 18,
+    "TotalTimeMinutes": 30,
+    "IngredientDetails": [
+      {
+        "Name": "ngó sen",
+        "Quantity": "150",
+        "Unit": "g",
+        "Preparation": "Thái lát, ngâm chanh"
+      },
+      {
+        "Name": "tôm",
+        "Quantity": "100",
+        "Unit": "g",
+        "Preparation": "Luộc chín"
+      },
+      {
+        "Name": "thịt heo",
+        "Quantity": "100",
+        "Unit": "g",
+        "Preparation": "Luộc chín, thái lát"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": "1/2",
+        "Unit": "củ",
+        "Preparation": "Bào sợi"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": "12",
+        "Unit": "ml",
+        "Preparation": "Pha sốt"
+      },
+      {
+        "Name": "rau răm",
+        "Quantity": "10",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      }
+    ],
+    "Preparation": [
+      "ngó sen: Thái lát, ngâm chanh.",
+      "tôm: Luộc chín.",
+      "thịt heo: Luộc chín, thái lát.",
+      "cà rốt: Bào sợi.",
+      "nước mắm: Pha sốt.",
+      "rau răm: Thái nhỏ."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Ngâm ngó sen trong nước chanh, vắt ráo; luộc tôm và thịt chín.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Thái thịt, bóc tôm và bào cà rốt.",
+        "DurationMinutes": 6,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Pha nước mắm chua ngọt, trộn cùng ngó sen và rau; dùng ngay.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R47",
+    "Name": "Canh bí đỏ nấu đậu phộng",
+    "Ingredients": [
+      "bí đỏ",
+      "đậu phộng",
+      "nước",
+      "hành lá",
+      "muối"
+    ],
+    "Instructions": [
+      "Ngâm đậu phộng cho mềm, gọt và cắt bí đỏ.",
+      "Nấu đậu phộng trong nước đến gần mềm.",
+      "Cho bí đỏ vào nấu chín mềm, nêm muối và thêm hành lá."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 15,
+    "EstimatedCostVND": 23000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "Allergens": [
+      "đậu phộng"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 150,
+      "ProteinG": 5,
+      "CarbsG": 25,
+      "FatG": 4,
+      "SaturatedFatG": 1,
+      "SodiumMg": 280,
+      "FiberG": 4,
+      "SugarG": 5,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Canh bí đỏ nấu đậu phộng là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 8,
+    "TotalTimeMinutes": 23,
+    "IngredientDetails": [
+      {
+        "Name": "bí đỏ",
+        "Quantity": "250",
+        "Unit": "g",
+        "Preparation": "Gọt vỏ, cắt miếng"
+      },
+      {
+        "Name": "đậu phộng",
+        "Quantity": "30",
+        "Unit": "g",
+        "Preparation": "Ngâm mềm"
+      },
+      {
+        "Name": "nước",
+        "Quantity": "750",
+        "Unit": "ml",
+        "Preparation": "Nấu canh"
+      },
+      {
+        "Name": "hành lá",
+        "Quantity": "10",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      },
+      {
+        "Name": "muối",
+        "Quantity": "3",
+        "Unit": "g",
+        "Preparation": "Nêm"
+      }
+    ],
+    "Preparation": [
+      "bí đỏ: Gọt vỏ, cắt miếng.",
+      "đậu phộng: Ngâm mềm.",
+      "nước: Nấu canh.",
+      "hành lá: Thái nhỏ.",
+      "muối: Nêm."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Ngâm đậu phộng cho mềm, gọt và cắt bí đỏ.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Nấu đậu phộng trong nước đến gần mềm.",
+        "DurationMinutes": 8,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Cho bí đỏ vào nấu chín mềm, nêm muối và thêm hành lá.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R48",
+    "Name": "Canh nấm đậu hũ",
+    "Ingredients": [
+      "nấm kim châm",
+      "đậu hũ non",
+      "cà rốt",
+      "nước",
+      "nước tương"
+    ],
+    "Instructions": [
+      "Sơ chế nấm, cà rốt và đậu hũ.",
+      "Đun nước, cho cà rốt vào nấu gần mềm rồi thêm nấm.",
+      "Thả đậu hũ nhẹ tay, nêm nước tương và tắt bếp khi nóng đều."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
+    "CookingTimeMinutes": 10,
+    "EstimatedCostVND": 24000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [
+      "đậu nành"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 105,
+      "ProteinG": 8,
+      "CarbsG": 10,
+      "FatG": 4,
+      "SaturatedFatG": 1,
+      "SodiumMg": 390,
+      "FiberG": 2,
+      "SugarG": 3,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Canh nấm đậu hũ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "soup",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 7,
+    "TotalTimeMinutes": 17,
+    "IngredientDetails": [
+      {
+        "Name": "nấm kim châm",
+        "Quantity": "100",
+        "Unit": "g",
+        "Preparation": "Cắt gốc"
+      },
+      {
+        "Name": "đậu hũ non",
+        "Quantity": "150",
+        "Unit": "g",
+        "Preparation": "Cắt khối"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": "1/2",
+        "Unit": "củ",
+        "Preparation": "Thái lát"
+      },
+      {
+        "Name": "nước",
+        "Quantity": "700",
+        "Unit": "ml",
+        "Preparation": "Nấu canh"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": "8",
+        "Unit": "ml",
+        "Preparation": "Nêm"
+      }
+    ],
+    "Preparation": [
+      "nấm kim châm: Cắt gốc.",
+      "đậu hũ non: Cắt khối.",
+      "cà rốt: Thái lát.",
+      "nước: Nấu canh.",
+      "nước tương: Nêm."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Sơ chế nấm, cà rốt và đậu hũ.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Đun nước, cho cà rốt vào nấu gần mềm rồi thêm nấm.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Thả đậu hũ nhẹ tay, nêm nước tương và tắt bếp khi nóng đều.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R49",
+    "Name": "Bí đỏ xào tỏi",
+    "Ingredients": [
+      "bí đỏ",
+      "tỏi",
+      "dầu ăn",
+      "muối"
+    ],
+    "Instructions": [
+      "Gọt bí đỏ, bỏ hạt và thái lát mỏng đều.",
+      "Phi tỏi với dầu, cho bí vào đảo và thêm chút nước.",
+      "Đậy nắp ngắn đến khi bí mềm vừa, nêm muối rồi tắt bếp."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    "CookingTimeMinutes": 10,
+    "EstimatedCostVND": 18000,
+    "Servings": 2,
+    "MoodTags": [
+      "comforting",
+      "fresh"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 115,
+      "ProteinG": 2,
+      "CarbsG": 22,
+      "FatG": 3,
+      "SaturatedFatG": 1,
+      "SodiumMg": 230,
+      "FiberG": 3,
+      "SugarG": 5,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Bí đỏ xào tỏi là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "side",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 8,
+    "TotalTimeMinutes": 18,
+    "IngredientDetails": [
+      {
+        "Name": "bí đỏ",
+        "Quantity": "250",
+        "Unit": "g",
+        "Preparation": "Gọt vỏ, thái lát"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": "3",
+        "Unit": "tép",
+        "Preparation": "Băm"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": "10",
+        "Unit": "ml",
+        "Preparation": "Xào"
+      },
+      {
+        "Name": "muối",
+        "Quantity": "2",
+        "Unit": "g",
+        "Preparation": "Nêm"
+      }
+    ],
+    "Preparation": [
+      "bí đỏ: Gọt vỏ, thái lát.",
+      "tỏi: Băm.",
+      "dầu ăn: Xào.",
+      "muối: Nêm."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Gọt bí đỏ, bỏ hạt và thái lát mỏng đều.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Phi tỏi với dầu, cho bí vào đảo và thêm chút nước.",
+        "DurationMinutes": 5,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Đậy nắp ngắn đến khi bí mềm vừa, nêm muối rồi tắt bếp.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R50",
+    "Name": "Bắp non xào nấm",
+    "Ingredients": [
+      "bắp non",
+      "nấm đùi gà",
+      "tỏi",
+      "nước tương",
+      "dầu ăn"
+    ],
+    "Instructions": [
+      "Rửa bắp non, bổ đôi và thái nấm.",
+      "Phi tỏi, xào bắp non trước với chút nước.",
+      "Thêm nấm, xào chín và nêm nước tương."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    "CookingTimeMinutes": 8,
+    "EstimatedCostVND": 29000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "Allergens": [
+      "đậu nành"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 120,
+      "ProteinG": 5,
+      "CarbsG": 18,
+      "FatG": 4,
+      "SaturatedFatG": 1,
+      "SodiumMg": 380,
+      "FiberG": 3,
+      "SugarG": 4,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Bắp non xào nấm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "side",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 8,
+    "TotalTimeMinutes": 16,
+    "IngredientDetails": [
+      {
+        "Name": "bắp non",
+        "Quantity": "150",
+        "Unit": "g",
+        "Preparation": "Bổ đôi"
+      },
+      {
+        "Name": "nấm đùi gà",
+        "Quantity": "100",
+        "Unit": "g",
+        "Preparation": "Thái lát"
+      },
+      {
+        "Name": "tỏi",
+        "Quantity": "2",
+        "Unit": "tép",
+        "Preparation": "Băm"
+      },
+      {
+        "Name": "nước tương",
+        "Quantity": "8",
+        "Unit": "ml",
+        "Preparation": "Nêm"
+      },
+      {
+        "Name": "dầu ăn",
+        "Quantity": "10",
+        "Unit": "ml",
+        "Preparation": "Xào"
+      }
+    ],
+    "Preparation": [
+      "bắp non: Bổ đôi.",
+      "nấm đùi gà: Thái lát.",
+      "tỏi: Băm.",
+      "nước tương: Nêm.",
+      "dầu ăn: Xào."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Rửa bắp non, bổ đôi và thái nấm.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Phi tỏi, xào bắp non trước với chút nước.",
+        "DurationMinutes": 4,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Thêm nấm, xào chín và nêm nước tương.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R51",
+    "Name": "Salad bắp cải cà rốt",
+    "Ingredients": [
+      "bắp cải",
+      "cà rốt",
+      "chanh",
+      "đường",
+      "dầu ô liu"
+    ],
+    "Instructions": [
+      "Thái bắp cải mỏng, bào cà rốt và để ráo.",
+      "Khuấy nước chanh, đường, muối và dầu ô liu.",
+      "Trộn rau với sốt ngay trước khi ăn để giữ độ giòn."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    "CookingTimeMinutes": 1,
+    "EstimatedCostVND": 19000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "light"
+    ],
+    "HealthTags": [],
+    "DietTags": [
+      "vegetarian",
+      "vegan",
+      "low_calorie"
+    ],
+    "Allergens": [],
+    "Nutrition": {
+      "CaloriesKcal": 90,
+      "ProteinG": 2,
+      "CarbsG": 14,
+      "FatG": 3,
+      "SaturatedFatG": 1,
+      "SodiumMg": 220,
+      "FiberG": 4,
+      "SugarG": 6,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Salad bắp cải cà rốt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "salad",
+    "Difficulty": "easy",
+    "PrepTimeMinutes": 12,
+    "TotalTimeMinutes": 13,
+    "IngredientDetails": [
+      {
+        "Name": "bắp cải",
+        "Quantity": "150",
+        "Unit": "g",
+        "Preparation": "Thái sợi"
+      },
+      {
+        "Name": "cà rốt",
+        "Quantity": "1/2",
+        "Unit": "củ",
+        "Preparation": "Bào sợi"
+      },
+      {
+        "Name": "chanh",
+        "Quantity": "1/2",
+        "Unit": "quả",
+        "Preparation": "Vắt nước"
+      },
+      {
+        "Name": "đường",
+        "Quantity": "5",
+        "Unit": "g",
+        "Preparation": "Pha sốt"
+      },
+      {
+        "Name": "dầu ô liu",
+        "Quantity": "8",
+        "Unit": "ml",
+        "Preparation": "Pha sốt"
+      }
+    ],
+    "Preparation": [
+      "bắp cải: Thái sợi.",
+      "cà rốt: Bào sợi.",
+      "chanh: Vắt nước.",
+      "đường: Pha sốt.",
+      "dầu ô liu: Pha sốt."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Thái bắp cải mỏng, bào cà rốt và để ráo.",
+        "DurationMinutes": 1,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Khuấy nước chanh, đường, muối và dầu ô liu.",
+        "DurationMinutes": 1,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Trộn rau với sốt ngay trước khi ăn để giữ độ giòn.",
+        "DurationMinutes": 1,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+  },
+  {
+    "RecipeID": "R52",
+    "Name": "Gỏi xoài tôm khô",
+    "Ingredients": [
+      "xoài xanh",
+      "tôm khô",
+      "rau răm",
+      "đậu phộng",
+      "nước mắm",
+      "chanh"
+    ],
+    "Instructions": [
+      "Ngâm tôm khô cho mềm, rang sơ; bào xoài và rửa rau răm.",
+      "Pha nước mắm với chanh và đường.",
+      "Trộn xoài với tôm và sốt, thêm rau răm cùng đậu phộng."
+    ],
+    "ImageURL": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    "CookingTimeMinutes": 5,
+    "EstimatedCostVND": 36000,
+    "Servings": 2,
+    "MoodTags": [
+      "fresh",
+      "energizing"
+    ],
+    "HealthTags": [],
+    "DietTags": [],
+    "Allergens": [
+      "tôm",
+      "đậu phộng"
+    ],
+    "Nutrition": {
+      "CaloriesKcal": 190,
+      "ProteinG": 8,
+      "CarbsG": 30,
+      "FatG": 5,
+      "SaturatedFatG": 1,
+      "SodiumMg": 690,
+      "FiberG": 4,
+      "SugarG": 16,
+      "Basis": "per_serving",
+      "IsEstimate": true
+    },
+    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Description": "Gỏi xoài tôm khô là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
+    "Cuisine": "Vietnamese",
+    "Category": "salad",
+    "Difficulty": "medium",
+    "PrepTimeMinutes": 15,
+    "TotalTimeMinutes": 20,
+    "IngredientDetails": [
+      {
+        "Name": "xoài xanh",
+        "Quantity": "1",
+        "Unit": "quả",
+        "Preparation": "Gọt, bào sợi"
+      },
+      {
+        "Name": "tôm khô",
+        "Quantity": "25",
+        "Unit": "g",
+        "Preparation": "Ngâm mềm"
+      },
+      {
+        "Name": "rau răm",
+        "Quantity": "10",
+        "Unit": "g",
+        "Preparation": "Thái nhỏ"
+      },
+      {
+        "Name": "đậu phộng",
+        "Quantity": "15",
+        "Unit": "g",
+        "Preparation": "Rang, giã"
+      },
+      {
+        "Name": "nước mắm",
+        "Quantity": "12",
+        "Unit": "ml",
+        "Preparation": "Pha sốt"
+      },
+      {
+        "Name": "chanh",
+        "Quantity": "1/2",
+        "Unit": "quả",
+        "Preparation": "Vắt nước"
+      }
+    ],
+    "Preparation": [
+      "xoài xanh: Gọt, bào sợi.",
+      "tôm khô: Ngâm mềm.",
+      "rau răm: Thái nhỏ.",
+      "đậu phộng: Rang, giã.",
+      "nước mắm: Pha sốt.",
+      "chanh: Vắt nước."
+    ],
+    "CookingSteps": [
+      {
+        "Step": 1,
+        "Title": "Sơ chế và chuẩn bị",
+        "Description": "Ngâm tôm khô cho mềm, rang sơ; bào xoài và rửa rau răm.",
+        "DurationMinutes": 1,
+        "HeatLevel": "Không gia nhiệt",
+        "Technique": "Sơ chế",
+        "CompletionCue": "Nguyên liệu đã sơ chế sạch."
+      },
+      {
+        "Step": 2,
+        "Title": "Tiến hành nấu",
+        "Description": "Pha nước mắm với chanh và đường.",
+        "DurationMinutes": 3,
+        "HeatLevel": "Vừa",
+        "Technique": "Nấu/xào",
+        "CompletionCue": "Nguyên liệu chín theo yêu cầu, không còn sống."
+      },
+      {
+        "Step": 3,
+        "Title": "Nêm nếm và hoàn thiện",
+        "Description": "Trộn xoài với tôm và sốt, thêm rau răm cùng đậu phộng.",
+        "DurationMinutes": 2,
+        "HeatLevel": "Nhỏ",
+        "Technique": "Hoàn thiện",
+        "CompletionCue": "Món chín hoàn toàn, gia vị vừa ăn."
+      }
+    ],
+    "ChefTips": [
+      "Chuẩn bị đủ nguyên liệu trước khi bật bếp.",
+      "Nêm gia vị từ từ và nếm lại trước khi tắt bếp."
+    ],
+    "CommonMistakes": [
+      {
+        "Mistake": "Để lửa quá lớn",
+        "Cause": "Nhiệt cao khiến món dễ cháy hoặc khô.",
+        "Fix": "Điều chỉnh lửa theo từng bước và kiểm tra thường xuyên."
+      }
+    ],
+    "Substitutions": [],
+    "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
   }
 ]
