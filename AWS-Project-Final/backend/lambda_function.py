@@ -280,21 +280,28 @@ def handle_nearby_stores(params):
             page_count += 1
 
             for item in result.get("ResultItems", []):
-                if item.get("PlaceType") != "PointOfInterest":
-                    continue
-
-                title = (item.get("Title") or "").strip()
-                if not title:
-                    continue
-                title_norm = normalize(title)
-                if any(term in title_norm for term in excluded_name_terms):
-                    continue
-
+                # Ghi log POI thô để xác định vì sao khu vực này không có kết quả.
+                # Chỉ dùng trong CloudWatch, không đưa dữ liệu debug ra giao diện.
                 categories = item.get("Categories") or []
                 category_names = [
                     normalize(category.get("LocalizedName") or category.get("Name") or "")
                     for category in categories
                 ]
+                title = (item.get("Title") or "").strip()
+                logger.info(
+                    "Nearby POI raw: title=%r place_type=%r categories=%s",
+                    title, item.get("PlaceType"), category_names
+                )
+
+                if item.get("PlaceType") != "PointOfInterest":
+                    continue
+
+                if not title:
+                    continue
+                title_norm = normalize(title)
+                if any(term in title_norm for term in excluded_name_terms):
+                    logger.info("Nearby POI rejected by name filter: %r", title)
+                    continue
 
                 # Loại chắc chắn nhà hàng/quán ăn và các nhóm không liên quan.
                 if any(
@@ -302,6 +309,7 @@ def handle_nearby_stores(params):
                     for category in category_names
                     for excluded in excluded_category_terms
                 ):
+                    logger.info("Nearby POI rejected by excluded category: %r categories=%s", title, category_names)
                     continue
 
                 has_grocery_category = any(
@@ -313,6 +321,7 @@ def handle_nearby_stores(params):
                 # Không nhận cửa hàng chuyên biệt/quán ăn chỉ vì tên hoặc category
                 # có một từ chung liên quan đến thực phẩm.
                 if not (has_grocery_category or has_grocery_name):
+                    logger.info("Nearby POI rejected: not recognized as general grocery: %r categories=%s", title, category_names)
                     continue
 
                 pos = item.get("Position")
