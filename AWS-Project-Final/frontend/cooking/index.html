@@ -681,11 +681,32 @@
         const adviceHtml = `<div class="p-2 bg-amber-50 border border-amber-200 rounded text-amber-900 mb-2">${data.advice || ''}</div>`;
 
         if (data.stores && data.stores.length > 0) {
-          listBox.innerHTML = adviceHtml + data.stores.map(s => {
+          // Hiển thị đủ 3 nhóm cùng lúc, không gộp chung rồi chỉ sắp xếp thứ tự.
+          const storeGroups = [
+            {
+              key: "low",
+              title: "Tiết kiệm — dưới 35.000đ",
+              subtitle: "Chợ truyền thống, tạp hóa bình dân",
+              stores: data.stores.filter(s => s.budgetGroup === "low")
+            },
+            {
+              key: "mid",
+              title: "Tầm trung — 35.000đ đến 70.000đ",
+              subtitle: "Bách Hóa Xanh, WinMart+, Co.op Food, Satrafood",
+              stores: data.stores.filter(s => s.budgetGroup === "mid")
+            },
+            {
+              key: "high",
+              title: "Cao — trên 70.000đ",
+              subtitle: "Co.opmart, WinMart, GO!, Lotte Mart, Tops Market, Kingfoodmart và siêu thị lớn",
+              stores: data.stores.filter(s => s.budgetGroup === "high")
+            }
+          ];
+
+          const renderStoreCard = s => {
             const distLabel = s.distanceMeters < 1000
               ? `${s.distanceMeters} m`
               : `${(s.distanceMeters / 1000).toFixed(1)} km`;
-            // Ưu tiên tọa độ đã được Lambda geocode để khoảng cách và chỉ đường cùng điểm xuất phát.
             const origin = data.origin
               ? `${data.origin.lat},${data.origin.lng}`
               : (manualAddress || `${lat},${lng}`);
@@ -695,7 +716,6 @@
               destination: `${s.lat},${s.lng}`,
               travelmode: "driving"
             });
-            // Dùng tọa độ cửa hàng từ Amazon Location để Google Maps không phải tự tìm tên/địa chỉ cửa hàng.
             const mapsUrl = `https://www.google.com/maps/dir/?${mapsParams.toString()}`;
 
             return `
@@ -707,12 +727,27 @@
                   </div>
                   <p class="text-gray-500 mt-0.5 line-clamp-1" title="${s.address}">${s.address}</p>
                 </div>
-                <a href="${mapsUrl}" target="_blank" class="bg-foody-red text-white font-bold px-3 py-1.5 rounded shrink-0">
+                <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" class="bg-foody-red text-white font-bold px-3 py-1.5 rounded shrink-0">
                   Chỉ đường ↗
                 </a>
               </div>
             `;
-          }).join("");
+          };
+
+          const groupsHtml = storeGroups.map(group => `
+            <section class="mb-4">
+              <div class="border-b border-gray-200 pb-2 mb-2">
+                <h4 class="font-extrabold text-sm text-gray-800">${group.title}</h4>
+                <p class="text-[11px] text-gray-500 mt-0.5">${group.subtitle}</p>
+                <p class="text-[11px] font-semibold text-gray-600 mt-1">${group.stores.length} địa điểm</p>
+              </div>
+              ${group.stores.length
+                ? group.stores.map(renderStoreCard).join("")
+                : '<p class="text-xs text-gray-400 italic py-2">Chưa tìm thấy địa điểm phù hợp trong nhóm này.</p>'}
+            </section>
+          `).join("");
+
+          listBox.innerHTML = adviceHtml + groupsHtml;
           return;
         }
 
