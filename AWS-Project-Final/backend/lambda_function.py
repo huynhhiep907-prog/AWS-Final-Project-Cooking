@@ -487,39 +487,11 @@ def handle_nearby_stores(params):
                 except Exception:
                     logger.exception("SearchText fallback failed for query=%r", search_term)
 
-        def budget_priority(store):
-            name = normalize(store.get("name", ""))
-            if tier == "low":
-                priorities = (
-                    ("cho ", 0), ("tap hoa", 1), ("bach hoa xanh", 2),
-                    ("satrafood", 2), ("coop food", 3), ("winmart", 3),
-                )
-            elif tier == "high":
-                priorities = (
-                    ("coopmart", 0), ("lotte mart", 0), ("mega market", 0),
-                    ("emart", 0), ("go market", 0), ("tops market", 1),
-                    ("kingfood", 1), ("winmart", 2), ("bach hoa xanh", 2),
-                )
-            else:
-                priorities = (
-                    ("coop food", 0), ("winmart", 0), ("bach hoa xanh", 0),
-                    ("satrafood", 0), ("kingfood", 1), ("tap hoa", 2),
-                    ("cho ", 2), ("coopmart", 2), ("lotte mart", 2),
-                )
-            for term, score in priorities:
-                if term in name:
-                    return score
-            return 4
-
-        # Khoảng cách vẫn là yếu tố chính; loại cửa hàng phù hợp ngân sách
-        # chỉ tạo lợi thế nhỏ để cửa hàng phù hợp không bị đẩy lên trước điểm
-        # gần hơn quá xa. Không coi đây là dữ liệu giá bán thực tế.
+        # Giữ phạm vi tìm kiếm 10 km và sắp xếp thuần túy theo khoảng cách gần nhất.
+        # Mức ngân sách chỉ dùng để hiển thị lời khuyên, không làm đảo thứ tự cửa hàng.
         stores = sorted(
             stores_by_key.values(),
-            key=lambda item: (
-                item["distanceMeters"] + budget_priority(item) * 250,
-                item["distanceMeters"],
-            )
+            key=lambda item: item["distanceMeters"]
         )
         logger.info(
             "SearchNearby pages=%s stores_kept=%s location=(%s,%s)",
