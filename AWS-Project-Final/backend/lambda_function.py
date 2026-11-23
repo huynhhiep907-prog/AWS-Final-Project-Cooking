@@ -487,11 +487,53 @@ def handle_nearby_stores(params):
                 except Exception:
                     logger.exception("SearchText fallback failed for query=%r", search_term)
 
-        # Giữ phạm vi tìm kiếm 10 km và sắp xếp thuần túy theo khoảng cách gần nhất.
-        # Mức ngân sách chỉ dùng để hiển thị lời khuyên, không làm đảo thứ tự cửa hàng.
+        # Ước lượng mức phù hợp ngân sách theo loại hình cửa hàng, không phải giá
+        # hoặc tồn kho thực tế. Trong cùng nhóm, cửa hàng gần hơn được xếp trước.
+        def budget_priority(store):
+            name = normalize(store.get("name", ""))
+
+            market_terms = ("cho ", "tap hoa", "bach hoa")
+            affordable_chains = (
+                "bach hoa xanh", "satrafood", "coop food", "co.op food",
+            )
+            mid_range_chains = ("winmart", "win mart", "kingfood")
+            large_supermarkets = (
+                "coopmart", "co.opmart", "lotte mart", "mega market",
+                "emart", "go market", "tops market",
+            )
+
+            if tier == "low":
+                priorities = (
+                    (market_terms, 0),
+                    (affordable_chains, 1),
+                    (mid_range_chains, 2),
+                    (large_supermarkets, 3),
+                )
+            elif tier == "high":
+                priorities = (
+                    (large_supermarkets, 0),
+                    (mid_range_chains, 1),
+                    (affordable_chains, 2),
+                    (market_terms, 3),
+                )
+            else:
+                priorities = (
+                    (market_terms, 0),
+                    (affordable_chains, 1),
+                    (mid_range_chains, 2),
+                    (large_supermarkets, 3),
+                )
+
+            for terms, score in priorities:
+                if any(term in name for term in terms):
+                    return score
+            return 4
+
+        # Tìm trong bán kính 10 km; ưu tiên nhóm cửa hàng phù hợp ngân sách,
+        # sau đó sắp xếp theo khoảng cách gần nhất trong từng nhóm.
         stores = sorted(
             stores_by_key.values(),
-            key=lambda item: item["distanceMeters"]
+            key=lambda item: (budget_priority(item), item["distanceMeters"])
         )
         logger.info(
             "SearchNearby pages=%s stores_kept=%s location=(%s,%s)",
