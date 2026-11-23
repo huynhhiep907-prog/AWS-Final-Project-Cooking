@@ -234,6 +234,11 @@ def handle_nearby_stores(params):
         "trai cay", "rau cu", "cua hang rau", "cua hang thit",
         "hai san", "ca tuoi", "me va be", "baby", "kids",
         "chao dinh duong", "mon ngon", "nha hang", "quan an",
+        # Cửa hàng chuyên mặt hàng, không phải điểm mua thực phẩm tổng hợp.
+        "dien may", "cua hang gao", "dai ly gao", "vua gao",
+        "luong thuc", "rau sach", "vegetables", "fruits",
+        "fruit garden", "nong san", "vinamilk", "nonglam milk",
+        "ba huan", "trung sach", "farmbox",
     )
     excluded_category_terms = (
         "restaurant", "cafe", "coffee", "fast food", "food court",
@@ -357,10 +362,20 @@ def handle_nearby_stores(params):
                     "businessChains": chain_names,
                 }
 
-                # Dùng PlaceId nếu có để tránh gộp nhầm hai chi nhánh cùng tên.
-                place_id = item.get("PlaceId")
+                # Gộp các bản ghi cùng chuỗi tại cùng địa chỉ (ví dụ Co.opmart
+                # có nhiều POI cổng chính/cổng phụ); chi nhánh ở địa chỉ khác vẫn riêng.
                 address_key = normalize(addr_label)
-                key = place_id or (normalize(title), address_key)
+                normalized_title = normalize(title)
+                known_brands = (
+                    "coopmart", "coop food", "winmart", "bach hoa xanh",
+                    "kingfoodmart", "tops market", "lotte mart", "mega market",
+                    "emart", "satrafood",
+                )
+                brand_key = next((brand for brand in known_brands if brand in normalized_title), None)
+                place_id = item.get("PlaceId")
+                key = (brand_key, address_key) if brand_key else (
+                    place_id or (normalized_title, address_key)
+                )
                 stores_by_key[key] = store
 
             next_token = result.get("NextToken")
@@ -467,9 +482,18 @@ def handle_nearby_stores(params):
                             "category": category_label,
                             "businessChains": chain_names,
                         }
-                        place_id = item.get("PlaceId")
                         address_key = normalize(addr_label)
-                        key = place_id or (normalize(title), address_key)
+                        normalized_title = normalize(title)
+                        known_brands = (
+                            "coopmart", "coop food", "winmart", "bach hoa xanh",
+                            "kingfoodmart", "tops market", "lotte mart", "mega market",
+                            "emart", "satrafood",
+                        )
+                        brand_key = next((brand for brand in known_brands if brand in normalized_title), None)
+                        place_id = item.get("PlaceId")
+                        key = (brand_key, address_key) if brand_key else (
+                            place_id or (normalized_title, address_key)
+                        )
                         stores_by_key[key] = store
                 except Exception:
                     logger.exception("SearchText fallback failed for query=%r", search_term)
