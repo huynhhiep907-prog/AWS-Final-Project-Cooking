@@ -511,11 +511,15 @@ def handle_nearby_stores(params):
                     return score
             return 4
 
-        # Xếp ưu tiên theo mức ngân sách trước, khoảng cách sau.
-        # Đây là ưu tiên theo loại hình/chuỗi, không phải giá bán tồn kho thực tế.
+        # Khoảng cách vẫn là yếu tố chính; loại cửa hàng phù hợp ngân sách
+        # chỉ tạo lợi thế nhỏ để cửa hàng phù hợp không bị đẩy lên trước điểm
+        # gần hơn quá xa. Không coi đây là dữ liệu giá bán thực tế.
         stores = sorted(
             stores_by_key.values(),
-            key=lambda item: (budget_priority(item), item["distanceMeters"])
+            key=lambda item: (
+                item["distanceMeters"] + budget_priority(item) * 250,
+                item["distanceMeters"],
+            )
         )
         logger.info(
             "SearchNearby pages=%s stores_kept=%s location=(%s,%s)",
