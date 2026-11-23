@@ -226,27 +226,35 @@ def handle_nearby_stores(params):
     }
     advice = tier_config.get(tier, tier_config["mid"])
 
-    # Loại chuỗi tiện lợi và loại hình không phục vụ mua nguyên liệu nấu ăn.
+    # Chỉ giữ cửa hàng/chợ bán thực phẩm tổng hợp; loại cửa hàng chuyên biệt,
+    # quán ăn và chuỗi tiện lợi không phù hợp để mua nguyên liệu nấu ăn.
     excluded_name_terms = (
         "famima", "familymart", "family mart", "circle k", "gs25",
         "7-eleven", "ministop", "cheers", "shop&go", "shop and go",
+        "trai cay", "rau cu", "cua hang rau", "cua hang thit",
+        "hai san", "ca tuoi", "me va be", "baby", "kids",
+        "chao dinh duong", "mon ngon", "nha hang", "quan an",
     )
     excluded_category_terms = (
         "restaurant", "cafe", "coffee", "fast food", "food court",
         "bar", "pub", "gas station", "pet store", "clothing",
-        "hotel", "lodging",
+        "hotel", "lodging", "shopping mall", "shopping center",
     )
-    grocery_category_terms = (
-        "grocery", "supermarket", "market", "food store", "food market",
-        "department store", "hypermarket", "convenience store",
-        "cua hang thuc pham", "sieu thi", "cho", "bach hoa",
-    )
+    # So khớp category theo tên loại hình hoàn chỉnh, tránh bắt nhầm chỉ vì
+    # category có chứa một từ chung như "market" hoặc "food".
+    grocery_categories = {
+        "grocery", "grocery store", "supermarket", "market",
+        "food store", "food market", "department store", "hypermarket",
+        "convenience store", "cua hang thuc pham", "sieu thi",
+        "cho", "bach hoa", "grocery or supermarket",
+    }
+    # Tên các chuỗi/loại hình tổng hợp đã biết. Các tên mơ hồ như "AEON"
+    # không tự động được chấp nhận nếu category không xác nhận là cửa hàng thực phẩm.
     grocery_name_terms = (
-        "bach hoa xanh", "bach hoa", "winmart", "win mart",
-        "coop food", "co.op food", "coopmart", "co.opmart",
-        "kingfood", "tops market", "lotte mart", "mega market",
-        "go!", "go market", "aeon", "emart", "sieu thi",
-        "cho ", "cho.", "food mart", "food store",
+        "bach hoa xanh", "winmart", "win mart", "coop food", "co.op food",
+        "coopmart", "co.opmart", "kingfood", "tops market", "lotte mart",
+        "mega market", "go market", "emart", "food mart", "food store",
+        "sieu thi", "cho ",
     )
 
     try:
@@ -297,14 +305,13 @@ def handle_nearby_stores(params):
                     continue
 
                 has_grocery_category = any(
-                    term in category
+                    category in grocery_categories
                     for category in category_names
-                    for term in grocery_category_terms
                 )
                 has_grocery_name = any(term in title_norm for term in grocery_name_terms)
 
-                # Chỉ nhận địa điểm có category bán lẻ thực phẩm hoặc tên cửa hàng/chợ rõ ràng.
-                # Không suy luận cửa hàng chỉ từ việc tên địa chỉ có chữ Co.opmart/WinMart.
+                # Không nhận cửa hàng chuyên biệt/quán ăn chỉ vì tên hoặc category
+                # có một từ chung liên quan đến thực phẩm.
                 if not (has_grocery_category or has_grocery_name):
                     continue
 
