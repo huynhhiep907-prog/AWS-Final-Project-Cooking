@@ -3251,7 +3251,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Thịt heo xào sả ớt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -3339,7 +3339,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R22",
@@ -3379,7 +3382,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Gà xào sả ớt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -3467,7 +3470,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R23",
@@ -3509,7 +3515,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Cá thu sốt cà chua là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -3597,7 +3603,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R24",
@@ -3643,7 +3652,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Đậu hũ non sốt nấm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -3731,7 +3740,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R25",
@@ -3774,7 +3786,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Trứng chiên cà chua là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -3855,7 +3867,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R26",
@@ -3894,7 +3909,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh cải ngọt thịt bằm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -3975,7 +3990,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R27",
@@ -4014,7 +4032,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh rau ngót thịt bằm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -4095,7 +4113,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R28",
@@ -4136,7 +4157,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh bí xanh nấu tôm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -4217,7 +4238,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R29",
@@ -4260,7 +4284,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Bắp cải xào trứng là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "side",
@@ -4341,7 +4365,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R30",
@@ -4384,7 +4411,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Đậu que xào tỏi là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "side",
@@ -4465,7 +4492,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R31",
@@ -4509,7 +4539,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Salad dưa leo cà chua là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "salad",
@@ -4597,7 +4627,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R32",
@@ -4642,7 +4675,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Cơm chiên trứng là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -4730,7 +4763,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R33",
@@ -4774,7 +4810,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh mồng tơi nấu mướp là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -4862,7 +4898,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R34",
@@ -4904,7 +4943,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh bầu nấu tôm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -4992,7 +5031,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R35",
@@ -5035,7 +5077,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh chua tôm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -5130,7 +5172,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R36",
@@ -5170,7 +5215,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Gà hấp hành là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -5258,7 +5303,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R37",
@@ -5300,7 +5348,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Bò xào hành tây là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -5388,7 +5436,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R38",
@@ -5431,7 +5482,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Cá diêu hồng hấp gừng là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -5519,7 +5570,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R39",
@@ -5561,7 +5615,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Tôm rang thịt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -5649,7 +5703,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R40",
@@ -5689,7 +5746,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Thịt viên sốt cà chua là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -5777,7 +5834,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R41",
@@ -5821,7 +5881,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Trứng cuộn rau củ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -5909,7 +5969,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R42",
@@ -5954,7 +6017,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Bánh mì trứng ốp la là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -6042,7 +6105,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R43",
@@ -6087,7 +6153,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Cháo yến mạch rau củ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -6175,7 +6241,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R44",
@@ -6221,7 +6290,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Mì xào chay rau củ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "main",
@@ -6309,7 +6378,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R45",
@@ -6355,7 +6427,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Rau củ luộc chấm kho quẹt chay là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "side",
@@ -6450,7 +6522,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R46",
@@ -6493,7 +6568,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Gỏi ngó sen tôm thịt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "salad",
@@ -6588,7 +6663,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R47",
@@ -6633,7 +6711,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh bí đỏ nấu đậu phộng là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -6721,7 +6799,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R48",
@@ -6767,7 +6848,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Canh nấm đậu hũ là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "soup",
@@ -6855,7 +6936,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R49",
@@ -6897,7 +6981,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Bí đỏ xào tỏi là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "side",
@@ -6978,7 +7062,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R50",
@@ -7023,7 +7110,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Bắp non xào nấm là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "side",
@@ -7111,7 +7198,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R51",
@@ -7155,7 +7245,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Salad bắp cải cà rốt là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "salad",
@@ -7243,7 +7333,10 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   },
   {
     "RecipeID": "R52",
@@ -7287,7 +7380,7 @@
       "Basis": "per_serving",
       "IsEstimate": true
     },
-    "Notes": "Chi phí và dinh dưỡng là ước tính tham khảo cho một khẩu phần, theo nguyên liệu phổ thông; cần điều chỉnh theo nhãn sản phẩm, khẩu phần và giá địa phương.",
+    "Notes": "Chi phí là ước tính cho toàn công thức 2 người; dinh dưỡng là ước tính trên một khẩu phần. Cần điều chỉnh theo giá địa phương, khẩu phần và nhãn sản phẩm thực tế.",
     "Description": "Gỏi xoài tôm khô là món ăn gia đình kiểu Việt, công thức dành cho 2 người; có thể điều chỉnh gia vị theo khẩu vị.",
     "Cuisine": "Vietnamese",
     "Category": "salad",
@@ -7382,6 +7475,9 @@
     ],
     "Substitutions": [],
     "Storage": "Bảo quản phần còn lại trong hộp kín, làm lạnh sớm và dùng trong 1–2 ngày.",
-    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại."
+    "Reheating": "Hâm nóng đến khi nóng đều phần giữa; món salad nên dùng ngay, không hâm lại.",
+    "CostBasis": "per_recipe",
+    "NutritionBasis": "per_serving",
+    "DataSource": "Ước tính tham khảo từ thành phần và định lượng công thức; chưa được kiểm nghiệm phòng thí nghiệm."
   }
 ]
