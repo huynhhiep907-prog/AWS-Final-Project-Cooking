@@ -399,6 +399,16 @@ def handle_nearby_stores(params):
 
                     for item in text_result.get("ResultItems", []):
                         title = (item.get("Title") or "").strip()
+                        raw_categories = item.get("Categories") or []
+                        raw_category_names = [
+                            normalize(category.get("LocalizedName") or category.get("Name") or "")
+                            for category in raw_categories
+                        ]
+                        logger.info(
+                            "SearchText POI raw: title=%r place_type=%r categories=%s position=%s place_id=%r",
+                            title, item.get("PlaceType"), raw_category_names,
+                            item.get("Position"), item.get("PlaceId")
+                        )
                         if not title:
                             continue
                         title_norm = normalize(title)
