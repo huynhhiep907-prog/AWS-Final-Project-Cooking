@@ -230,7 +230,7 @@ def handle_nearby_stores(params):
     # quán ăn và chuỗi tiện lợi không phù hợp để mua nguyên liệu nấu ăn.
     excluded_name_terms = (
         "famima", "familymart", "family mart", "circle k", "gs25",
-        "7-eleven", "ministop", "cheers", "shop&go", "shop and go",
+        "7-eleven", "ministop", "cheers", "shop&go", "shop and go", "fumart",
         "trai cay", "rau cu", "cua hang rau", "cua hang thit",
         "hai san", "ca tuoi", "me va be", "baby", "kids",
         "chao dinh duong", "mon ngon", "nha hang", "quan an",
